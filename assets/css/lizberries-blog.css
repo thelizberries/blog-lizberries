@@ -1,4 +1,3 @@
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #182430;
@@ -45,3 +44,12 @@ footer { padding: 2rem 0; font-size: 0.9rem; color: #aaa; }
 .post-image { width: 100%; height: auto; border-radius: 10px; margin-bottom: 1.5rem; }
 .btn { background: linear-gradient(217deg, #f8174b, #7f1fa3 70.71%); padding: 0.5rem 1rem; border-radius: 5px; color: white; text-transform: uppercase; }
 .btn:hover { opacity: 0.8; }
+
+.post-preview.no-image {
+  background-color: #071116;
+  padding: 1rem;
+  text-align: center;
+}
+.post-preview.no-image h2 {
+  margin-top: 1rem;
+}
