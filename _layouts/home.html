@@ -6,7 +6,7 @@ layout: default
   {% for post in paginator.posts %}
   <article class="post-preview">
     <a href="{{ post.url | relative_url }}">
-      <img src="{{ post.image | default: '/assets/images/The-Lizberries-Logo.webp' }}" alt="{{ post.title }}">
+      <img src="{{ post.image | default: '/assets/images/The-Lizberries-Logo_small.png' }}" alt="{{ post.title }}">
       <h2>{{ post.title }}</h2>
       <p class="excerpt">{{ post.excerpt }}</p>
     </a>
