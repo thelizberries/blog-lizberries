@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Lizberries Blog</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:title" content="{{ page.title }} - Lizberries Blog">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ page.image | default: '/assets/images/The-Lizberries-Logo.webp' }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/lizberries-blog.css">
+  </head>
+  <body>
+    {% include header.html %}
+    <main class="container">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
