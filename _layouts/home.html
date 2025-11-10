@@ -4,7 +4,7 @@ layout: default
 <h1 class="text-center text-red">The Lizberries Blog</h1>
 <div class="posts-grid">
   {% for post in paginator.posts %}
-  <article class="post-preview">
+  <article class="post-preview{% unless post.image %} no-image{% endunless %}">
     <a href="{{ post.url | relative_url }}">
       {% if post.image %}
         <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
