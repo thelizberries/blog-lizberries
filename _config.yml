@@ -1,3 +1,16 @@
-title: "Blog di Tuo Nome"
-description: "Novità e articoli del mio sito"
+
+title: "Lizberries Blog"
+description: "Novità, dietro le quinte e curiosità dal mondo Lizberries"
+url: "https://blog.lizberries.thelizards.it"
+author:
+  name: "Lizberries Team"
+  email: "info@lizberries.thelizards.it"
 theme: minima
+show_excerpts: true
+lang: it_IT
+paginate: 5
+paginate_path: "/page:num"
+sass:
+  style: compressed
+plugins:
+  - jekyll-paginate
