@@ -10,7 +10,7 @@ a:hover { color: #7f1fa3; }
 .text-center { text-align: center; }
 .text-red { color: #f8174b; }
 .bg-dark-primary { background-color: #071116; }
-.bg-dark-secondary { background-color: #182430; }
+.bg-dark-secondary { background-color: #071116; }
 header.blog-header {
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ footer { padding: 2rem 0; font-size: 0.9rem; color: #aaa; }
 .btn:hover { opacity: 0.8; }
 
 .post-preview.no-image {
-  background-color: #071116;
+  background-color: #182430;
   padding: 1rem;
   text-align: center;
 }
