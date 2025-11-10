@@ -1,7 +1,16 @@
 ---
 layout: post
-title: "Benvenuto nel mio blog"
-date: 2025-10-17
+title: "Benvenuti nel blog dei Lizberries"
+date: 2025-11-10
 ---
-Questo è il mio primo articolo! 🎉  
-Scrivo due volte a settimana, quindi resta aggiornato.
+ Ciao a tutti! 👋
+ Siamo i Lizberries – un gruppo di [band/creativi/amici] che ha deciso di aprire questo piccolo spazio online per condividere con voi ciò che ci appassiona.
+Qui troverete:
+ 🎶 dietro le quinte dei nostri progetti
+ 📝 storie, pensieri e ispirazioni
+ 📸 foto e momenti che non finiscono su Instagram
+ 💡 idee, consigli e qualche sorpresa
+Per noi questo blog è come un diario aperto: un posto dove raccontarci senza filtri e dove voi potete lasciare commenti, domande o anche solo un saluto.
+Se siete curiosi di scoprire cosa bolle in pentola, restate con noi: pubblicheremo presto il primo aggiornamento su [un progetto/una canzone/qualcosa di vostro].
+Grazie per essere qui 💜
+ – The Lizberries
