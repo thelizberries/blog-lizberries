@@ -1,1 +1,36 @@
+name: Auto-translate blog posts
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '_posts/**.md'
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install googletrans==4.0.0-rc1
+
+      - name: Translate posts to English
+        run: |
+          mkdir -p en/_posts
+          python3 .github/scripts/translate_posts.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "actions@github.com"
+          git add en/_posts
+          git commit -m "Auto-translated new posts" || echo "No changes"
+          git push
