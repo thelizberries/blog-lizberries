@@ -43,6 +43,9 @@ header.blog-header nav a {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+header.blog-header nav a:hover {
+  color: var(--accent);
+}
 
 /* Posts grid */
 .posts-grid {
