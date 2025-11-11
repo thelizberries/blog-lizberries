@@ -12,8 +12,31 @@ layout: default
   </div>
   <!-- Link di ritorno -->
   <div class="back-link text-center" style="margin-top: 2rem;">
-    <a href="{{ '/' | relative_url }}" class="text-red text-uppercase font-weight-bold">
-      ← Torna al blog
-    </a>
-  </div>
+  <a href="#" class="text-red text-uppercase font-weight-bold" id="backLink">
+    ← Torna al blog
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const ref = document.referrer;
+    const backLink = document.getElementById('backLink');
+
+    // Determina dove tornare
+    let target = '/';
+    if (ref && ref.includes('blog.lizberries.thelizards.it/page')) {
+      target = ref;
+    }
+
+    // Aggiunge l'effetto fade e poi reindirizza
+    backLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = target;
+      }, 500); // 500ms = durata transizione
+    });
+  });
+</script>
+
 </article>
