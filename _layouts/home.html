@@ -23,12 +23,12 @@ layout: default
 </div>
 <div class="pagination text-center" style="margin: 2rem 0;">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}" class="text-red text-uppercase font-weight-bold" style="margin-right: 1.5rem;">
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="text-red text-uppercase" style="margin-right: 1.5rem;">
       ← Post più recenti
     </a>
   {% endif %}
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="text-red text-uppercase font-weight-bold">
+    <a href="{{ paginator.next_page_path | relative_url }}" class="text-red text-uppercase">
       Post più vecchi →
     </a>
   {% endif %}
