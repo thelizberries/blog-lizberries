@@ -107,12 +107,6 @@ header.blog-header nav a:hover {
   object-fit: cover;
 }
 
-/* Variant for previews without image */
-.post-preview.no-image {
-  padding: 1rem;
-  text-align: center;
-}
-
 /* Single post styles */
 .post {
   padding: 2rem;
