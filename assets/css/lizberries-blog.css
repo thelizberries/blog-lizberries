@@ -132,7 +132,7 @@ header.blog-header nav a {
   text-align: center;
   transition: color 0.3s ease;
 }
-.back-link a:hover { color: var(--accent-2); }
+.back-link a:hover { color: var(--text); }
 
 .text-uppercase {
   text-transform: uppercase;
