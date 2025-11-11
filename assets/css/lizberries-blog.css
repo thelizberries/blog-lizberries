@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
 a:hover {
