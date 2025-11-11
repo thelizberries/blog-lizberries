@@ -66,3 +66,11 @@ footer { padding: 2rem 0; font-size: 0.9rem; color: #aaa; }
 .post-preview.no-image h2 {
   margin-top: 1rem;
 }
+.post-date {
+  color: #bbb;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: -0.5rem 1rem 0.5rem;
+  display: block;
+}
+
