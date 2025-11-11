@@ -53,8 +53,9 @@ header.blog-header nav a:hover {
 
 /* Posts grid */
 .posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra anche se ci sono pochi post */
   gap: 1.5rem;
   padding: 2rem;
 }
@@ -67,6 +68,9 @@ header.blog-header nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   color: var(--text);
+  width: 274.22px; /* larghezza fissa */
+  height: 446.67px; /* altezza fissa */
+  justify-content: space-between; /* mantiene proporzioni tra contenuto e margini */
 }
 .post-preview:hover {
   transform: scale(1.03);
@@ -173,4 +177,11 @@ footer {
   padding: 2rem 0;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .post-preview {
+    width: 90%;
+    height: auto;
+  }
 }
