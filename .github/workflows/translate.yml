@@ -36,16 +36,16 @@ jobs:
 
       - name: Commit and push changes if any
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT }}
         run: |
           git add en/_posts
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Auto-translated new posts"
-            # Imposta l'URL del remote con il token per evitare il 403
-            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/thelizberries/blog.git
+            git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog.git
             git push origin HEAD:main
           fi
+
 
           
