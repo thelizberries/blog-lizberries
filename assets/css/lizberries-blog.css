@@ -126,6 +126,14 @@ header.blog-header nav a {
 }
 .btn:hover { opacity: 0.8; }
 
+.back-link a {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.back-link a:hover { color: #7f1fa3; }
+
 /* Footer */
 footer {
   padding: 2rem 0;
