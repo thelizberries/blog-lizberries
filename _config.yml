@@ -4,7 +4,7 @@ description: "Novità, dietro le quinte e curiosità dal mondo Lizberries"
 url: "https://blog.lizberries.thelizards.it"
 author:
   name: "Lizberries Team"
-  email: "info@lizberries.thelizards.it"
+  email: "lizberries@thelizards.it"
 theme: minima
 show_excerpts: true
 lang: it_IT
@@ -15,4 +15,4 @@ sass:
 plugins:
   - jekyll-paginate
 
-# rebuild1
+# rebuild
