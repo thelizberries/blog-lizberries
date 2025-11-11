@@ -172,6 +172,24 @@ header.blog-header nav a:hover {
   text-transform: uppercase;
 }
 
+.excerpt {
+  color: #ccc;
+  padding: 0 1rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.read-more {
+  text-align: right;
+  padding: 0 1rem 1rem;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.post-preview:hover .read-more {
+  color: var(--accent);
+}
+
 /* Footer */
 footer {
   padding: 2rem 0;
