@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # ⚠️ importante
+          persist-credentials: false  # fondamentale
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,6 +43,9 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-translated new posts"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/thelizberries/blog.git HEAD:main
+            # Imposta l'URL del remote con il token per evitare il 403
+            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/thelizberries/blog.git
+            git push origin HEAD:main
           fi
+
           
