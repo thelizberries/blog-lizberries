@@ -10,6 +10,7 @@ layout: default
         <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
       {% endif %}
       <h2>{{ post.title }}</h2>
+      <p class="post-date">{{ post.date | date: "%d %B %Y" }}</p>
       <p class="excerpt">{{ post.excerpt }}</p>
     </a>
   </article>
