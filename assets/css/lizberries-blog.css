@@ -134,6 +134,10 @@ header.blog-header nav a {
 }
 .back-link a:hover { color: var(--accent-2); }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 /* Footer */
 footer {
   padding: 2rem 0;
