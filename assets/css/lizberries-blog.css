@@ -134,6 +134,29 @@ header.blog-header nav a {
 }
 .back-link a:hover { color: var(--text); }
 
+/* ============================= */
+/*  Utility classes Lizberries   */
+/* ============================= */
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.text-red {
+  color: #f8174b;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
 .text-uppercase {
   text-transform: uppercase;
 }
