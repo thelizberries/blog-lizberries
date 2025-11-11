@@ -28,3 +28,26 @@ layout: default
     </a>
   {% endif %}
 </div>
+
+<!-- ✨ Script per effetto fade all'apertura del post -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Seleziona tutti i link ai post
+    const postLinks = document.querySelectorAll('.post-preview a');
+
+    postLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetUrl = this.href;
+
+        // Aggiunge la classe per la dissolvenza
+        document.body.classList.add('fade-out');
+
+        // Dopo mezzo secondo (durata CSS), carica il post
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 500);
+      });
+    });
+  });
+</script>
