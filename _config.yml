@@ -1,4 +1,3 @@
-
 title: "Lizberries Blog"
 description: "Novità, dietro le quinte e curiosità dal mondo Lizberries"
 url: "https://blog.lizberries.thelizards.it"
@@ -8,12 +7,18 @@ author:
 theme: minima
 show_excerpts: true
 lang: it_IT
+
+# Impostazioni di paginazione
 paginate: 5
-paginate_path: "/page:num"
+paginate_path: "/page:num/"
+
 sass:
   style: compressed
+
 plugins:
   - jekyll-paginate
+
+# Impostazioni lingua automatica per i post
 defaults:
   - scope:
       path: ""
@@ -25,4 +30,3 @@ defaults:
       type: "posts"
     values:
       lang: "en"
-
