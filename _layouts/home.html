@@ -4,19 +4,8 @@ layout: default
 
 <h1 class="text-center">The Lizberries Blog</h1>
 
-{% assign italian_posts = site.posts | where: "lang", "it" | sort: "date" | reverse %}
-{% assign posts_per_page = 5 %}
-{% assign total_posts = italian_posts | size %}
-{% assign total_pages = total_posts | divided_by: posts_per_page | ceil %}
-{% assign current_page = page.url | remove: '/' | replace: 'page', '' | plus: 0 %}
-{% if current_page == 0 %}
-  {% assign current_page = 1 %}
-{% endif %}
-{% assign start = posts_per_page | times: current_page | minus: posts_per_page %}
-{% assign paginated_posts = italian_posts | slice: start, posts_per_page %}
-
 <div class="posts-grid">
-  {% for post in paginated_posts %}
+  {% for post in paginator.posts %}
   <article class="post-preview{% unless post.image %} no-image{% endunless %}">
     <a href="{{ post.url | relative_url }}">
       {% if post.image %}
@@ -34,19 +23,19 @@ layout: default
 </div>
 
 <div class="pagination text-center" style="margin: 2rem 0;">
-  {% if current_page > 1 %}
-    <a href="{% if current_page == 2 %}/index.html{% else %}/page{{ current_page | minus: 1 }}/{% endif %}" 
-       class="text-red text-uppercase" style="margin-right: 1.5rem;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="text-red text-uppercase" style="margin-right: 1.5rem;">
       ← Post più recenti
     </a>
   {% endif %}
-  {% if current_page < total_pages %}
-    <a href="/page{{ current_page | plus: 1 }}/" class="text-red text-uppercase">
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="text-red text-uppercase">
       Post più vecchi →
     </a>
   {% endif %}
 </div>
 
+<!-- Script per effetto fade all'apertura del post -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const postLinks = document.querySelectorAll('.post-preview a');
