@@ -14,5 +14,15 @@ sass:
   style: compressed
 plugins:
   - jekyll-paginate
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      lang: "it"
+  - scope:
+      path: "en"
+      type: "posts"
+    values:
+      lang: "en"
 
-# rebuild1
