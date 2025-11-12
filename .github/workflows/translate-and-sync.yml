@@ -1,0 +1,39 @@
+name: Translate and sync blog posts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '_posts/**.md'
+
+jobs:
+  translate_and_sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Italian repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install googletrans==4.0.0-rc1
+
+      - name: Clone English repo
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/thelizberries/blog-en.git
+
+      - name: Translate new posts
+        run: python .github/scripts/translate_and_copy.py
+
+      - name: Commit and push to English repo
+        run: |
+          cd blog-en
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Auto-translated new posts" || echo "No changes"
+          git push
