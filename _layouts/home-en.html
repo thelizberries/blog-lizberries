@@ -15,7 +15,7 @@ layout: default
         {{ post.excerpt | strip_html | truncatewords: 30 }}
       </p>
       <p class="read-more text-red">
-        → Leggi di più
+        → Read more
       </p>
     </a>
   </article>
@@ -24,12 +24,12 @@ layout: default
 <div class="pagination text-center" style="margin: 2rem 0;">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | relative_url }}" class="text-red text-uppercase" style="margin-right: 1.5rem;">
-      ← Post più recenti
+      ← Newer posts
     </a>
   {% endif %}
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url }}" class="text-red text-uppercase">
-      Post più vecchi →
+      Older posts →
     </a>
   {% endif %}
 </div>
