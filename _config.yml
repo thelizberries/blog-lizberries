@@ -17,16 +17,3 @@ sass:
 
 plugins:
   - jekyll-paginate
-
-# Impostazioni lingua automatica per i post
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      lang: "it"
-  - scope:
-      path: "en"
-      type: "posts"
-    values:
-      lang: "en"
