@@ -13,7 +13,11 @@ layout: default
         <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
       {% endif %}
       <h2>{{ post.title }}</h2>
-      <p class="post-date">{{ post.date | date: "%d %B %Y" }}</p>
+      {% assign mesi = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre" | split: "," %}
+      {% assign mese_index = post.date | date: "%-m" | minus: 1 %}
+      <p class="post-date">
+        {{ post.date | date: "%-d" }} {{ mesi[mese_index] }} {{ post.date | date: "%Y" }}
+      </p>
       <p class="excerpt">
         {{ post.excerpt | strip_html | truncatewords: 30 }}
       </p>
