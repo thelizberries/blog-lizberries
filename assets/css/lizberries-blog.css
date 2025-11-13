@@ -107,6 +107,16 @@ header.blog-header nav a:hover {
   object-fit: cover;
 }
 
+.post-preview img.default-image {
+  width: 60%;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  background-color: var(--card-bg);
+  padding: 20px;
+}
+
 /* Single post styles */
 .post {
   padding: 2rem;

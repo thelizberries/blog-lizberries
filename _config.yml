@@ -18,4 +18,14 @@ sass:
 plugins:
   - jekyll-paginate
 
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      image: "/assets/images/The-Lizberries-Logo_small.png"
+      layout: post
+      lang: "it"
+
 #test
