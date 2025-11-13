@@ -2,7 +2,37 @@
 
 Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Questa guida ti accompagnerà passo dopo passo nella creazione di nuovi articoli.
 
-## 📝 Struttura del Blog
+---
+
+## ⚡ GUIDA RAPIDA - Per chi non è pratico di GitHub
+
+**Il modo più semplice per scrivere e pubblicare un post:**
+
+### 1️⃣ Vai su https://prose.io/
+### 2️⃣ Clicca "Authorize on GitHub" e fai login
+### 3️⃣ Seleziona il repository "thelizberries/blog"
+### 4️⃣ Clicca sulla cartella "_posts"
+### 5️⃣ Clicca "New File" (in alto a destra)
+### 6️⃣ Scrivi il contenuto del post nell'editor
+### 7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:
+   - **Title**: Titolo del post
+   - **Date**: Data (formato: 2025-11-15)
+   - **Image** (opzionale): /assets/images/nome-immagine.webp
+### 8️⃣ Clicca "Save" (💾 in alto a destra)
+### 9️⃣ **Fatto!** Il post verrà pubblicato automaticamente
+
+**📸 Per aggiungere immagini:**
+- Nella stessa interfaccia, clicca sull'icona immagine (🖼️)
+- Trascina l'immagine o selezionala dal computer
+- L'immagine verrà caricata automaticamente
+
+**⏱️ Tempi di pubblicazione:**
+- Il post appare sul blog italiano in 1-2 minuti
+- Dopo altri 1-2 minuti appare tradotto automaticamente sul blog inglese
+
+---
+
+## 📝 Struttura del Blog (Per Utenti Tecnici)
 
 Il blog è costruito con Jekyll e GitHub Pages. I post vengono scritti in formato Markdown e pubblicati automaticamente su:
 - **Blog Italiano**: https://blog.lizberries.thelizards.it
