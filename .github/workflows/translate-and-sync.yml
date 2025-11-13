@@ -1,11 +1,11 @@
-#name: Translate and sync to English blog
+name: Translate and sync to English blog
 
-#on:
-#  push:
-#    branches:
-#      - main
-#    paths:
-#      - '_posts/**.md'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '_posts/**.md'
 
 jobs:
   translate:
