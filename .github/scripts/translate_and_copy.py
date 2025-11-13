@@ -1,5 +1,6 @@
 from googletrans import Translator
 from pathlib import Path
+import re
 
 translator = Translator()
 
@@ -25,8 +26,18 @@ for post in src_dir.glob("*.md"):
         fm, content = "", text
 
     print(f"Translating: {post.name}")
-    translated = translator.translate(content, src="it", dest="en").text
+    
+    # Traduci il titolo nel front matter
+    title_match = re.search(r'title:\s*["\']?([^"\'\n]+)["\']?', fm)
+    if title_match:
+        original_title = title_match.group(1).strip()
+        translated_title = translator.translate(original_title, src="it", dest="en").text
+        fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
+                    rf'\1{translated_title}\3', fm)
+    
+    # Traduci il contenuto
+    translated_content = translator.translate(content, src="it", dest="en").text
 
-    dest_file.write_text(f"---{fm}---\n{translated}", encoding="utf-8")
+    dest_file.write_text(f"---{fm}---\n{translated_content}", encoding="utf-8")
 
 print("✅ All posts translated and copied to English repo!")
