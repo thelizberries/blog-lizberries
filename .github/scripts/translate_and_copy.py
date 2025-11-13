@@ -8,6 +8,18 @@ src_dir = Path("_posts")
 dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
 
+# Ottieni lista dei post italiani
+italian_posts = set(post.name for post in src_dir.glob("*.md"))
+
+# Rimuovi i post inglesi che non hanno più corrispondenza in italiano
+print("🔍 Checking for deleted posts...")
+for en_post in dest_dir.glob("*.md"):
+    if en_post.name not in italian_posts:
+        print(f"🗑️  Deleting: {en_post.name} (no longer exists in Italian)")
+        en_post.unlink()
+
+# Traduci i nuovi post
+print("🔄 Translating new posts...")
 for post in src_dir.glob("*.md"):
     dest_file = dest_dir / post.name
 
@@ -25,7 +37,7 @@ for post in src_dir.glob("*.md"):
     else:
         fm, content = "", text
 
-    print(f"Translating: {post.name}")
+    print(f"📝 Translating: {post.name}")
     
     # Traduci il titolo nel front matter
     title_match = re.search(r'title:\s*["\']?([^"\'\n]+)["\']?', fm)
@@ -40,4 +52,4 @@ for post in src_dir.glob("*.md"):
 
     dest_file.write_text(f"---{fm}---\n{translated_content}", encoding="utf-8")
 
-print("✅ All posts translated and copied to English repo!")
+print("✅ All posts synchronized with English repo!")
