@@ -51,7 +51,6 @@ header.blog-header nav a:hover {
   color: var(--accent);
 }
 header.blog-header nav a.lang-link {
-  border: 2px solid var(--accent);
   padding: 0.4rem 0.8rem;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -224,7 +223,6 @@ header.blog-header nav a.lang-link.active {
 .pagination-link,
 .pagination-number {
   padding: 0.5rem 1rem;
-  border: 2px solid var(--accent);
   border-radius: 5px;
   color: var(--text);
   text-decoration: none;
