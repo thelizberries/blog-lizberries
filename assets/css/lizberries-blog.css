@@ -205,6 +205,55 @@ header.blog-header nav a.lang-link.active {
   color: var(--accent);
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pagination-link,
+.pagination-number {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.pagination-link:hover:not(.disabled),
+.pagination-number:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.pagination-number.active {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.pagination-link.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+.pagination-ellipsis {
+  color: var(--muted);
+  padding: 0 0.5rem;
+}
+
 /* Footer */
 footer {
   padding: 2rem 0;
