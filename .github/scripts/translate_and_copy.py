@@ -8,26 +8,50 @@ src_dir = Path("_posts")
 dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
 
+def slugify_english(text):
+    """Converte testo in slug URL-friendly"""
+    # Rimuovi caratteri speciali e converti in minuscolo
+    text = re.sub(r'[^\w\s-]', '', text.lower())
+    # Sostituisci spazi con trattini
+    text = re.sub(r'[-\s]+', '-', text)
+    return text.strip('-')
+
 # Ottieni lista dei post italiani
 italian_posts = set(post.name for post in src_dir.glob("*.md"))
 
 # Rimuovi i post inglesi che non hanno più corrispondenza in italiano
 print("🔍 Checking for deleted posts...")
 for en_post in dest_dir.glob("*.md"):
-    if en_post.name not in italian_posts:
+    # Leggi il front matter per trovare original_file
+    text = en_post.read_text(encoding="utf-8")
+    original_match = re.search(r'original_file:\s*["\']?([^"\'\n]+)["\']?', text)
+    
+    if original_match:
+        original_file = original_match.group(1).strip()
+        if original_file not in italian_posts:
+            print(f"🗑️  Deleting: {en_post.name} (original {original_file} no longer exists)")
+            en_post.unlink()
+    elif en_post.name not in italian_posts:
+        # Fallback per vecchi post senza original_file
         print(f"🗑️  Deleting: {en_post.name} (no longer exists in Italian)")
         en_post.unlink()
 
 # Traduci i nuovi post
 print("🔄 Translating new posts...")
 for post in src_dir.glob("*.md"):
-    dest_file = dest_dir / post.name
-
-    # Salta se il file esiste già (già tradotto)
-    if dest_file.exists():
-        continue
-
     text = post.read_text(encoding="utf-8")
+    
+    # Controlla se il post è già stato tradotto cercando original_file
+    already_translated = False
+    for en_post in dest_dir.glob("*.md"):
+        en_text = en_post.read_text(encoding="utf-8")
+        original_match = re.search(r'original_file:\s*["\']?([^"\'\n]+)["\']?', en_text)
+        if original_match and original_match.group(1).strip() == post.name:
+            already_translated = True
+            break
+    
+    if already_translated:
+        continue
 
     # Separa front matter e contenuto
     if text.startswith("---"):
@@ -41,15 +65,31 @@ for post in src_dir.glob("*.md"):
     
     # Traduci il titolo nel front matter
     title_match = re.search(r'title:\s*["\']?([^"\'\n]+)["\']?', fm)
+    translated_title = ""
     if title_match:
         original_title = title_match.group(1).strip()
         translated_title = translator.translate(original_title, src="it", dest="en").text
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_title}\3', fm)
     
+    # Aggiungi original_file al front matter
+    fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\n'
+    
     # Traduci il contenuto
     translated_content = translator.translate(content, src="it", dest="en").text
-
+    
+    # Crea il nuovo nome del file con slug inglese
+    # Estrai la data dal nome del file (YYYY-MM-DD)
+    date_match = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)\.md', post.name)
+    if date_match and translated_title:
+        date_prefix = date_match.group(1)
+        english_slug = slugify_english(translated_title)
+        new_filename = f"{date_prefix}-{english_slug}.md"
+    else:
+        new_filename = post.name  # Fallback al nome originale
+    
+    dest_file = dest_dir / new_filename
     dest_file.write_text(f"---{fm}---\n{translated_content}", encoding="utf-8")
+    print(f"   ✓ Created: {new_filename}")
 
 print("✅ All posts synchronized with English repo!")
