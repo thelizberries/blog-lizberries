@@ -114,7 +114,6 @@ header.blog-header nav a:hover {
   margin: 0 auto;
   display: block;
   background-color: var(--card-bg);
-  padding: 20px;
 }
 
 /* Single post styles */
