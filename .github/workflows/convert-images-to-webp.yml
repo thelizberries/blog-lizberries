@@ -20,6 +20,13 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: Checkout English blog repository
+        uses: actions/checkout@v3
+        with:
+          repository: thelizberries/blog-en
+          path: blog-en
+          token: ${{ secrets.PAT }}
+      
       - name: Install WebP tools
         run: sudo apt-get update && sudo apt-get install -y webp
       
@@ -36,20 +43,36 @@ jobs:
               echo "Converting $img to WebP..."
               if cwebp -q 85 "$img" -o "$webp_file"; then
                 echo "Successfully converted $img to $webp_file"
+                
+                # Copia il file webp nel blog inglese
+                dest_file="blog-en/${webp_file}"
+                mkdir -p "$(dirname "$dest_file")"
+                cp "$webp_file" "$dest_file"
+                echo "Copied $webp_file to blog-en"
+                
                 # Rimuovi il file originale dopo la conversione riuscita
                 rm "$img"
-                echo "Removed original file $img"
-              else
-                echo "Error converting $img, keeping original file"
-              fi
-            fi
-          done
-      
       - name: Commit converted images
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add assets/images/
+          git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
+      
+      - name: Commit and push to English blog
+        run: |
+          cd blog-en
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/images/
+          git diff --staged --quiet || git commit -m "Add converted WebP images from Italian blog [skip ci]"
+          git push
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
           git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
       
       - name: Push changes
