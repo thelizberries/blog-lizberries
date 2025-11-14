@@ -3,23 +3,3 @@ layout: home
 title: "Lizberries Blog"
 lang: "it"
 ---
-
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-  
-  // Gestisci il token di invito nell'URL
-  const params = new URLSearchParams(window.location.hash.substring(1));
-  if (params.get('invite_token')) {
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.open('signup');
-    }
-  }
-</script>
