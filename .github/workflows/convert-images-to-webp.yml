@@ -31,11 +31,14 @@ jobs:
             # Converti solo se il file webp non esiste o è più vecchio dell'originale
             if [ ! -f "$webp_file" ] || [ "$img" -nt "$webp_file" ]; then
               echo "Converting $img to WebP..."
-              cwebp -q 85 "$img" -o "$webp_file"
-              
-              # Opzionale: rimuovi il file originale dopo la conversione
-              # Decommenta la riga seguente se vuoi eliminare jpg/png dopo la conversione
-              # rm "$img"
+              if cwebp -q 85 "$img" -o "$webp_file"; then
+                echo "Successfully converted $img to $webp_file"
+                # Rimuovi il file originale dopo la conversione riuscita
+                rm "$img"
+                echo "Removed original file $img"
+              else
+                echo "Error converting $img, keeping original file"
+              fi
             fi
           done
       
@@ -43,8 +46,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add assets/images/*.webp
-          git diff --staged --quiet || git commit -m "Convert images to WebP format [skip ci]"
+          git add assets/images/
+          git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
       
       - name: Push changes
         uses: ad-m/github-push-action@master
