@@ -1,0 +1,53 @@
+name: Convert Images to WebP
+
+on:
+  push:
+    paths:
+      - 'assets/images/**'
+    branches:
+      - main
+
+jobs:
+  convert-images:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Install WebP tools
+        run: sudo apt-get update && sudo apt-get install -y webp
+      
+      - name: Convert new/modified images to WebP
+        run: |
+          # Trova tutte le immagini non-webp in assets/images
+          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
+            # Ottieni il percorso senza estensione
+            base="${img%.*}"
+            webp_file="${base}.webp"
+            
+            # Converti solo se il file webp non esiste o è più vecchio dell'originale
+            if [ ! -f "$webp_file" ] || [ "$img" -nt "$webp_file" ]; then
+              echo "Converting $img to WebP..."
+              cwebp -q 85 "$img" -o "$webp_file"
+              
+              # Opzionale: rimuovi il file originale dopo la conversione
+              # Decommenta la riga seguente se vuoi eliminare jpg/png dopo la conversione
+              # rm "$img"
+            fi
+          done
+      
+      - name: Commit converted images
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/images/*.webp
+          git diff --staged --quiet || git commit -m "Convert images to WebP format [skip ci]"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

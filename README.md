@@ -17,14 +17,29 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 ### 7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:
    - **Title**: Titolo del post
    - **Date**: Data (formato: 2025-11-15)
-   - **Image** (opzionale): /assets/images/nome-immagine.webp
+   - (opzionale) **Image**: /assets/images/nome-immagine.estenzione_immagine
 ### 8️⃣ Clicca "Save" (💾 in alto a destra)
 ### 9️⃣ **Fatto!** Il post verrà pubblicato automaticamente
 
 **📸 Per aggiungere immagini:**
-- Nella stessa interfaccia, clicca sull'icona immagine (🖼️)
-- Trascina l'immagine o selezionala dal computer
-- L'immagine verrà caricata automaticamente
+
+**IMPORTANTE**: Prose.io non permette di scegliere la cartella di destinazione per le immagini. 
+
+**Metodo consigliato per caricare immagini con Prose.io:**
+
+1. **Prima di scrivere il post**, carica le immagini:
+   - Vai su https://github.com/thelizberries/blog
+   - Naviga nella cartella `assets/images/`
+   - Clicca "Add file" → "Upload files"
+   - Trascina le tue immagini (qualsiasi formato: `.jpg`, `.jpeg`, `.png`)
+   - Clicca "Commit changes"
+
+2. **Attendi 1-2 minuti**: Le immagini verranno **convertite automaticamente in formato `.webp`** (ottimizzato per il web)
+
+3. **Poi scrivi il post in Prose.io** e referenzia le immagini convertite:
+   - Nel campo "Image" dei metadati: `/assets/images/nome-immagine.webp` (usa l'estensione `.webp` anche se hai caricato `.jpg`)
+
+**Nota**: Le immagini verranno copiate automaticamente anche nel blog inglese durante la traduzione!
 
 **⏱️ Tempi di pubblicazione:**
 - Il post appare sul blog italiano in 1-2 minuti
@@ -110,9 +125,10 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 ### Aggiungere un'Immagine al Post
 
 1. **Salva l'immagine** nella cartella `assets/images/`
-2. **Formati consigliati**: `.webp` (ottimizzato) o `.jpg`, `.png`
-3. **Naming**: Usa nomi descrittivi con trattini, es: `concerto-milano-2025.webp`
-4. **Aggiungi nel front matter**: 
+2. **Formati supportati**: `.jpg`, `.jpeg`, `.png` (verranno convertiti automaticamente in `.webp`)
+3. **Naming**: Usa nomi descrittivi con trattini, es: `concerto-milano-2025.jpg`
+4. **Conversione automatica**: Dopo 1-2 minuti dal caricamento, l'immagine sarà disponibile in formato `.webp`
+5. **Aggiungi nel front matter** (usa sempre `.webp` come estensione): 
    ```yaml
    image: /assets/images/nome-immagine.webp
    ```
@@ -160,13 +176,17 @@ Quando pubblichi un post in italiano:
 
 1. **GitHub Actions** rileva il nuovo post
 2. Lo **traduce automaticamente** in inglese
-3. Lo pubblica sul blog inglese con:
+3. **Copia automaticamente le immagini** dal post italiano al blog inglese
+4. Lo pubblica sul blog inglese con:
    - Titolo tradotto
    - Contenuto tradotto
    - Nome file tradotto (SEO-friendly)
+   - Immagini copiate in `assets/images/`
    - Link al post originale italiano
 
 ⏱️ La traduzione richiede circa 1-2 minuti dopo il push.
+
+**Nota**: Non devi fare nulla per le immagini! Se le hai caricate in `assets/images/` nel blog italiano, verranno copiate automaticamente nel blog inglese.
 
 ## ✏️ Formattazione Markdown
 

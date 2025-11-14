@@ -1,12 +1,18 @@
 from googletrans import Translator
 from pathlib import Path
 import re
+import shutil
 
 translator = Translator()
 
 src_dir = Path("_posts")
 dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
+
+# Directory per le immagini
+src_images_dir = Path("assets/images")
+dest_images_dir = Path("blog-en/assets/images")
+dest_images_dir.mkdir(parents=True, exist_ok=True)
 
 def slugify_english(text):
     """Converte testo in slug URL-friendly"""
@@ -15,6 +21,36 @@ def slugify_english(text):
     # Sostituisci spazi con trattini
     text = re.sub(r'[-\s]+', '-', text)
     return text.strip('-')
+
+def copy_images_from_post(post_content, front_matter):
+    """Copia le immagini referenziate nel post e nel front matter"""
+    images_to_copy = set()
+    
+    # Cerca immagini nel front matter (campo image:)
+    image_match = re.search(r'image:\s*["\']?(/assets/images/[^"\'\n]+)["\']?', front_matter)
+    if image_match:
+        image_path = image_match.group(1).strip()
+        # Rimuovi il leading slash e "assets/images/"
+        image_name = image_path.replace('/assets/images/', '')
+        images_to_copy.add(image_name)
+    
+    # Cerca immagini nel contenuto markdown (![alt](/assets/images/...))
+    content_images = re.findall(r'!\[.*?\]\((/assets/images/[^)]+)\)', post_content)
+    for img_path in content_images:
+        image_name = img_path.replace('/assets/images/', '')
+        images_to_copy.add(image_name)
+    
+    # Copia le immagini
+    for image_name in images_to_copy:
+        src_image = src_images_dir / image_name
+        dest_image = dest_images_dir / image_name
+        
+        if src_image.exists():
+            if not dest_image.exists():
+                shutil.copy2(src_image, dest_image)
+                print(f"   📸 Copied image: {image_name}")
+        else:
+            print(f"   ⚠️  Warning: Image not found: {image_name}")
 
 # Ottieni lista dei post italiani
 italian_posts = set(post.name for post in src_dir.glob("*.md"))
@@ -77,6 +113,9 @@ for post in src_dir.glob("*.md"):
     
     # Traduci il contenuto
     translated_content = translator.translate(content, src="it", dest="en").text
+    
+    # Copia le immagini referenziate nel post
+    copy_images_from_post(content, fm)
     
     # Crea il nuovo nome del file con slug inglese
     # Estrai la data dal nome del file (YYYY-MM-DD)
