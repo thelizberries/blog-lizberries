@@ -51,6 +51,50 @@ def copy_images_from_post(post_content, front_matter):
                 print(f"   📸 Copied image: {image_name}")
         else:
             print(f"   ⚠️  Warning: Image not found: {image_name}")
+    
+    return images_to_copy
+
+def extract_images_from_post(post_content, front_matter):
+# Rimuovi i post inglesi che non hanno più corrispondenza in italiano
+print("🔍 Checking for deleted posts...")
+for en_post in dest_dir.glob("*.md"):
+    # Leggi il front matter per trovare original_file
+    text = en_post.read_text(encoding="utf-8")
+    original_match = re.search(r'original_file:\s*["\']?([^"\'\n]+)["\']?', text)
+    
+    if original_match:
+        original_file = original_match.group(1).strip()
+        if original_file not in italian_posts:
+            print(f"🗑️  Deleting post: {en_post.name} (original {original_file} no longer exists)")
+            
+            # Estrai le immagini dal post prima di cancellarlo
+            if text.startswith("---"):
+                parts = text.split("---", 2)
+                if len(parts) >= 3:
+                    fm = parts[1]
+                    content = parts[2]
+                    images = extract_images_from_post(content, fm)
+                    
+                    # Cancella le immagini dal blog inglese
+                    for image_name in images:
+                        dest_image = dest_images_dir / image_name
+                        if dest_image.exists():
+                            dest_image.unlink()
+                            print(f"   🗑️  Deleted image from blog-en: {image_name}")
+                        
+                        # Cancella anche dal blog italiano
+                        src_image = src_images_dir / image_name
+                        if src_image.exists():
+                            src_image.unlink()
+                            print(f"   🗑️  Deleted image from blog: {image_name}")
+            
+            # Cancella il post
+            en_post.unlink()
+    elif en_post.name not in italian_posts:
+        # Fallback per vecchi post senza original_file
+        print(f"🗑️  Deleting: {en_post.name} (no longer exists in Italian)")
+        en_post.unlink()
+    return images
 
 # Ottieni lista dei post italiani
 italian_posts = set(post.name for post in src_dir.glob("*.md"))
