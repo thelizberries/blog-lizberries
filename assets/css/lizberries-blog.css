@@ -265,3 +265,43 @@ footer {
     height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  header.blog-header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  header.blog-header .logo img {
+    width: 120px;
+  }
+  
+  header.blog-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  header.blog-header nav a {
+    margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  
+  header.blog-header nav a.lang-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .pagination {
+    gap: 0.3rem;
+  }
+  
+  .pagination-link,
+  .pagination-number {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
