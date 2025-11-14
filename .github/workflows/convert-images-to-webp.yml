@@ -3,7 +3,7 @@ name: Convert Images to WebP
 on:
   push:
     paths:
-      - 'assets/images/**'
+      - 'assets/images/posts/**'
     branches:
       - main
 
@@ -32,8 +32,8 @@ jobs:
       
       - name: Convert new/modified images to WebP
         run: |
-          # Trova tutte le immagini non-webp in assets/images
-          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
+          # Trova tutte le immagini non-webp in assets/images/posts
+          find assets/images/posts -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) 2>/dev/null | while read img; do
             # Ottieni il percorso senza estensione
             base="${img%.*}"
             webp_file="${base}.webp"
@@ -52,11 +52,18 @@ jobs:
                 
                 # Rimuovi il file originale dopo la conversione riuscita
                 rm "$img"
+                echo "Removed original file $img"
+              else
+                echo "Error converting $img, keeping original file"
+              fi
+            fi
+          done
+      
       - name: Commit converted images
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add assets/images/
+          git add assets/images/posts/
           git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
       
       - name: Commit and push to English blog
@@ -64,16 +71,9 @@ jobs:
           cd blog-en
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add assets/images/
+          git add assets/images/posts/
           git diff --staged --quiet || git commit -m "Add converted WebP images from Italian blog [skip ci]"
           git push
-      
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-          git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
       
       - name: Push changes
         uses: ad-m/github-push-action@master

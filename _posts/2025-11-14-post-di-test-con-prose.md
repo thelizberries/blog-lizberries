@@ -2,7 +2,7 @@
 layout: post
 title: "Post di test con prose"
 date: 2025-11-14
-image: /assets/images/IMG_20250711_214344.webp
+image: /assets/images/posts/IMG_20250711_214344.webp
 ---
 
 Inserisci qui il testo del post...

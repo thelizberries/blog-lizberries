@@ -29,7 +29,7 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 1. **Prima di scrivere il post**, carica le immagini:
    - Vai su https://github.com/thelizberries/blog
-   - Naviga nella cartella `assets/images/`
+   - Naviga nella cartella `assets/images/posts/`
    - Clicca "Add file" → "Upload files"
    - Trascina le tue immagini (qualsiasi formato: `.jpg`, `.jpeg`, `.png`)
    - Clicca "Commit changes"
@@ -37,7 +37,7 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 2. **Attendi 1-2 minuti**: Le immagini verranno **convertite automaticamente in formato `.webp`** (ottimizzato per il web)
 
 3. **Poi scrivi il post in Prose.io** e referenzia le immagini convertite:
-   - Nel campo "Image" dei metadati: `/assets/images/nome-immagine.webp` (usa l'estensione `.webp` anche se hai caricato `.jpg`)
+   - Nel campo "Image" dei metadati: `/assets/images/posts/nome-immagine.webp` (usa l'estensione `.webp` anche se hai caricato `.jpg`)
 
 **Nota**: Le immagini verranno copiate automaticamente anche nel blog inglese durante la traduzione!
 
@@ -97,7 +97,7 @@ Continua con il resto del contenuto...
 layout: post
 title: "Titolo del Post"
 date: 2025-11-15
-image: /assets/images/nome-immagine.webp
+image: /assets/images/posts/nome-immagine.webp
 ---
 
 Inserisci qui il testo del post...
@@ -124,13 +124,13 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 
 ### Aggiungere un'Immagine al Post
 
-1. **Salva l'immagine** nella cartella `assets/images/`
+1. **Salva l'immagine** nella cartella `assets/images/posts/`
 2. **Formati supportati**: `.jpg`, `.jpeg`, `.png` (verranno convertiti automaticamente in `.webp`)
 3. **Naming**: Usa nomi descrittivi con trattini, es: `concerto-milano-2025.jpg`
 4. **Conversione automatica**: Dopo 1-2 minuti dal caricamento, l'immagine sarà disponibile in formato `.webp`
 5. **Aggiungi nel front matter** (usa sempre `.webp` come estensione): 
    ```yaml
-   image: /assets/images/nome-immagine.webp
+   image: /assets/images/posts/concerto-milano-2025.webp
    ```
 
 ### Immagine di Default
@@ -148,7 +148,7 @@ Se non specifichi un'immagine, verrà usato automaticamente il logo dei Lizberri
 
 2. **Se hai aggiunto immagini**:
    ```bash
-   git add assets/images/nome-immagine.webp
+   git add assets/images/posts/nome-immagine.webp
    ```
 
 3. **Crea il commit**:
@@ -226,7 +226,7 @@ Ecco alcuni esempi di formattazione che puoi usare nei post:
 
 ### Immagini nel Contenuto
 ```markdown
-![Descrizione immagine](/assets/images/nome-immagine.webp)
+![Descrizione immagine](/assets/images/posts/nome-immagine.webp)
 ```
 
 ## 🔄 Workflow Completo
@@ -246,7 +246,7 @@ Ecco alcuni esempi di formattazione che puoi usare nei post:
 layout: post
 title: "Nuovo Concerto a Milano - 20 Dicembre 2025"
 date: 2025-11-15
-image: /assets/images/concerto-milano.webp
+image: /assets/images/posts/concerto-milano.webp
 ---
 
 Siamo entusiasti di annunciare il nostro prossimo concerto a Milano!

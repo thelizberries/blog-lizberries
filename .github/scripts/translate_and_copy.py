@@ -10,8 +10,8 @@ dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
 
 # Directory per le immagini
-src_images_dir = Path("assets/images")
-dest_images_dir = Path("blog-en/assets/images")
+src_images_dir = Path("assets/images/posts")
+dest_images_dir = Path("blog-en/assets/images/posts")
 dest_images_dir.mkdir(parents=True, exist_ok=True)
 
 def slugify_english(text):
@@ -27,17 +27,17 @@ def copy_images_from_post(post_content, front_matter):
     images_to_copy = set()
     
     # Cerca immagini nel front matter (campo image:)
-    image_match = re.search(r'image:\s*["\']?(/assets/images/[^"\'\n]+)["\']?', front_matter)
+    image_match = re.search(r'image:\s*["\']?(/assets/images/posts/[^"\'\n]+)["\']?', front_matter)
     if image_match:
         image_path = image_match.group(1).strip()
-        # Rimuovi il leading slash e "assets/images/"
-        image_name = image_path.replace('/assets/images/', '')
+        # Rimuovi il leading slash e "assets/images/posts/"
+        image_name = image_path.replace('/assets/images/posts/', '')
         images_to_copy.add(image_name)
     
-    # Cerca immagini nel contenuto markdown (![alt](/assets/images/...))
-    content_images = re.findall(r'!\[.*?\]\((/assets/images/[^)]+)\)', post_content)
+    # Cerca immagini nel contenuto markdown (![alt](/assets/images/posts/...))
+    content_images = re.findall(r'!\[.*?\]\((/assets/images/posts/[^)]+)\)', post_content)
     for img_path in content_images:
-        image_name = img_path.replace('/assets/images/', '')
+        image_name = img_path.replace('/assets/images/posts/', '')
         images_to_copy.add(image_name)
     
     # Copia le immagini

@@ -2,7 +2,7 @@
 layout: post
 title: "Speciale: 'Zombie' live"
 date: 2025-11-09
-image: /assets/images/zombie.webp
+image: /assets/images/posts/zombie.webp
 ---
 Uno dei momenti più intensi dei nostri concerti: *Zombie*! 
 
