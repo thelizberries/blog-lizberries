@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Configurazione per pubblicazione immediata
+publish_mode: simple
+
+# Percorso per le immagini caricate
+media_folder: "assets/images/posts"
+public_folder: "/assets/images/posts"
+
+collections:
+  - name: "posts"
+    label: "Post del Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Data Pubblicazione", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Immagine di Anteprima", name: "image", widget: "image", required: false, hint: "Carica un'immagine per l'anteprima del post"}
+      - {label: "Contenuto", name: "body", widget: "markdown", hint: "Scrivi qui il contenuto del post. Usa <!--more--> per separare l'anteprima dal resto"}

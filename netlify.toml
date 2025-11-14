@@ -1,0 +1,13 @@
+# Configurazione Netlify solo per Identity/Git Gateway
+# Il sito è hostato su GitHub Pages
+
+[build]
+  # Non eseguire build - il sito è su GitHub Pages
+  command = "echo 'No build needed - using GitHub Pages'"
+  publish = "."
+
+# Configura redirects per il CMS admin
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
