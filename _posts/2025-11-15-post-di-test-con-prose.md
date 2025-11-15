@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Post di test con prose"
-date: 2025-11-14
+date: 2025-11-15
 image: /assets/images/IMG_20250711_214344.webp
 ---
 
