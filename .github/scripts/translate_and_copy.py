@@ -62,6 +62,24 @@ def copy_images_from_post(post_content, front_matter):
 # Ottieni lista dei post italiani
 italian_posts = set(post.name for post in src_dir.glob("*.md"))
 
+# Raccogli tutte le immagini usate nei post italiani esistenti
+def get_all_used_images():
+    """Restituisce il set di tutte le immagini utilizzate nei post esistenti"""
+    used_images = set()
+    for post in src_dir.glob("*.md"):
+        text = post.read_text(encoding="utf-8")
+        if text.startswith("---"):
+            parts = text.split("---", 2)
+            if len(parts) >= 3:
+                fm = parts[1]
+                content = parts[2]
+                images = extract_images_from_post(content, fm)
+                used_images.update(images)
+    return used_images
+
+# Ottieni tutte le immagini attualmente in uso
+images_in_use = get_all_used_images()
+
 # Rimuovi i post inglesi che non hanno più corrispondenza in italiano
 print("🔍 Checking for deleted posts...")
 for en_post in dest_dir.glob("*.md"):
@@ -82,18 +100,22 @@ for en_post in dest_dir.glob("*.md"):
                     content = parts[2]
                     images = extract_images_from_post(content, fm)
                     
-                    # Cancella le immagini dal blog inglese
+                    # Cancella le immagini SOLO se non sono usate in altri post
                     for image_name in images:
-                        dest_image = dest_images_dir / image_name
-                        if dest_image.exists():
-                            dest_image.unlink()
-                            print(f"   🗑️  Deleted image from blog-en: {image_name}")
-                        
-                        # Cancella anche dal blog italiano
-                        src_image = src_images_dir / image_name
-                        if src_image.exists():
-                            src_image.unlink()
-                            print(f"   🗑️  Deleted image from blog: {image_name}")
+                        if image_name not in images_in_use:
+                            # Cancella dal blog inglese
+                            dest_image = dest_images_dir / image_name
+                            if dest_image.exists():
+                                dest_image.unlink()
+                                print(f"   🗑️  Deleted image from blog-en: {image_name}")
+                            
+                            # Cancella dal blog italiano
+                            src_image = src_images_dir / image_name
+                            if src_image.exists():
+                                src_image.unlink()
+                                print(f"   🗑️  Deleted image from blog: {image_name}")
+                        else:
+                            print(f"   ⚠️  Image {image_name} still in use, keeping it")
             
             # Cancella il post
             en_post.unlink()
