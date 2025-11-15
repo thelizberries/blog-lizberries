@@ -22,6 +22,38 @@ def slugify_english(text):
     text = re.sub(r'[-\s]+', '-', text)
     return text.strip('-')
 
+def copy_images_from_post(post_content, front_matter):
+    """Copia le immagini referenziate nel post e nel front matter"""
+    images_to_copy = set()
+    
+    # Cerca immagini nel front matter (campo image:)
+    image_match = re.search(r'image:\s*["\']?(/assets/images/posts/[^"\'\n]+)["\']?', front_matter)
+    if image_match:
+        image_path = image_match.group(1).strip()
+        # Rimuovi il leading slash e "assets/images/posts/"
+        image_name = image_path.replace('/assets/images/posts/', '')
+        images_to_copy.add(image_name)
+    
+    # Cerca immagini nel contenuto markdown (![alt](/assets/images/posts/...))
+    content_images = re.findall(r'!\[.*?\]\((/assets/images/posts/[^)]+)\)', post_content)
+    for img_path in content_images:
+        image_name = img_path.replace('/assets/images/posts/', '')
+        images_to_copy.add(image_name)
+    
+    # Copia le immagini
+    for image_name in images_to_copy:
+        src_image = src_images_dir / image_name
+        dest_image = dest_images_dir / image_name
+        
+        if src_image.exists():
+            if not dest_image.exists():
+                shutil.copy2(src_image, dest_image)
+                print(f"   📸 Copied image: {image_name}")
+        else:
+            print(f"   ⚠️  Warning: Image not found: {image_name}")
+    
+    return images_to_copy
+
 def extract_images_from_post(post_content, front_matter):
     """Estrae la lista di immagini referenziate nel post"""
     images = set()
@@ -40,24 +72,6 @@ def extract_images_from_post(post_content, front_matter):
         images.add(image_name)
     
     return images
-
-def copy_images_from_post(post_content, front_matter):
-    """Copia le immagini referenziate nel post e nel front matter"""
-    images_to_copy = extract_images_from_post(post_content, front_matter)
-    
-    # Copia le immagini
-    for image_name in images_to_copy:
-        src_image = src_images_dir / image_name
-        dest_image = dest_images_dir / image_name
-        
-        if src_image.exists():
-            if not dest_image.exists():
-                shutil.copy2(src_image, dest_image)
-                print(f"   📸 Copied image: {image_name}")
-        else:
-            print(f"   ⚠️  Warning: Image not found: {image_name}")
-    
-    return images_to_copy
 
 # Ottieni lista dei post italiani
 italian_posts = set(post.name for post in src_dir.glob("*.md"))
@@ -96,6 +110,27 @@ for en_post in dest_dir.glob("*.md"):
                             print(f"   🗑️  Deleted image from blog: {image_name}")
             
             # Cancella il post
+            en_post.unlink()
+    elif en_post.name not in italian_posts:
+        # Fallback per vecchi post senza original_file
+        print(f"🗑️  Deleting: {en_post.name} (no longer exists in Italian)")
+        en_post.unlink()
+    return images
+
+# Ottieni lista dei post italiani
+italian_posts = set(post.name for post in src_dir.glob("*.md"))
+
+# Rimuovi i post inglesi che non hanno più corrispondenza in italiano
+print("🔍 Checking for deleted posts...")
+for en_post in dest_dir.glob("*.md"):
+    # Leggi il front matter per trovare original_file
+    text = en_post.read_text(encoding="utf-8")
+    original_match = re.search(r'original_file:\s*["\']?([^"\'\n]+)["\']?', text)
+    
+    if original_match:
+        original_file = original_match.group(1).strip()
+        if original_file not in italian_posts:
+            print(f"🗑️  Deleting: {en_post.name} (original {original_file} no longer exists)")
             en_post.unlink()
     elif en_post.name not in italian_posts:
         # Fallback per vecchi post senza original_file
