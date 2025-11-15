@@ -55,6 +55,27 @@ def copy_images_from_post(post_content, front_matter):
     return images_to_copy
 
 def extract_images_from_post(post_content, front_matter):
+    """Estrae la lista di immagini referenziate nel post"""
+    images = set()
+    
+    # Cerca immagini nel front matter (campo image:)
+    image_match = re.search(r'image:\s*["\']?(/assets/images/posts/[^"\'\n]+)["\']?', front_matter)
+    if image_match:
+        image_path = image_match.group(1).strip()
+        image_name = image_path.replace('/assets/images/posts/', '')
+        images.add(image_name)
+    
+    # Cerca immagini nel contenuto markdown (![alt](/assets/images/posts/...))
+    content_images = re.findall(r'!\[.*?\]\((/assets/images/posts/[^)]+)\)', post_content)
+    for img_path in content_images:
+        image_name = img_path.replace('/assets/images/posts/', '')
+        images.add(image_name)
+    
+    return images
+
+# Ottieni lista dei post italiani
+italian_posts = set(post.name for post in src_dir.glob("*.md"))
+
 # Rimuovi i post inglesi che non hanno più corrispondenza in italiano
 print("🔍 Checking for deleted posts...")
 for en_post in dest_dir.glob("*.md"):
