@@ -102,18 +102,24 @@ for en_post in dest_dir.glob("*.md"):
                     
                     # Cancella le immagini SOLO se non sono usate in altri post
                     for image_name in images:
+                        print(f"   🔍 Checking image: {image_name}")
+                        print(f"   📋 Images in use: {images_in_use}")
                         if image_name not in images_in_use:
                             # Cancella dal blog inglese
                             dest_image = dest_images_dir / image_name
                             if dest_image.exists():
                                 dest_image.unlink()
                                 print(f"   🗑️  Deleted image from blog-en: {image_name}")
+                            else:
+                                print(f"   ⚠️  Image not found in blog-en: {image_name}")
                             
                             # Cancella dal blog italiano
                             src_image = src_images_dir / image_name
                             if src_image.exists():
                                 src_image.unlink()
                                 print(f"   🗑️  Deleted image from blog: {image_name}")
+                            else:
+                                print(f"   ⚠️  Image not found in blog: {image_name}")
                         else:
                             print(f"   ⚠️  Image {image_name} still in use, keeping it")
             
