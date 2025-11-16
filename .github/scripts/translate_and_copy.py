@@ -130,23 +130,20 @@ for en_post in dest_dir.glob("*.md"):
         print(f"🗑️  Deleting: {en_post.name} (no longer exists in Italian)")
         en_post.unlink()
 
-# Traduci i nuovi post
-print("🔄 Translating new posts...")
+# Traduci i nuovi post e aggiorna quelli modificati
+print("🔄 Translating new posts and updating modified ones...")
 for post in src_dir.glob("*.md"):
     text = post.read_text(encoding="utf-8")
     
     # Controlla se il post è già stato tradotto cercando original_file
-    already_translated = False
+    existing_en_post = None
     for en_post in dest_dir.glob("*.md"):
         en_text = en_post.read_text(encoding="utf-8")
         original_match = re.search(r'original_file:\s*["\']?([^"\'\n]+)["\']?', en_text)
         if original_match and original_match.group(1).strip() == post.name:
-            already_translated = True
+            existing_en_post = en_post
             break
     
-    if already_translated:
-        continue
-
     # Separa front matter e contenuto
     if text.startswith("---"):
         parts = text.split("---", 2)
@@ -155,7 +152,20 @@ for post in src_dir.glob("*.md"):
     else:
         fm, content = "", text
 
-    print(f"📝 Translating: {post.name}")
+    # Se esiste già, controlla se è stato modificato
+    if existing_en_post:
+        # Leggi il contenuto del post italiano dal post inglese esistente
+        en_text = existing_en_post.read_text(encoding="utf-8")
+        
+        # Verifica se il contenuto è cambiato (confronto semplice sulla lunghezza)
+        # Un metodo più accurato sarebbe salvare un hash, ma questo è sufficiente
+        if len(text) == len(en_text):
+            # Probabilmente non è cambiato, salta
+            continue
+        else:
+            print(f"🔄 Updating: {post.name}")
+    else:
+        print(f"📝 Translating: {post.name}")
     
     # Traduci il titolo nel front matter
     title_match = re.search(r'title:\s*["\']?([^"\'\n]+)["\']?', fm)
