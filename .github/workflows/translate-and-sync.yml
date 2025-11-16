@@ -46,11 +46,11 @@ jobs:
           PAT: ${{ secrets.PAT }}
         run: |
           cd blog-en
-          git add _posts
+          git add _posts assets/images/posts
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-translated new posts"
+            git commit -m "Auto-translated new posts and sync images"
             git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog-en.git
             git push origin HEAD:main
           fi
