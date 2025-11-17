@@ -28,7 +28,7 @@ jobs:
           token: ${{ secrets.PAT }}
       
       - name: Install WebP tools
-        run: sudo apt-get update && sudo apt-get install -y webp
+        run: sudo apt-get update && sudo apt-get install -y webp imagemagick
       
       - name: Convert new/modified images to WebP
         run: |
@@ -41,8 +41,17 @@ jobs:
             # Converti solo se il file webp non esiste o è più vecchio dell'originale
             if [ ! -f "$webp_file" ] || [ "$img" -nt "$webp_file" ]; then
               echo "Converting $img to WebP..."
-              if cwebp -q 85 "$img" -o "$webp_file"; then
-                echo "Successfully converted $img to $webp_file"
+              echo "Original size: $(du -h "$img" | cut -f1)"
+              
+              # Step 1: Ridimensiona a max 900x600 mantenendo proporzioni
+              temp_resized="${base}_resized.${img##*.}"
+              convert "$img" -resize '900x600>' -quality 92 "$temp_resized"
+              echo "Resized to max 900x600px"
+              
+              # Step 2: Converti in WebP con alta compressione
+              if cwebp -q 75 -m 6 -af -resize 900 600 "$temp_resized" -o "$webp_file"; then
+                webp_size=$(du -h "$webp_file" | cut -f1)
+                echo "Successfully converted to WebP: $webp_size"
                 
                 # Copia il file webp nel blog inglese
                 dest_file="blog-en/${webp_file}"
@@ -50,11 +59,13 @@ jobs:
                 cp "$webp_file" "$dest_file"
                 echo "Copied $webp_file to blog-en"
                 
-                # Rimuovi il file originale dopo la conversione riuscita
+                # Rimuovi i file temporanei e originali
+                rm "$temp_resized"
                 rm "$img"
                 echo "Removed original file $img"
               else
                 echo "Error converting $img, keeping original file"
+                rm -f "$temp_resized"
               fi
             fi
           done
