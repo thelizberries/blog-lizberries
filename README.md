@@ -146,9 +146,13 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 3. **Seleziona l'immagine** dal tuo computer
    - Formati supportati: `.jpg`, `.jpeg`, `.png`
    - Nome file: usa nomi descrittivi con trattini (es: `concerto-milano-2025.jpg`)
+   - Dimensioni: qualsiasi (verranno ottimizzate automaticamente)
 4. **Visualizza l'anteprima** e le dimensioni del file
 5. **Clicca "Carica Immagine"**
-6. **Attendi 1-2 minuti**: L'immagine viene caricata e convertita automaticamente in `.webp`
+6. **Attendi 1-2 minuti**: L'immagine viene caricata e automaticamente:
+   - Ridimensionata a max **900x600px** (mantenendo proporzioni)
+   - Convertita in formato **WebP** ottimizzato
+   - Compressa a circa **30-40KB** per caricamento veloce
 7. **Copia il nome WebP** mostrato nel messaggio di successo (es: `concerto-milano-2025.webp`)
 8. **Usa nel post** il percorso: `/assets/images/posts/concerto-milano-2025.webp`
 
@@ -156,6 +160,7 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 - Non serve account GitHub
 - Interfaccia semplice e intuitiva
 - Anteprima prima del caricamento
+- **Ottimizzazione automatica** (ridimensionamento + compressione)
 - Controllo duplicati automatico
 - Conversione WebP automatica
 
@@ -164,13 +169,18 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 ### Caricare Immagini - Metodo GitHub (Alternativo)
 
 1. **Salva l'immagine** nella cartella `assets/images/posts/` tramite GitHub
-2. **Formati supportati**: `.jpg`, `.jpeg`, `.png` (verranno convertiti automaticamente in `.webp`)
+2. **Formati supportati**: `.jpg`, `.jpeg`, `.png`
 3. **Naming**: Usa nomi descrittivi con trattini, es: `concerto-milano-2025.jpg`
-4. **Conversione automatica**: Dopo 1-2 minuti dal caricamento, l'immagine sarà disponibile in formato `.webp`
+4. **Ottimizzazione automatica**: Dopo 1-2 minuti dal caricamento:
+   - Ridimensionamento a max 900x600px
+   - Conversione in formato WebP
+   - Compressione a ~30-40KB
 5. **Aggiungi nel front matter** (usa sempre `.webp` come estensione): 
    ```yaml
    image: /assets/images/posts/concerto-milano-2025.webp
    ```
+
+**Nota**: Le immagini vengono ottimizzate automaticamente per garantire caricamento rapido del blog.
 
 ---
 
@@ -349,17 +359,17 @@ Ecco alcuni esempi di formattazione che puoi usare nei post:
 5. 🔄 Il sistema elimina automaticamente:
    - Il post inglese corrispondente
    - Le immagini associate (se non usate in altri post) da entrambi i blog
-
-### Gestione delle Immagini
-
-**Caricamento (2 metodi):**
-
 **Metodo 1 - Form di Upload (consigliato):**
 1. 📤 Vai su https://blog.lizberries.thelizards.it/upload.html
 2. 🔐 Inserisci la password
-3. 🖼️ Seleziona e carica l'immagine
-4. ⏳ Attendi 1-2 minuti: viene convertita automaticamente in `.webp`
+3. 🖼️ Seleziona e carica l'immagine (qualsiasi dimensione)
+4. ⏳ Attendi 1-2 minuti: viene ridimensionata (max 900x600px), convertita in WebP e compressa (~30-40KB)
 5. 📝 Usa il nome WebP nel post
+
+**Metodo 2 - Via GitHub:**
+1. 📤 Carica l'immagine in `assets/images/posts/` tramite GitHub
+2. ⏳ Attendi 1-2 minuti: viene ottimizzata automaticamente (ridimensionamento + WebP + compressione)
+3. 📝 Referenziala nel post usando `.webp` come estensione
 
 **Metodo 2 - Via GitHub:**
 1. 📤 Carica l'immagine in `assets/images/posts/` tramite GitHub
@@ -444,6 +454,11 @@ Il sistema di upload è implementato con:
 - **Backend**: Netlify Function serverless (https://funny-selkie-35b2ef.netlify.app)
 - **Autenticazione**: Password protetta tramite variabile d'ambiente `UPLOAD_PASSWORD`
 - **Storage**: GitHub API - carica direttamente nel repository `thelizberries/blog`
+- **Ottimizzazione immagini**:
+  - Ridimensionamento automatico a max 900x600px (mantenendo proporzioni)
+  - Conversione in formato WebP
+  - Compressione con qualità 75 e metodo 6 (massima compressione)
+  - Dimensione finale: ~30-40KB per caricamento rapido
 - **Sicurezza**: 
   - Validazione formato file server-side
   - Controllo duplicati automatico
