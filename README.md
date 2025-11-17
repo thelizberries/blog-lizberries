@@ -23,9 +23,22 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 **📸 Per aggiungere immagini:**
 
-**IMPORTANTE**: Prose.io non permette di scegliere la cartella di destinazione per le immagini. 
+**METODO 1: Form di Upload (CONSIGLIATO) 🎯**
 
-**Metodo consigliato per caricare immagini con Prose.io:**
+Il modo più semplice per caricare immagini:
+
+1. **Vai su**: https://blog.lizberries.thelizards.it/upload.html
+2. **Inserisci la password** (chiedila al team tecnico)
+3. **Seleziona l'immagine** (formati supportati: `.jpg`, `.jpeg`, `.png`)
+4. **Clicca "Carica Immagine"**
+5. **Copia il nome del file WebP** mostrato nel messaggio di successo
+6. **Usa questo nome** nel post (es: `/assets/images/posts/nome-file.webp`)
+
+✅ **Vantaggi**: Nessun account GitHub necessario, interfaccia semplice, anteprima immagine
+
+---
+
+**METODO 2: Tramite GitHub (per utenti esperti)**
 
 1. **Prima di scrivere il post**, carica le immagini:
    - Vai su https://github.com/thelizberries/blog
@@ -38,6 +51,8 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 3. **Poi scrivi il post in Prose.io** e referenzia le immagini convertite:
    - Nel campo "Image" dei metadati: `/assets/images/posts/nome-immagine.webp` (usa l'estensione `.webp` anche se hai caricato `.jpg`)
+
+---
 
 **Nota**: Le immagini verranno copiate automaticamente anche nel blog inglese durante la traduzione!
 
@@ -122,9 +137,33 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 
 ## 🖼️ Gestione delle Immagini
 
-### Aggiungere un'Immagine al Post
+### Caricare Immagini - Metodo Form di Upload (Consigliato)
 
-1. **Salva l'immagine** nella cartella `assets/images/posts/`
+**Il modo più semplice per caricare immagini:**
+
+1. **Vai su**: https://blog.lizberries.thelizards.it/upload.html
+2. **Inserisci la password** (richiedila al team tecnico se non ce l'hai)
+3. **Seleziona l'immagine** dal tuo computer
+   - Formati supportati: `.jpg`, `.jpeg`, `.png`
+   - Nome file: usa nomi descrittivi con trattini (es: `concerto-milano-2025.jpg`)
+4. **Visualizza l'anteprima** e le dimensioni del file
+5. **Clicca "Carica Immagine"**
+6. **Attendi 1-2 minuti**: L'immagine viene caricata e convertita automaticamente in `.webp`
+7. **Copia il nome WebP** mostrato nel messaggio di successo (es: `concerto-milano-2025.webp`)
+8. **Usa nel post** il percorso: `/assets/images/posts/concerto-milano-2025.webp`
+
+✅ **Vantaggi**:
+- Non serve account GitHub
+- Interfaccia semplice e intuitiva
+- Anteprima prima del caricamento
+- Controllo duplicati automatico
+- Conversione WebP automatica
+
+---
+
+### Caricare Immagini - Metodo GitHub (Alternativo)
+
+1. **Salva l'immagine** nella cartella `assets/images/posts/` tramite GitHub
 2. **Formati supportati**: `.jpg`, `.jpeg`, `.png` (verranno convertiti automaticamente in `.webp`)
 3. **Naming**: Usa nomi descrittivi con trattini, es: `concerto-milano-2025.jpg`
 4. **Conversione automatica**: Dopo 1-2 minuti dal caricamento, l'immagine sarà disponibile in formato `.webp`
@@ -132,6 +171,8 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
    ```yaml
    image: /assets/images/posts/concerto-milano-2025.webp
    ```
+
+---
 
 ### Immagine di Default
 
@@ -311,14 +352,23 @@ Ecco alcuni esempi di formattazione che puoi usare nei post:
 
 ### Gestione delle Immagini
 
-**Caricamento:**
-1. 📤 Carica l'immagine in `assets/images/posts/` (formato `.jpg`, `.png`, `.jpeg`)
+**Caricamento (2 metodi):**
+
+**Metodo 1 - Form di Upload (consigliato):**
+1. 📤 Vai su https://blog.lizberries.thelizards.it/upload.html
+2. 🔐 Inserisci la password
+3. 🖼️ Seleziona e carica l'immagine
+4. ⏳ Attendi 1-2 minuti: viene convertita automaticamente in `.webp`
+5. 📝 Usa il nome WebP nel post
+
+**Metodo 2 - Via GitHub:**
+1. 📤 Carica l'immagine in `assets/images/posts/` tramite GitHub
 2. ⏳ Attendi 1-2 minuti: viene convertita automaticamente in `.webp`
 3. 📝 Referenziala nel post usando `.webp` come estensione
 
 **Aggiornamento:**
 - Modifica l'immagine referenziata nel post italiano
-- Fai push
+- Fai push (o ricarica via form)
 - L'immagine viene automaticamente aggiornata nel blog inglese
 
 **Eliminazione:**
@@ -369,19 +419,48 @@ Non vediamo l'ora di vedervi! 🎸
 2. Fai commit e push
 3. Il post verrà rimosso **automaticamente** sia dal blog italiano che da quello inglese
 4. Le immagini associate verranno cancellate da entrambi i blog (se non usate in altri post)
-
-### Cosa succede se elimino un'immagine usata in più post?
-
-L'immagine viene cancellata **solo se** non è più referenziata in nessun altro post. Il sistema controlla automaticamente tutti i post prima di eliminare un'immagine.
-
-### Posso modificare direttamente i post nel blog inglese?
-
-**No!** Non modificare mai manualmente i file nel repository `blog-en`. Tutte le modifiche devono essere fatte nel blog italiano, e il sistema sincronizzerà automaticamente tutto nel blog inglese.
-
 ### Posso usare HTML nel post?
 
 Sì! Markdown supporta anche HTML, quindi puoi usare tag HTML quando necessario.
 
+### Come vedo l'anteprima prima di pubblicare?
+
+Puoi usare un editor Markdown online come:
+- https://dillinger.io/
+- https://stackedit.io/
+
+### Come ottengo la password per il form di upload delle immagini?
+
+La password per il form di upload è **riservata ai membri del team** che devono caricare immagini per i post. Contatta il team tecnico (Mattia) per ottenerla. La password è configurata in modo sicuro sul server e non è visibile pubblicamente.
+
+---
+
+## 🔧 Informazioni Tecniche (Solo per Amministratori)
+
+### Form di Upload Immagini
+
+Il sistema di upload è implementato con:
+- **Frontend**: Form HTML accessibile su https://blog.lizberries.thelizards.it/upload.html
+- **Backend**: Netlify Function serverless (https://funny-selkie-35b2ef.netlify.app)
+- **Autenticazione**: Password protetta tramite variabile d'ambiente `UPLOAD_PASSWORD`
+- **Storage**: GitHub API - carica direttamente nel repository `thelizberries/blog`
+- **Sicurezza**: 
+  - Validazione formato file server-side
+  - Controllo duplicati automatico
+  - Token GitHub con scope limitato (`repo` only)
+  - Password hash non committata nel repository
+
+**Configurazione variabili d'ambiente su Netlify**:
+1. `UPLOAD_PASSWORD`: Password per il form di upload
+2. `GITHUB_TOKEN`: Personal Access Token con scope `repo`
+
+**Manutenzione**:
+- Per cambiare la password: Netlify Dashboard → Site settings → Environment variables
+- Per rigenerare il token GitHub: https://github.com/settings/tokens
+
+---
+
+Per qualsiasi dubbio o problema, contatta il team tecnico (Mattia)! 🎵
 ### Come vedo l'anteprima prima di pubblicare?
 
 Puoi usare un editor Markdown online come:
