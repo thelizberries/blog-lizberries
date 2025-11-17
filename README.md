@@ -4,6 +4,23 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 ---
 
+## 📑 Indice
+
+- [⚡ Guida Rapida](#-guida-rapida---per-chi-non-è-pratico-di-github)
+- [📸 Caricamento Immagini](#-per-aggiungere-immagini)
+
+- [📝 Struttura del Blog](#-struttura-del-blog-per-utenti-tecnici)
+- [🚀 Come Creare un Nuovo Post](#-come-creare-un-nuovo-post)
+- [🖼️ Gestione delle Immagini](#️-gestione-delle-immagini)
+- [📤 Pubblicare il Post](#-pubblicare-il-post)
+- [🌐 Traduzione Automatica](#-traduzione-automatica-e-sincronizzazione)
+- [✏️ Formattazione Markdown](#️-formattazione-markdown)
+- [🔄 Workflow Completo](#-workflow-completo)
+- [❓ Domande Frequenti](#-domande-frequenti)
+- [🔧 Informazioni Tecniche](#-informazioni-tecniche-solo-per-amministratori)
+
+---
+
 ## ⚡ GUIDA RAPIDA - Per chi non è pratico di GitHub
 
 **Il modo più semplice per scrivere e pubblicare un post:**
@@ -13,23 +30,32 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 ### 3️⃣ Seleziona il repository "blog" (o clicca sul tasto "View Project")
 ### 4️⃣ Clicca sulla cartella "_posts"
 ### 5️⃣ Clicca "New File" (in alto a destra)
-### 6️⃣ Scrivi il contenuto del post nell'editor
+### 6️⃣ Inserisci il nome del file nel formato: `YYYY-MM-DD-titolo-del-post.md`
+   - **Esempio**: `2025-11-15-nuovo-concerto-milano.md`
+   - Usa trattini `-` al posto degli spazi nel titolo
 ### 7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:
    - **Title**: Titolo del post
    - **Date**: Data (formato: 2025-11-15)
      - ⏰ Puoi programmare post futuri! Il post verrà pubblicato automaticamente il giorno indicato
      - I post con data futura non appariranno sul blog fino a quel giorno
-   - (opzionale) **Image**: /assets/images/nome-immagine.estenzione_immagine
-### 8️⃣ Clicca "Save" (💾 in alto a destra)
-### 9️⃣ **Fatto!** Il post verrà pubblicato automaticamente (subito se la data è oggi o passata, altrimenti alla data programmata)
+   - (opzionale) **Image**: /assets/images/nome-immagine.webp
+   - **Esempio**: ` layout: post
+                    title: Descrizione titolo post
+                    date: 2025-11-17 
+                    immagine: /assets/images/prova.webp`
+### 8️⃣ Scrivi il contenuto del post nell'editor
+   - Usa Markdown per la formattazione (grassetto, corsivo, liste, ecc.)
+   - Inserisci `<!--more-->` per separare l'anteprima (il testo visibile dalla lista dei post) dal resto del contenuto (visibile solo nel dettaglio del post)
+### 9️⃣ Clicca "Save" (💾 in alto a destra)
+### 🔟 **Fatto!** Il post verrà pubblicato automaticamente (subito se la data è oggi o passata, altrimenti alla data programmata)
 
-**📸 Per aggiungere immagini:**
+**IMPORTANTE!! 📸 Per aggiungere immagini:**
 
 **METODO 1: Form di Upload (CONSIGLIATO) 🎯**
 
 Il modo più semplice per caricare immagini:
 
-1. **Vai su**: https://blog.lizberries.thelizards.it/upload.html
+1. **Vai al link**: https://blog.lizberries.thelizards.it/upload.html
 2. **Inserisci la password** (chiedila al team tecnico)
 3. **Seleziona l'immagine** (formati supportati: `.jpg`, `.jpeg`, `.png`)
 4. **Clicca "Carica Immagine"**
@@ -65,7 +91,9 @@ Il modo più semplice per caricare immagini:
 
 ---
 
-## 📝 Struttura del Blog (Per Utenti Tecnici)
+## DOCUMENTAZIONE PER UTENTI TECNICI 
+
+## 📝 Struttura del Blog
 
 Il blog è costruito con Jekyll e GitHub Pages. I post vengono scritti in formato Markdown e pubblicati automaticamente su:
 - **Blog Italiano**: https://blog.lizberries.thelizards.it
@@ -137,7 +165,7 @@ Continua con il resto del contenuto...
 ### 4. Tag `<!--more-->`
 
 Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
-- Il testo **prima** del tag appare nella home del blog come anteprima
+- Il testo **prima** del tag, seguito da una riga di spazio, appare nella home del blog come anteprima
 - Il testo **dopo** il tag appare solo nell'articolo completo
 
 ## 🖼️ Gestione delle Immagini
@@ -291,7 +319,7 @@ Quando elimini un post italiano:
 
 **Nota**: Non modificare manualmente i post o le immagini nel repository blog-en! Tutto viene gestito automaticamente dal workflow di traduzione.
 
-## ✏️ Formattazione Markdown
+## ✏️ ESEMPI DI FORMATTAZIONE MARKDOWN
 
 Ecco alcuni esempi di formattazione che puoi usare nei post:
 
@@ -417,7 +445,7 @@ Il 20 dicembre 2025 saremo al **Fabrique** per una serata speciale dedicata ai b
 Non vediamo l'ora di vedervi! 🎸
 ```
 
-## ❓ Domande Frequenti
+## ❓ FAQ: Domande Frequenti
 
 ### Come modifico un post già pubblicato?
 
