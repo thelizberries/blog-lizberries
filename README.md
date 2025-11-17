@@ -17,9 +17,11 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 ### 7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:
    - **Title**: Titolo del post
    - **Date**: Data (formato: 2025-11-15)
+     - ⏰ Puoi programmare post futuri! Il post verrà pubblicato automaticamente il giorno indicato
+     - I post con data futura non appariranno sul blog fino a quel giorno
    - (opzionale) **Image**: /assets/images/nome-immagine.estenzione_immagine
 ### 8️⃣ Clicca "Save" (💾 in alto a destra)
-### 9️⃣ **Fatto!** Il post verrà pubblicato automaticamente
+### 9️⃣ **Fatto!** Il post verrà pubblicato automaticamente (subito se la data è oggi o passata, altrimenti alla data programmata)
 
 **📸 Per aggiungere immagini:**
 
@@ -57,8 +59,9 @@ Il modo più semplice per caricare immagini:
 **Nota**: Le immagini verranno copiate automaticamente anche nel blog inglese durante la traduzione!
 
 **⏱️ Tempi di pubblicazione:**
-- Il post appare sul blog italiano in 1-2 minuti
+- Il post appare sul blog italiano in 1-2 minuti (se la data è oggi o passata)
 - Dopo altri 1-2 minuti appare tradotto automaticamente sul blog inglese
+- **Post programmati**: I post con data futura verranno pubblicati automaticamente il giorno indicato
 
 ---
 
@@ -127,6 +130,8 @@ Continua con il resto del contenuto...
 - **layout**: Sempre `post` (obbligatorio)
 - **title**: Il titolo del post tra virgolette (obbligatorio)
 - **date**: La data nel formato `YYYY-MM-DD` (obbligatorio)
+  - Puoi usare date future per programmare la pubblicazione
+  - I post con data futura non appariranno sul blog fino a quel giorno
 - **image**: Percorso dell'immagine di anteprima (opzionale)
 
 ### 4. Tag `<!--more-->`
@@ -433,6 +438,10 @@ Non vediamo l'ora di vedervi! 🎸
 
 Sì! Markdown supporta anche HTML, quindi puoi usare tag HTML quando necessario.
 
+### Posso programmare post per il futuro?
+
+Sì! Puoi impostare una data futura nel front matter del post (es: `date: 2025-12-25`). Il post verrà pubblicato automaticamente il giorno indicato. Fino a quella data, il post non sarà visibile sul blog, ma sarà già presente nel repository GitHub.
+
 ### Come vedo l'anteprima prima di pubblicare?
 
 Puoi usare un editor Markdown online come:
@@ -472,15 +481,6 @@ Il sistema di upload è implementato con:
 **Manutenzione**:
 - Per cambiare la password: Netlify Dashboard → Site settings → Environment variables
 - Per rigenerare il token GitHub: https://github.com/settings/tokens
-
----
-
-Per qualsiasi dubbio o problema, contatta il team tecnico (Mattia)! 🎵
-### Come vedo l'anteprima prima di pubblicare?
-
-Puoi usare un editor Markdown online come:
-- https://dillinger.io/
-- https://stackedit.io/
 
 ---
 
