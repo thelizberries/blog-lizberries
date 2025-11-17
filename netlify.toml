@@ -1,8 +1,11 @@
 # Configurazione Netlify per il blog Lizberries
+# Questo sito serve solo le funzioni serverless (upload)
+# Il blog vero è pubblicato su GitHub Pages
 
 [build]
-  # Non serve build command per Jekyll (già generato da GitHub Pages)
-  publish = "_site"
+  # Nessun build necessario, usiamo solo le funzioni
+  command = "echo 'No build required'"
+  publish = "."
   
 [functions]
   directory = "netlify/functions"
