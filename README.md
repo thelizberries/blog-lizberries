@@ -452,7 +452,7 @@ Il sistema di upload è implementato con:
 
 **Configurazione variabili d'ambiente su Netlify**:
 1. `UPLOAD_PASSWORD`: Password per il form di upload
-2. `GITHUB_TOKEN`: Personal Access Token con scope `repo`
+2. `GITHUB_TOKEN`: Personal Access Token con scope `repo` (token name "Blog Image Upload")
 
 **Manutenzione**:
 - Per cambiare la password: Netlify Dashboard → Site settings → Environment variables
