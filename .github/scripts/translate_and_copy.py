@@ -164,6 +164,9 @@ for post in src_dir.glob("*.md"):
             continue
         else:
             print(f"🔄 Updating: {post.name}")
+            # Cancella il vecchio file (verrà ricreato con il nome aggiornato)
+            existing_en_post.unlink()
+            print(f"🗑️ Deleted old version: {existing_en_post.name}")
     else:
         print(f"📝 Translating: {post.name}")
     
