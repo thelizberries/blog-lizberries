@@ -10,7 +10,7 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 ### 1️⃣ Vai su https://prose.io/
 ### 2️⃣ Clicca "Authorize on GitHub" e fai login
-### 3️⃣ Seleziona il repository "thelizberries/blog"
+### 3️⃣ Seleziona il repository "blog" (o clicca sul tasto "View Project")
 ### 4️⃣ Clicca sulla cartella "_posts"
 ### 5️⃣ Clicca "New File" (in alto a destra)
 ### 6️⃣ Scrivi il contenuto del post nell'editor
