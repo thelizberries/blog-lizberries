@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
@@ -23,7 +23,7 @@
 
         .container {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             padding: 40px;
             max-width: 500px;
@@ -59,7 +59,7 @@
         input[type="password"],
         input[type="file"] {
             width: 100%;
-            padding: 12px 16px;
+            padding: 12px 15px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 14px;
@@ -72,40 +72,42 @@
             border-color: #667eea;
         }
 
-        input[type="file"] {
-            padding: 10px;
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-input-wrapper input[type="file"] {
             cursor: pointer;
         }
 
         .file-info {
             margin-top: 10px;
-            padding: 12px;
+            padding: 10px;
             background: #f5f5f5;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 13px;
             color: #666;
             display: none;
         }
 
-        .file-info.active {
+        .file-info.show {
             display: block;
         }
 
         .preview-container {
             margin-top: 15px;
             display: none;
-            text-align: center;
         }
 
-        .preview-container.active {
+        .preview-container.show {
             display: block;
         }
 
         .preview-image {
-            max-width: 100%;
-            max-height: 300px;
+            width: 100%;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
         }
 
         button {
@@ -123,49 +125,23 @@
 
         button:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
         button:disabled {
-            opacity: 0.6;
+            background: #ccc;
             cursor: not-allowed;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .loading.active {
-            display: block;
-        }
-
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .message {
             margin-top: 20px;
             padding: 15px;
             border-radius: 8px;
-            display: none;
             font-size: 14px;
-            line-height: 1.6;
+            display: none;
         }
 
-        .message.active {
+        .message.show {
             display: block;
         }
 
@@ -181,6 +157,37 @@
             border: 1px solid #f5c6cb;
         }
 
+        .message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .instructions {
             background: #f8f9fa;
             padding: 15px;
@@ -192,20 +199,11 @@
 
         .instructions ul {
             margin-left: 20px;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .instructions li {
             margin-bottom: 5px;
-        }
-
-        .webp-name {
-            font-weight: bold;
-            color: #667eea;
-            background: #f0f0ff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
         }
     </style>
 </head>
@@ -215,56 +213,60 @@
         <p class="subtitle">Lizberries Blog</p>
 
         <div class="instructions">
-            <strong>ℹ️ Informazioni:</strong>
+            <strong>ℹ️ Come funziona:</strong>
             <ul>
-                <li>Formati supportati: JPG, JPEG, PNG</li>
-                <li>Le immagini verranno automaticamente ottimizzate</li>
-                <li>Ridimensionamento: max 900x600px</li>
-                <li>Conversione in WebP (~30-40KB)</li>
+                <li>Seleziona un'immagine (.jpg, .jpeg, .png)</li>
+                <li>Inserisci la password</li>
+                <li>Attendi 1-2 minuti per la conversione in .webp</li>
+                <li>Usa il nome .webp nei tuoi post!</li>
             </ul>
         </div>
 
         <form id="uploadForm">
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">🔒 Password</label>
                 <input 
                     type="password" 
                     id="password" 
                     name="password" 
-                    required 
                     placeholder="Inserisci la password"
+                    required
                 >
             </div>
 
             <div class="form-group">
-                <label for="file">Seleziona Immagine:</label>
-                <input 
-                    type="file" 
-                    id="file" 
-                    name="file" 
-                    accept=".jpg,.jpeg,.png" 
-                    required
-                >
+                <label for="file">🖼️ Seleziona Immagine</label>
+                <div class="file-input-wrapper">
+                    <input 
+                        type="file" 
+                        id="file" 
+                        name="file" 
+                        accept=".jpg,.jpeg,.png"
+                        required
+                    >
+                </div>
                 <div id="fileInfo" class="file-info"></div>
                 <div id="previewContainer" class="preview-container">
                     <img id="previewImage" class="preview-image" alt="Anteprima">
                 </div>
             </div>
 
-            <button type="submit" id="submitBtn">Carica Immagine</button>
+            <button type="submit" id="submitBtn">
+                Carica Immagine
+            </button>
         </form>
 
         <div id="loading" class="loading">
             <div class="spinner"></div>
-            <p>Caricamento in corso...</p>
+            <p style="margin-top: 10px; color: #667eea;">Caricamento in corso...</p>
         </div>
 
         <div id="message" class="message"></div>
     </div>
 
     <script>
-        // CONFIGURAZIONE: URL del Cloudflare Worker
-        const CLOUDFLARE_WORKER_URL = 'https://lizberries-blog-upload.lizberries.workers.dev';
+        // CONFIGURAZIONE: URL della funzione Netlify
+        const NETLIFY_FUNCTION_URL = 'https://funny-selkie-35b2ef.netlify.app/.netlify/functions/upload';
         
         // Elementi DOM
         const form = document.getElementById('uploadForm');
@@ -281,37 +283,20 @@
             const file = e.target.files[0];
             if (file) {
                 // Mostra info file
-                const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
-                fileInfo.textContent = `File: ${file.name} (${sizeMB} MB)`;
-                fileInfo.classList.add('active');
+                fileInfo.textContent = `📁 ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+                fileInfo.classList.add('show');
 
                 // Mostra anteprima
                 const reader = new FileReader();
-                reader.onload = function(event) {
-                    previewImage.src = event.target.result;
-                    previewContainer.classList.add('active');
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewContainer.classList.add('show');
                 };
                 reader.readAsDataURL(file);
-            } else {
-                fileInfo.classList.remove('active');
-                previewContainer.classList.remove('active');
             }
         });
 
-        // Converti file in base64
-        function fileToBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => {
-                    const base64 = reader.result.split(',')[1];
-                    resolve(base64);
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        }
-
-        // Gestione submit
+        // Gestione submit form
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -319,21 +304,30 @@
             const file = fileInput.files[0];
 
             if (!file) {
-                showMessage('Seleziona un\'immagine', 'error');
+                showMessage('Seleziona un file', 'error');
                 return;
             }
 
-            // Disabilita form
+            // Verifica estensione
+            const allowedExtensions = ['jpg', 'jpeg', 'png'];
+            const fileExt = file.name.split('.').pop().toLowerCase();
+            if (!allowedExtensions.includes(fileExt)) {
+                showMessage('Formato non supportato. Usa .jpg, .jpeg o .png', 'error');
+                return;
+            }
+
+            // Mostra loading
             submitBtn.disabled = true;
-            loading.classList.add('active');
-            messageDiv.classList.remove('active');
+            loading.classList.add('show');
+            messageDiv.classList.remove('show');
 
             try {
                 // Converti file in base64
-                const fileContent = await fileToBase64(file);
+                const base64 = await fileToBase64(file);
+                const base64Content = base64.split(',')[1]; // Rimuovi il prefixo data:image/...
 
-                // Invia richiesta al Cloudflare Worker
-                const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                // Invia al server
+                const response = await fetch(NETLIFY_FUNCTION_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -341,39 +335,46 @@
                     body: JSON.stringify({
                         password: password,
                         filename: file.name,
-                        fileContent: fileContent
+                        fileContent: base64Content
                     })
                 });
 
-                const data = await response.json();
+                const result = await response.json();
 
-                if (response.ok && data.success) {
+                if (response.ok && result.success) {
                     showMessage(
-                        `✅ ${data.message}<br><br>` +
-                        `📝 Usa questo nome nel post:<br>` +
-                        `<span class="webp-name">/assets/images/posts/${data.webpName}</span><br><br>` +
-                        `⏳ Attendi 1-2 minuti per la conversione in WebP`,
+                        `✅ ${result.message}\n\n` +
+                        `📝 Per usarla nel post, scrivi:\n` +
+                        `image: /assets/images/posts/${result.webpName}`,
                         'success'
                     );
                     form.reset();
-                    fileInfo.classList.remove('active');
-                    previewContainer.classList.remove('active');
+                    fileInfo.classList.remove('show');
+                    previewContainer.classList.remove('show');
                 } else {
-                    showMessage(`❌ Errore: ${data.error || 'Errore sconosciuto'}`, 'error');
+                    showMessage(`❌ ${result.error || 'Errore durante il caricamento'}`, 'error');
                 }
-
             } catch (error) {
-                console.error('Error:', error);
                 showMessage(`❌ Errore: ${error.message}`, 'error');
             } finally {
                 submitBtn.disabled = false;
-                loading.classList.remove('active');
+                loading.classList.remove('show');
             }
         });
 
+        // Funzioni helper
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
         function showMessage(text, type) {
-            messageDiv.innerHTML = text;
-            messageDiv.className = `message ${type} active`;
+            messageDiv.textContent = text;
+            messageDiv.className = 'message show ' + type;
         }
     </script>
 </body>

@@ -1,0 +1,17 @@
+# Configurazione Netlify per il blog Lizberries
+# Questo sito serve solo le funzioni serverless (upload)
+# Il blog vero è pubblicato su GitHub Pages
+
+[build]
+  # Nessun build necessario, usiamo solo le funzioni
+  command = "echo 'No build required'"
+  publish = "."
+  
+[functions]
+  directory = "netlify/functions"
+
+# Reindirizzamenti
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

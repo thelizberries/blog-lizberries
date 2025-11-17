@@ -196,6 +196,7 @@ Il tag `<!--more-->` separa l'anteprima (excerpt) dal resto del contenuto:
 - **Ottimizzazione automatica** (ridimensionamento + compressione)
 - Controllo duplicati automatico
 - Conversione WebP automatica
+- **100% gratuito**: Cloudflare Workers offre 100.000 richieste/giorno senza limiti di credito
 
 ---
 
@@ -488,7 +489,7 @@ La password per il form di upload è **riservata ai membri del team** che devono
 
 Il sistema di upload è implementato con:
 - **Frontend**: Form HTML accessibile su https://blog.lizberries.thelizards.it/upload.html
-- **Backend**: Netlify Function serverless (https://funny-selkie-35b2ef.netlify.app)
+- **Backend**: Cloudflare Worker serverless (https://lizberries-blog-upload.lizberries.workers.dev)
 - **Autenticazione**: Password protetta tramite variabile d'ambiente `UPLOAD_PASSWORD`
 - **Storage**: GitHub API - carica direttamente nel repository `thelizberries/blog`
 - **Ottimizzazione immagini**:
@@ -501,14 +502,21 @@ Il sistema di upload è implementato con:
   - Controllo duplicati automatico
   - Token GitHub con scope limitato (`repo` only)
   - Password hash non committata nel repository
+- **Vantaggi Cloudflare**:
+  - 100% gratuito: 100.000 richieste/giorno senza limiti di credito
+  - Nessuna carta di credito richiesta
+  - Deploy globale su edge network
+  - Zero downtime
 
-**Configurazione variabili d'ambiente su Netlify**:
-1. `UPLOAD_PASSWORD`: Password per il form di upload
-2. `GITHUB_TOKEN`: Personal Access Token con scope `repo` (token name "Blog Image Upload")
+**Configurazione variabili d'ambiente su Cloudflare**:
+1. Dashboard Cloudflare: Workers & Pages → lizberries-blog-upload → Settings → Variables
+2. `UPLOAD_PASSWORD`: Password per il form di upload → Encrypt → Save
+3. `GITHUB_TOKEN`: Personal Access Token con scope `repo` (token name "Blog Image Upload") → Encrypt → Save
 
 **Manutenzione**:
-- Per cambiare la password: Netlify Dashboard → Site settings → Environment variables
+- Per cambiare la password: Cloudflare Dashboard → Workers & Pages → lizberries-blog-upload → Settings → Variables
 - Per rigenerare il token GitHub: https://github.com/settings/tokens
+- Per modificare il codice: Cloudflare Dashboard → Workers & Pages → lizberries-blog-upload → Edit Code
 
 ---
 
