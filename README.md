@@ -170,23 +170,70 @@ Se non specifichi un'immagine, verrà usato automaticamente il logo dei Lizberri
 5. Scrivi un messaggio di commit
 6. Clicca su "Commit changes"
 
-## 🌐 Traduzione Automatica
+## 🌐 Traduzione Automatica e Sincronizzazione
+
+Quando lavori con i post in italiano, il sistema gestisce **automaticamente** la traduzione e la sincronizzazione con il blog inglese.
+
+### ✨ Creazione di un Nuovo Post
 
 Quando pubblichi un post in italiano:
 
 1. **GitHub Actions** rileva il nuovo post
-2. Lo **traduce automaticamente** in inglese
-3. **Copia automaticamente le immagini** dal post italiano al blog inglese
+2. Lo **traduce automaticamente** in inglese usando Google Translate
+3. **Copia automaticamente le immagini** referenziate nel post al blog inglese
 4. Lo pubblica sul blog inglese con:
    - Titolo tradotto
    - Contenuto tradotto
-   - Nome file tradotto (SEO-friendly)
-   - Immagini copiate in `assets/images/`
-   - Link al post originale italiano
+   - Nome file tradotto (SEO-friendly slug inglese)
+   - Immagini copiate in `assets/images/posts/`
+   - Campo `original_file` che traccia il post italiano di origine
 
 ⏱️ La traduzione richiede circa 1-2 minuti dopo il push.
 
-**Nota**: Non devi fare nulla per le immagini! Se le hai caricate in `assets/images/` nel blog italiano, verranno copiate automaticamente nel blog inglese.
+### 🔄 Modifica di un Post Esistente
+
+**Tutto viene aggiornato automaticamente!** Quando modifichi un post italiano esistente:
+
+1. Il sistema **rileva la modifica** confrontando la lunghezza del contenuto
+2. **Cancella il vecchio post inglese** (qualsiasi fosse il nome)
+3. **Crea un nuovo post inglese** con:
+   - Nuovo titolo tradotto (se lo hai modificato)
+   - Nuova data (se l'hai modificata nel filename)
+   - Contenuto aggiornato e tradotto
+   - Immagini aggiornate (se le hai cambiate)
+
+**Esempi:**
+- Modifichi solo il **contenuto** → il post inglese viene aggiornato mantenendo stesso nome
+- Modifichi il **titolo** → il post inglese viene rinominato con il nuovo slug tradotto
+- Modifichi la **data** nel filename → il post inglese viene rinominato con la nuova data
+- Modifichi **tutto insieme** → il post inglese viene completamente rigenerato
+
+⚠️ **Importante**: Il sistema usa il campo `original_file` nel front matter del post inglese per tracciare quale post italiano corrisponde. Anche se cambi titolo o data, il sistema trova sempre il post inglese corretto da aggiornare.
+
+### 🗑️ Cancellazione di un Post
+
+Quando elimini un post italiano:
+
+1. Il post inglese corrispondente viene **cancellato automaticamente**
+2. Le **immagini associate** vengono **cancellate automaticamente** sia dal blog italiano che da quello inglese
+3. **SOLO SE** l'immagine non è usata in altri post (controllo di sicurezza)
+
+**Gestione Intelligente delle Immagini:**
+- Se un'immagine è referenziata da più post, viene mantenuta anche se ne elimini uno
+- Vengono cancellate solo le immagini che non sono più utilizzate da nessun post
+- La cancellazione avviene in entrambi i repository (italiano e inglese)
+
+### 📸 Sincronizzazione delle Immagini
+
+**Le immagini vengono gestite automaticamente!** Non devi copiarle manualmente.
+
+- Quando carichi un'immagine in `assets/images/posts/` nel blog italiano
+- E la referenzi in un post (nel front matter o nel contenuto)
+- Viene **automaticamente copiata** nel blog inglese durante la traduzione
+- Se modifichi l'immagine nel post italiano, viene aggiornata anche nel post inglese
+- Se elimini il post, l'immagine viene rimossa da entrambi i blog (se non usata altrove)
+
+**Nota**: Non modificare manualmente i post o le immagini nel repository blog-en! Tutto viene gestito automaticamente dal workflow di traduzione.
 
 ## ✏️ Formattazione Markdown
 
@@ -231,13 +278,53 @@ Ecco alcuni esempi di formattazione che puoi usare nei post:
 
 ## 🔄 Workflow Completo
 
+### Creare un Nuovo Post
+
 1. ✍️ Scrivi il post in Markdown
 2. 📁 Salva il file in `_posts/` con il formato `YYYY-MM-DD-titolo.md`
-3. 🖼️ (Opzionale) Aggiungi immagini in `assets/images/`
+3. 🖼️ (Opzionale) Aggiungi immagini in `assets/images/posts/`
 4. 💾 Fai commit e push su GitHub
-5. ⏳ Attendi 1-2 minuti per la build di GitHub Pages
-6. ✅ Il post appare sul blog italiano
-7. 🌍 Dopo altri 1-2 minuti, appare tradotto sul blog inglese
+5. ⏳ Attendi 1-2 minuti per la pubblicazione
+6. ✅ Il post appare sul **blog italiano**
+7. 🌍 Dopo altri 1-2 minuti, appare **tradotto automaticamente** sul blog inglese
+
+### Modificare un Post Esistente
+
+1. ✏️ Modifica il file del post in `_posts/` (titolo, data, contenuto, immagini)
+2. 💾 Fai commit e push su GitHub
+3. ⏳ Attendi 1-2 minuti
+4. ✅ Il post viene **aggiornato** sul blog italiano
+5. 🔄 Il sistema **rileva la modifica** e aggiorna automaticamente:
+   - Il post inglese con contenuto tradotto aggiornato
+   - Il filename inglese (se hai cambiato titolo o data)
+   - Le immagini copiate nel blog inglese
+
+### Eliminare un Post
+
+1. 🗑️ Elimina il file del post da `_posts/`
+2. 💾 Fai commit e push su GitHub
+3. ⏳ Attendi 1-2 minuti
+4. ✅ Il post viene **rimosso** dal blog italiano
+5. 🔄 Il sistema elimina automaticamente:
+   - Il post inglese corrispondente
+   - Le immagini associate (se non usate in altri post) da entrambi i blog
+
+### Gestione delle Immagini
+
+**Caricamento:**
+1. 📤 Carica l'immagine in `assets/images/posts/` (formato `.jpg`, `.png`, `.jpeg`)
+2. ⏳ Attendi 1-2 minuti: viene convertita automaticamente in `.webp`
+3. 📝 Referenziala nel post usando `.webp` come estensione
+
+**Aggiornamento:**
+- Modifica l'immagine referenziata nel post italiano
+- Fai push
+- L'immagine viene automaticamente aggiornata nel blog inglese
+
+**Eliminazione:**
+- Elimina il post che usa l'immagine
+- L'immagine viene cancellata automaticamente da entrambi i blog
+- Solo se non è usata in altri post!
 
 ## 📋 Esempio Completo di Post
 
@@ -269,15 +356,27 @@ Non vediamo l'ora di vedervi! 🎸
 
 ### Come modifico un post già pubblicato?
 
-1. Modifica il file in `_posts/`
+1. Modifica il file in `_posts/` (puoi cambiare titolo, data, contenuto, immagini)
 2. Fai commit e push
-3. Il post verrà aggiornato automaticamente
+3. Il post verrà aggiornato automaticamente **sia nel blog italiano che in quello inglese**
+4. Se hai modificato il titolo o la data, il post inglese verrà rinominato automaticamente
+
+**Nota**: Non serve toccare il blog inglese, tutto viene sincronizzato automaticamente!
 
 ### Come elimino un post?
 
 1. Elimina il file dalla cartella `_posts/`
 2. Fai commit e push
-3. Il post verrà rimosso sia dal blog italiano che da quello inglese
+3. Il post verrà rimosso **automaticamente** sia dal blog italiano che da quello inglese
+4. Le immagini associate verranno cancellate da entrambi i blog (se non usate in altri post)
+
+### Cosa succede se elimino un'immagine usata in più post?
+
+L'immagine viene cancellata **solo se** non è più referenziata in nessun altro post. Il sistema controlla automaticamente tutti i post prima di eliminare un'immagine.
+
+### Posso modificare direttamente i post nel blog inglese?
+
+**No!** Non modificare mai manualmente i file nel repository `blog-en`. Tutte le modifiche devono essere fatte nel blog italiano, e il sistema sincronizzerà automaticamente tutto nel blog inglese.
 
 ### Posso usare HTML nel post?
 
