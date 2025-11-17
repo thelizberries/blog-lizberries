@@ -38,11 +38,15 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
    - **Date**: Data (formato: 2025-11-15)
      - ⏰ Puoi programmare post futuri! Il post verrà pubblicato automaticamente il giorno indicato
      - I post con data futura non appariranno sul blog fino a quel giorno
-   - (opzionale) **Image**: /assets/images/nome-immagine.webp
-   - **Esempio**: ` layout: post
-                    title: Descrizione titolo post
-                    date: 2025-11-17 
-                    immagine: /assets/images/prova.webp`
+   - (opzionale) **Image**: /assets/images/posts/nome-immagine.webp
+   
+   **Esempio di metadati compilati:**
+   ```yaml
+   layout: post
+   title: "Nuovo Concerto a Milano"
+   date: 2025-11-17
+   image: /assets/images/posts/concerto-milano.webp
+   ```
 ### 8️⃣ Scrivi il contenuto del post nell'editor
    - Usa Markdown per la formattazione (grassetto, corsivo, liste, ecc.)
    - Inserisci `<!--more-->` per separare l'anteprima (il testo visibile dalla lista dei post) dal resto del contenuto (visibile solo nel dettaglio del post)
