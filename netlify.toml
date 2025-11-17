@@ -1,0 +1,14 @@
+# Configurazione Netlify per il blog Lizberries
+
+[build]
+  # Non serve build command per Jekyll (già generato da GitHub Pages)
+  publish = "_site"
+  
+[functions]
+  directory = "netlify/functions"
+
+# Reindirizzamenti
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

@@ -265,8 +265,8 @@
     </div>
 
     <script>
-        // CONFIGURAZIONE: Inserisci qui l'URL della tua funzione Vercel
-        const VERCEL_FUNCTION_URL = 'https://YOUR-PROJECT.vercel.app/api/upload';
+        // CONFIGURAZIONE: Inserisci qui l'URL della tua funzione Netlify
+        const NETLIFY_FUNCTION_URL = 'https://YOUR-SITE.netlify.app/.netlify/functions/upload';
         
         // Elementi DOM
         const form = document.getElementById('uploadForm');
@@ -327,7 +327,7 @@
                 const base64Content = base64.split(',')[1]; // Rimuovi il prefixo data:image/...
 
                 // Invia al server
-                const response = await fetch(VERCEL_FUNCTION_URL, {
+                const response = await fetch(NETLIFY_FUNCTION_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
