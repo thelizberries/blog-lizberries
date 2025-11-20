@@ -9,6 +9,8 @@ on:
 jobs:
   backup:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permette di creare branch e fare push
     
     steps:
       - name: Checkout repository
