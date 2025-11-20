@@ -26,39 +26,57 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 
 **Il modo più semplice per scrivere e pubblicare un post:**
 
-### 1️⃣ Vai su https://prose.io/
-### 2️⃣ Clicca "Authorize on GitHub" e fai login
-### 3️⃣ Seleziona il repository "blog" (o clicca sul tasto "View Project")
-### 4️⃣ Clicca sulla cartella "_posts"
-### 5️⃣ Clicca "New File" (in alto a destra)
-### 6️⃣ Inserisci il nome del file nel formato: `YYYY-MM-DD-titolo-del-post.md`
-   - **Esempio**: `2025-11-15-nuovo-concerto-milano.md`
-   - Usa trattini `-` al posto degli spazi nel titolo
-### 7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:
-   - **Title**: Titolo del post
-   - **Date**: Data (formato: 2025-11-15)
-     - ⏰ Puoi programmare post futuri! Il post verrà pubblicato automaticamente il giorno indicato
-     - I post con data futura non appariranno sul blog fino a quel giorno
-   - (opzionale) **Image**: /assets/images/posts/nome-immagine.webp
-   
-   **Esempio di metadati compilati:**
-   ```yaml
-   layout: post
-   title: "Nuovo Concerto a Milano"
-   date: 2025-11-17
-   image: /assets/images/posts/concerto-milano.webp
-   ```
-### 8️⃣ Scrivi il contenuto del post nell'editor
-   - Usa Markdown per la formattazione (grassetto, corsivo, liste, ecc.)
-   - Inserisci `<!--more-->` per separare l'anteprima (il testo visibile dalla lista dei post) dal resto del contenuto (visibile solo nel dettaglio del post)
-### 9️⃣ Clicca "Save" (💾 in alto a destra)
-### 🔟 **Fatto!** Il post verrà pubblicato automaticamente (subito se la data è oggi o passata, altrimenti alla data programmata)
+### Metodo 1: Editor Unificato (CONSIGLIATO) 🎯
 
-**IMPORTANTE!! 📸 Per aggiungere immagini:**
+**Crea post e carica immagini in un solo posto!**
 
-**METODO 1: Form di Upload (CONSIGLIATO) 🎯**
+1. **Vai su**: https://blog.lizberries.thelizards.it/upload.html
+2. **Carica l'immagine** (opzionale):
+   - Seleziona un file `.jpg`, `.jpeg` o `.png`
+   - Vedrai l'anteprima dell'immagine
+3. **Compila il post**:
+   - **Titolo**: es. "Nuovo Concerto a Milano"
+   - **Data**: Seleziona la data di pubblicazione (anche futura per programmare)
+   - **Contenuto**: Scrivi il testo usando Markdown
+   - Usa i pulsanti della toolbar per formattare (grassetto, corsivo, link, ecc.)
+4. **Vedi l'anteprima** in tempo reale mentre scrivi
+5. **Inserisci la password** (richiedila al team tecnico)
+6. **Clicca "Pubblica Post + Immagine"**
+7. **Fatto!** Il post e l'immagine vengono caricati insieme
 
-Il modo più semplice per caricare immagini:
+✅ **Vantaggi**:
+- Tutto in un solo posto
+- Anteprima live mentre scrivi
+- Nessun account GitHub necessario
+- Ottimizzazione immagini automatica
+- 100% gratuito (Cloudflare Workers: 100.000 richieste/giorno)
+
+---
+
+### Metodo 2: Prose.io (per modificare post esistenti)
+
+Usa questo metodo solo se devi **modificare un post già pubblicato**:
+
+1. **Vai su** https://prose.io/
+2. **Clicca "Authorize on GitHub"** e fai login
+3. **Seleziona il repository "blog"**
+4. **Clicca sulla cartella "_posts"**
+5. **Clicca sul post** che vuoi modificare
+6. **Modifica il contenuto**
+7. **Clicca "Save"** (💾 in alto a destra)
+
+---
+
+**⏱️ Tempi di pubblicazione:**
+- Il post appare sul blog italiano in 1-2 minuti (se la data è oggi o passata)
+- Dopo altri 1-2 minuti appare tradotto automaticamente sul blog inglese
+- **Post programmati**: I post con data futura verranno pubblicati automaticamente il giorno indicato
+
+---
+
+## 📸 Caricamento Immagini (Metodo Manuale)
+
+Se preferisci caricare solo le immagini separatamente (senza creare il post):
 
 1. **Vai al link**: https://blog.lizberries.thelizards.it/upload.html
 2. **Inserisci la password** (chiedila al team tecnico)
@@ -66,33 +84,6 @@ Il modo più semplice per caricare immagini:
 4. **Clicca "Carica Immagine"**
 5. **Copia il nome del file WebP** mostrato nel messaggio di successo
 6. **Usa questo nome** nel post (es: `/assets/images/posts/nome-file.webp`)
-
-✅ **Vantaggi**: Nessun account GitHub necessario, interfaccia semplice, anteprima immagine
-
----
-
-**METODO 2: Tramite GitHub (per utenti esperti)**
-
-1. **Prima di scrivere il post**, carica le immagini:
-   - Vai su https://github.com/thelizberries/blog
-   - Naviga nella cartella `assets/images/posts/`
-   - Clicca "Add file" → "Upload files"
-   - Trascina le tue immagini (qualsiasi formato: `.jpg`, `.jpeg`, `.png`)
-   - Clicca "Commit changes"
-
-2. **Attendi 1-2 minuti**: Le immagini verranno **convertite automaticamente in formato `.webp`** (ottimizzato per il web)
-
-3. **Poi scrivi il post in Prose.io** e referenzia le immagini convertite:
-   - Nel campo "Image" dei metadati: `/assets/images/posts/nome-immagine.webp` (usa l'estensione `.webp` anche se hai caricato `.jpg`)
-
----
-
-**Nota**: Le immagini verranno copiate automaticamente anche nel blog inglese durante la traduzione!
-
-**⏱️ Tempi di pubblicazione:**
-- Il post appare sul blog italiano in 1-2 minuti (se la data è oggi o passata)
-- Dopo altri 1-2 minuti appare tradotto automaticamente sul blog inglese
-- **Post programmati**: I post con data futura verranno pubblicati automaticamente il giorno indicato
 
 ---
 
