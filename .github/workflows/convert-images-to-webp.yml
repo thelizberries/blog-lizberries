@@ -84,6 +84,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add assets/images/posts/
           git diff --staged --quiet || git commit -m "Add converted WebP images from Italian blog [skip ci]"
+          git pull --rebase origin main
           git push
       
       - name: Push changes

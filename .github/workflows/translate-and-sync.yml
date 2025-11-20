@@ -66,6 +66,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-translated new posts and sync images"
+            git pull --rebase origin main
             git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog-en.git
             git push origin HEAD:main
           fi
