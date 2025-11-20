@@ -259,86 +259,88 @@
             </div>
 
             <div id="guida-rapida" class="quick-guide">
-                <h2><span class="emoji">⚡</span>GUIDA RAPIDA - Per chi non è pratico di GitHub</h2>
+                <h2><span class="emoji">⚡</span>GUIDA RAPIDA - Creare un Nuovo Post</h2>
                 <p><strong>Il modo più semplice per scrivere e pubblicare un post:</strong></p>
                 
                 <div class="steps">
                     <div class="step">
-                        <h3>1️⃣ Vai su <a href="https://prose.io/" target="_blank">https://prose.io/</a></h3>
+                        <h3>1️⃣ Vai su <a href="https://blog.lizberries.thelizards.it/upload.html" target="_blank">https://blog.lizberries.thelizards.it/upload.html</a></h3>
                     </div>
                     <div class="step">
-                        <h3>2️⃣ Clicca "Authorize on GitHub" e fai login (anche attraverso il tuo account Google)</h3>
+                        <h3>2️⃣ (Opzionale) Seleziona un'immagine per il post</h3>
+                        <p>L'immagine verrà automaticamente ottimizzata (max 900x600px, WebP ~30-40KB)</p>
                     </div>
                     <div class="step">
-                        <h3>3️⃣ Seleziona il repository "blog"</h3>
+                        <h3>3️⃣ Scrivi il titolo del post</h3>
+                        <p><strong>Esempio:</strong> "Nuovo Concerto a Milano"</p>
                     </div>
                     <div class="step">
-                        <h3>4️⃣ Clicca sulla cartella "_posts"</h3>
+                        <h3>4️⃣ Seleziona la data di pubblicazione</h3>
+                        <p>⏰ Puoi programmare post futuri! Il post verrà pubblicato automaticamente il giorno indicato.</p>
                     </div>
                     <div class="step">
-                        <h3>5️⃣ Clicca "New File" (in alto a destra)</h3>
-                    </div>
-                    <div class="step">
-                        <h3>6️⃣ Inserisci il nome del file nel formato:</h3>
-                        <code>YYYY-MM-DD-titolo-del-post.md</code>
-                        <p><strong>Esempio:</strong> <code>2025-11-15-nuovo-concerto-milano.md</code></p>
-                        <p>Usa trattini <code>-</code> al posto degli spazi nel titolo</p>
-                    </div>
-                    <div class="step">
-                        <h3>7️⃣ Clicca sull'icona dei metadati (📋) a destra e compila:</h3>
-                        <ul>
-                            <li><strong>Title:</strong> Titolo del post</li>
-                            <li><strong>Date:</strong> Data (formato: 2025-11-15)</li>
-                            <li><strong>Image:</strong> /assets/images/posts/nome-immagine.webp (opzionale)</li>
-                        </ul>
-                        <div class="info">
-                            <strong>⏰ Puoi programmare post futuri!</strong> Il post verrà pubblicato automaticamente il giorno indicato. I post con data futura non appariranno sul blog fino a quel giorno.
-                        </div>
-                        <p><strong>Esempio di metadati compilati:</strong></p>
-                        <pre><code>layout: post
-title: "Nuovo Concerto a Milano"
-date: 2025-11-17
-image: /assets/images/posts/concerto-milano.webp</code></pre>
-                    </div>
-                    <div class="step">
-                        <h3>8️⃣ Scrivi il contenuto del post nell'editor</h3>
-                        <p>Usa Markdown per la formattazione (grassetto, corsivo, liste, ecc.)</p>
+                        <h3>5️⃣ Scrivi il contenuto del post</h3>
+                        <p>Usa la toolbar per formattare il testo (grassetto, corsivo, titoli, liste)</p>
                         <p>Inserisci <code>&lt;!--more--&gt;</code> per separare l'anteprima dal resto del contenuto</p>
+                        <p><strong>Suggerimento:</strong> Guarda l'anteprima in tempo reale sulla destra!</p>
                     </div>
                     <div class="step">
-                        <h3>9️⃣ Clicca "Save" (💾 in alto a destra)</h3>
+                        <h3>6️⃣ Inserisci la password</h3>
+                        <p>Richiedi la password al team tecnico se non ce l'hai</p>
                     </div>
                     <div class="step">
-                        <h3>🔟 Fatto!</h3>
+                        <h3>7️⃣ Clicca "Pubblica Post + Immagine"</h3>
+                    </div>
+                    <div class="step">
+                        <h3>8️⃣ Fatto!</h3>
                         <div class="success">
-                            Il post verrà pubblicato automaticamente (subito se la data è oggi o passata, altrimenti alla data programmata)
+                            Il post verrà pubblicato automaticamente:<br>
+                            ✅ Blog italiano: 1-2 minuti<br>
+                            🌍 Blog inglese (tradotto): 2-3 minuti
                         </div>
                     </div>
                 </div>
+                
+                <hr>
+                
+                <h3 style="margin-top: 30px;">✏️ Per Modificare un Post Esistente</h3>
+                <p>Per modificare post già pubblicati, usa <a href="https://prose.io/" target="_blank">Prose.io</a>:</p>
+                <ol>
+                    <li>Vai su <a href="https://prose.io/" target="_blank">https://prose.io/</a></li>
+                    <li>Fai login con GitHub</li>
+                    <li>Seleziona il repository "blog"</li>
+                    <li>Clicca sulla cartella "_posts"</li>
+                    <li>Seleziona il post da modificare</li>
+                    <li>Modifica e salva</li>
+                </ol>
             </div>
 
             <div id="caricamento-immagini">
-                <h2><span class="emoji">📸</span>Per Aggiungere Immagini</h2>
+                <h2><span class="emoji">📸</span>Caricamento Immagini</h2>
                 
-                <h3>METODO 1: Form di Upload (CONSIGLIATO) 🎯</h3>
+                <div class="alert alert-info" style="background: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; border-radius: 4px; margin: 20px 0;">
+                    <strong>💡 Novità:</strong> Ora puoi caricare immagini direttamente durante la creazione del post! Usa l'<a href="https://blog.lizberries.thelizards.it/upload.html">editor unificato</a> per tutto in un solo posto.
+                </div>
+                
+                <h3>METODO 1: Editor Unificato (CONSIGLIATO) 🎯</h3>
                 <div class="highlight">
-                    <p><strong>Il modo più semplice per caricare immagini:</strong></p>
+                    <p><strong>Carica immagini e crea post nello stesso posto:</strong></p>
                     <ol>
                         <li><strong>Vai al link:</strong> <a href="https://blog.lizberries.thelizards.it/upload.html" target="_blank">https://blog.lizberries.thelizards.it/upload.html</a></li>
-                        <li><strong>Inserisci la password</strong> (chiedila al team tecnico)</li>
                         <li><strong>Seleziona l'immagine</strong> (formati supportati: <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>)</li>
-                        <li><strong>Clicca "Carica Immagine"</strong></li>
-                        <li><strong>Copia il nome del file WebP</strong> mostrato nel messaggio di successo</li>
-                        <li><strong>Usa questo nome</strong> nel post (es: <code>/assets/images/posts/nome-file.webp</code>)</li>
+                        <li><strong>Scrivi il post</strong> con titolo, data e contenuto</li>
+                        <li><strong>Vedi l'anteprima</strong> in tempo reale</li>
+                        <li><strong>Inserisci la password</strong> e pubblica tutto insieme!</li>
                     </ol>
                 </div>
                 
                 <div class="success">
                     <strong>✅ Vantaggi:</strong>
                     <ul>
-                        <li>Nessun account GitHub necessario</li>
-                        <li>Interfaccia semplice e intuitiva</li>
-                        <li>Anteprima immagine prima del caricamento</li>
+                        <li><strong>Tutto in un solo posto</strong>: immagine + post insieme</li>
+                        <li><strong>Anteprima live</strong>: vedi come apparirà il post mentre scrivi</li>
+                        <li>Toolbar Markdown per formattazione facile</li>
+                        <li>Ottimizzazione automatica immagini (max 900x600px, WebP ~30-40KB)</li>
                         <li>100% gratuito (Cloudflare Workers: 100.000 richieste/giorno)</li>
                     </ul>
                 </div>
@@ -357,7 +359,7 @@ image: /assets/images/posts/concerto-milano.webp</code></pre>
                         </ul>
                     </li>
                     <li><strong>Attendi 1-2 minuti:</strong> Le immagini verranno <strong>convertite automaticamente in formato <code>.webp</code></strong> (ottimizzato per il web)</li>
-                    <li><strong>Poi scrivi il post in Prose.io</strong> e referenzia le immagini convertite usando l'estensione <code>.webp</code></li>
+                    <li><strong>Poi scrivi il post</strong> usando l'editor unificato o Prose.io</li>
                 </ol>
 
                 <div class="info">
@@ -588,12 +590,14 @@ Continua con il resto del contenuto...</code></pre>
             <div id="workflow">
                 <h2><span class="emoji">🔄</span>Workflow Completo</h2>
                 
-                <h3>Creare un Nuovo Post</h3>
+                <h3>Creare un Nuovo Post (METODO SEMPLICE)</h3>
                 <ol>
-                    <li>✍️ Scrivi il post in Markdown</li>
-                    <li>📁 Salva il file in <code>_posts/</code> con il formato <code>YYYY-MM-DD-titolo.md</code></li>
-                    <li>🖼️ (Opzionale) Aggiungi immagini in <code>assets/images/posts/</code></li>
-                    <li>💾 Fai commit e push su GitHub</li>
+                    <li>🌐 Vai su <a href="https://blog.lizberries.thelizards.it/upload.html" target="_blank">https://blog.lizberries.thelizards.it/upload.html</a></li>
+                    <li>🖼️ (Opzionale) Seleziona un'immagine</li>
+                    <li>✍️ Scrivi titolo, data e contenuto</li>
+                    <li>👁️ Controlla l'anteprima in tempo reale</li>
+                    <li>🔐 Inserisci la password</li>
+                    <li>📤 Clicca "Pubblica Post + Immagine"</li>
                     <li>⏳ Attendi 1-2 minuti per la pubblicazione</li>
                     <li>✅ Il post appare sul <strong>blog italiano</strong></li>
                     <li>🌍 Dopo altri 1-2 minuti, appare <strong>tradotto automaticamente</strong> sul blog inglese</li>
@@ -601,8 +605,12 @@ Continua con il resto del contenuto...</code></pre>
 
                 <h3>Modificare un Post Esistente</h3>
                 <ol>
-                    <li>✏️ Modifica il file del post in <code>_posts/</code> (titolo, data, contenuto, immagini)</li>
-                    <li>💾 Fai commit e push su GitHub</li>
+                    <li>🌐 Vai su <a href="https://prose.io/" target="_blank">https://prose.io/</a></li>
+                    <li>🔐 Fai login con GitHub</li>
+                    <li>📁 Seleziona repository "blog" → cartella "_posts"</li>
+                    <li>✏️ Seleziona il post da modificare</li>
+                    <li>📝 Modifica titolo, data, contenuto o immagine</li>
+                    <li>💾 Clicca "Save"</li>
                     <li>⏳ Attendi 1-2 minuti</li>
                     <li>✅ Il post viene <strong>aggiornato</strong> sul blog italiano</li>
                     <li>🔄 Il sistema <strong>rileva la modifica</strong> e aggiorna automaticamente il post inglese</li>
@@ -610,8 +618,10 @@ Continua con il resto del contenuto...</code></pre>
 
                 <h3>Eliminare un Post</h3>
                 <ol>
-                    <li>🗑️ Elimina il file del post da <code>_posts/</code></li>
-                    <li>💾 Fai commit e push su GitHub</li>
+                    <li>🌐 Vai su <a href="https://github.com/thelizberries/blog" target="_blank">https://github.com/thelizberries/blog</a></li>
+                    <li>📁 Naviga nella cartella <code>_posts/</code></li>
+                    <li>🗑️ Elimina il file del post</li>
+                    <li>💾 Fai commit</li>
                     <li>⏳ Attendi 1-2 minuti</li>
                     <li>✅ Il post viene <strong>rimosso</strong> dal blog italiano</li>
                     <li>🔄 Il sistema elimina automaticamente il post inglese e le immagini associate</li>
@@ -647,14 +657,15 @@ Continua con il resto del contenuto...</code></pre>
                 <p>Sì! Puoi impostare una data futura nel front matter del post (es: <code>date: 2025-12-25</code>). Il post verrà pubblicato automaticamente il giorno indicato. Fino a quella data, il post non sarà visibile sul blog, ma sarà già presente nel repository GitHub.</p>
 
                 <h3>Come vedo l'anteprima prima di pubblicare?</h3>
-                <p>Puoi usare un editor Markdown online come:</p>
+                <p><strong>Metodo consigliato:</strong> Usa l'<a href="https://blog.lizberries.thelizards.it/upload.html" target="_blank">editor unificato</a> che mostra l'anteprima in tempo reale mentre scrivi!</p>
+                <p>In alternativa, puoi usare un editor Markdown online come:</p>
                 <ul>
                     <li><a href="https://dillinger.io/" target="_blank">https://dillinger.io/</a></li>
                     <li><a href="https://stackedit.io/" target="_blank">https://stackedit.io/</a></li>
                 </ul>
 
-                <h3>Come ottengo la password per il form di upload delle immagini?</h3>
-                <p>La password per il form di upload è <strong>riservata ai membri del team</strong> che devono caricare immagini per i post. Contatta il team tecnico (Mattia) per ottenerla. La password è configurata in modo sicuro sul server e non è visibile pubblicamente.</p>
+                <h3>Come ottengo la password per pubblicare?</h3>
+                <p>La password è <strong>riservata ai membri del team</strong> che devono creare post. Contatta il team tecnico (Mattia) per ottenerla. La password è configurata in modo sicuro sul server e non è visibile pubblicamente.</p>
             </div>
 
             <div id="tecnico" class="technical">

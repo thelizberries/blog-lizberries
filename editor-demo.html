@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Blog Lizberries</title>
+    <title>Editor Blog Lizberries - DEMO</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
@@ -30,7 +30,7 @@
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 25px 30px;
+            padding: 30px;
             text-align: center;
         }
         
@@ -41,7 +41,18 @@
         
         header p {
             opacity: 0.9;
-            font-size: 1em;
+            font-size: 1.1em;
+        }
+        
+        .demo-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9em;
         }
         
         .main-content {
@@ -82,13 +93,11 @@
             font-weight: 600;
             margin-bottom: 5px;
             color: #333;
-            font-size: 0.95em;
         }
         
         input[type="text"],
         input[type="date"],
         input[type="file"],
-        input[type="password"],
         textarea {
             width: 100%;
             padding: 10px;
@@ -107,9 +116,8 @@
         
         textarea {
             resize: vertical;
-            min-height: 250px;
+            min-height: 200px;
             font-family: 'Courier New', monospace;
-            line-height: 1.5;
         }
         
         .image-preview {
@@ -164,9 +172,8 @@
             border-left: 4px solid #667eea;
         }
         
-        .publish-section h3 {
+        .publish-section input[type="password"] {
             margin-bottom: 15px;
-            color: #667eea;
         }
         
         .publish-btn {
@@ -182,7 +189,7 @@
             transition: transform 0.2s;
         }
         
-        .publish-btn:hover:not(:disabled) {
+        .publish-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
@@ -203,7 +210,6 @@
         .preview-content h1 {
             color: #333;
             margin-bottom: 10px;
-            line-height: 1.3;
         }
         
         .preview-content .post-meta {
@@ -211,7 +217,6 @@
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #e0e0e0;
-            font-size: 0.95em;
         }
         
         .preview-content .post-image {
@@ -231,28 +236,10 @@
             color: #667eea;
             margin-top: 25px;
             margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .preview-content .post-body h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 12px;
-            font-size: 1.2em;
         }
         
         .preview-content .post-body p {
             margin-bottom: 15px;
-        }
-        
-        .preview-content .post-body ul,
-        .preview-content .post-body ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        
-        .preview-content .post-body li {
-            margin-bottom: 8px;
         }
         
         .preview-content .post-body strong {
@@ -261,15 +248,6 @@
         
         .preview-content .post-body em {
             font-style: italic;
-        }
-        
-        .preview-content .post-body a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        
-        .preview-content .post-body a:hover {
-            text-decoration: underline;
         }
         
         .help-text {
@@ -296,38 +274,7 @@
             color: #155724;
         }
         
-        .alert-error {
-            background: #f8d7da;
-            border-left: 4px solid #dc3545;
-            color: #721c24;
-        }
-        
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .loading.active {
-            display: block;
-        }
-        
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
             }
@@ -344,6 +291,7 @@
         <header>
             <h1>🎸 Editor Blog Lizberries</h1>
             <p>Crea e pubblica post in un solo posto</p>
+            <span class="demo-badge">🧪 DEMO - NON FUNZIONANTE</span>
         </header>
         
         <div class="main-content">
@@ -352,7 +300,7 @@
                 <h2 class="section-title">✏️ Scrivi il tuo Post</h2>
                 
                 <div class="alert alert-info">
-                    <strong>💡 Come funziona:</strong> Compila i campi, vedi l'anteprima in tempo reale. Quando sei pronto, inserisci la password e pubblica tutto insieme!
+                    <strong>📝 Demo Interattiva:</strong> Compila i campi per vedere l'anteprima in tempo reale. La pubblicazione è disabilitata in questa demo.
                 </div>
                 
                 <!-- UPLOAD IMMAGINE -->
@@ -362,7 +310,7 @@
                     <div class="image-preview" id="imagePreview">
                         <p style="color: #999;">Seleziona un'immagine per vedere l'anteprima</p>
                     </div>
-                    <p class="help-text">Formati: JPG, PNG. L'immagine verrà ottimizzata automaticamente (max 900x600px, WebP ~30-40KB)</p>
+                    <p class="help-text">Formati supportati: JPG, PNG. L'immagine verrà ottimizzata automaticamente.</p>
                 </div>
                 
                 <!-- METADATI POST -->
@@ -381,13 +329,13 @@
                 <div class="form-group">
                     <label for="content">✍️ Contenuto del Post *</label>
                     <div class="toolbar">
-                        <button type="button" onclick="insertMarkdown('**', '**')" title="Grassetto"><strong>B</strong></button>
-                        <button type="button" onclick="insertMarkdown('*', '*')" title="Corsivo"><em>I</em></button>
-                        <button type="button" onclick="insertMarkdown('## ', '')" title="Titolo H2">H2</button>
-                        <button type="button" onclick="insertMarkdown('### ', '')" title="Titolo H3">H3</button>
-                        <button type="button" onclick="insertMarkdown('[', '](url)')" title="Link">🔗 Link</button>
-                        <button type="button" onclick="insertMarkdown('- ', '')" title="Lista">• Lista</button>
-                        <button type="button" onclick="insertMarkdown('<!--more-->\n\n', '')" title="Separa anteprima">✂️ Anteprima</button>
+                        <button type="button" onclick="insertMarkdown('**', '**')"><strong>B</strong></button>
+                        <button type="button" onclick="insertMarkdown('*', '*')"><em>I</em></button>
+                        <button type="button" onclick="insertMarkdown('## ', '')">H2</button>
+                        <button type="button" onclick="insertMarkdown('### ', '')">H3</button>
+                        <button type="button" onclick="insertMarkdown('[', '](url)')">🔗 Link</button>
+                        <button type="button" onclick="insertMarkdown('- ', '')">• Lista</button>
+                        <button type="button" onclick="insertMarkdown('<!--more-->\n\n', '')">✂️ Separa Anteprima</button>
                     </div>
                     <textarea id="content" placeholder="Scrivi qui il contenuto del post usando Markdown...
 
@@ -396,40 +344,32 @@ Siamo entusiasti di annunciare il nostro prossimo concerto!
 
 <!--more-->
 
-Il **20 dicembre 2025** saremo al Fabrique di Milano per una serata speciale dedicata ai Cranberries.
+Il **20 dicembre 2025** saremo al Fabrique di Milano per una serata speciale.
 
 ## Dettagli dell'Evento
 
 - **Data**: 20 Dicembre 2025
-- **Luogo**: Fabrique, Milano  
-- **Biglietti**: Disponibili su TicketOne
-
-Vi aspettiamo numerosi! 🎵"></textarea>
+- **Luogo**: Fabrique, Milano
+- **Biglietti**: Disponibili su TicketOne"></textarea>
                     <p class="help-text">
-                        💡 Usa <code>&lt;!--more--&gt;</code> per separare l'anteprima dal resto del contenuto. <br>
-                        Usa <strong>**testo**</strong> per grassetto, <em>*testo*</em> per corsivo, <code>## Titolo</code> per i titoli.
+                        💡 Usa <code><!--more--></code> per separare l'anteprima dal resto del contenuto
                     </p>
                 </div>
                 
                 <!-- SEZIONE PUBBLICAZIONE -->
                 <div class="publish-section">
-                    <h3>🚀 Pubblica</h3>
+                    <h3 style="margin-bottom: 15px;">🚀 Pubblica</h3>
                     <div class="form-group">
                         <label for="password">🔐 Password</label>
-                        <input type="password" id="password" placeholder="Inserisci la password per pubblicare">
-                        <p class="help-text">Richiedi la password al team tecnico se non ce l'hai</p>
+                        <input type="password" id="password" placeholder="Inserisci la password per pubblicare" disabled>
+                        <p class="help-text">Richiedi la password al team tecnico</p>
                     </div>
-                    
-                    <div id="loading" class="loading">
-                        <div class="spinner"></div>
-                        <p>Pubblicazione in corso...</p>
-                    </div>
-                    
-                    <div id="message"></div>
-                    
-                    <button class="publish-btn" id="publishBtn" onclick="publishPost()">
+                    <button class="publish-btn" disabled>
                         📤 Pubblica Post + Immagine
                     </button>
+                    <p class="help-text" style="margin-top: 10px; text-align: center;">
+                        ⚠️ Funzionalità disabilitata in questa demo
+                    </p>
                 </div>
             </div>
             
@@ -452,33 +392,22 @@ Vi aspettiamo numerosi! 🎵"></textarea>
     </div>
     
     <script>
-        // CONFIGURAZIONE
-        const CLOUDFLARE_WORKER_URL = 'https://lizberries-blog-upload.lizberries.workers.dev';
-        
         // Auto-update preview
         document.getElementById('title').addEventListener('input', updatePreview);
         document.getElementById('date').addEventListener('change', updatePreview);
         document.getElementById('content').addEventListener('input', updatePreview);
         
-        // Variabile per salvare il file immagine
-        let selectedImageFile = null;
-        let selectedImageName = null;
-        
         // Image preview
         document.getElementById('image').addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
-                selectedImageFile = file;
-                selectedImageName = file.name.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-                
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const preview = document.getElementById('imagePreview');
                     preview.innerHTML = `
-                        <p style="color: #28a745; font-weight: bold;">✅ Immagine selezionata</p>
+                        <p style="color: #28a745; font-weight: bold;">✅ Immagine caricata</p>
                         <p style="font-size: 0.9em;">${file.name} (${(file.size / 1024).toFixed(1)} KB)</p>
                         <img src="${e.target.result}" alt="Preview">
-                        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">Verrà caricata come: ${selectedImageName}</p>
                     `;
                     preview.classList.add('has-image');
                     
@@ -488,10 +417,6 @@ Vi aspettiamo numerosi! 🎵"></textarea>
                     previewImg.style.display = 'block';
                 };
                 reader.readAsDataURL(file);
-            } else {
-                selectedImageFile = null;
-                selectedImageName = null;
-                document.getElementById('previewImage').style.display = 'none';
             }
         });
         
@@ -527,15 +452,11 @@ Vi aspettiamo numerosi! 🎵"></textarea>
                     // Links
                     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
                     // Lists
-                    .replace(/^- (.+)$/gm, '<li>$1</li>');
-                
-                // Wrap paragraphs
-                html = html.split('\n\n').map(p => {
-                    p = p.trim();
-                    if (!p) return '';
-                    if (p.startsWith('<h') || p.startsWith('<li>') || p.includes('<!--more-->')) return p;
-                    return `<p>${p}</p>`;
-                }).join('\n');
+                    .replace(/^- (.+)$/gm, '<li>$1</li>')
+                    // Paragraphs
+                    .split('\n\n')
+                    .map(p => p.trim() && !p.startsWith('<') ? `<p>${p}</p>` : p)
+                    .join('\n');
                 
                 // Wrap lists
                 html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
@@ -573,148 +494,6 @@ Vi aspettiamo numerosi! 🎵"></textarea>
             textarea.selectionEnd = start + before.length + selectedText.length;
             
             updatePreview();
-        }
-        
-        function fileToBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => {
-                    const base64 = reader.result.split(',')[1];
-                    resolve(base64);
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
-        }
-        
-        function slugify(text) {
-            return text.toLowerCase()
-                .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
-                .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with -
-                .replace(/^-+|-+$/g, ''); // Remove leading/trailing -
-        }
-        
-        async function publishPost() {
-            const password = document.getElementById('password').value;
-            const title = document.getElementById('title').value;
-            const date = document.getElementById('date').value;
-            const content = document.getElementById('content').value;
-            
-            // Validation
-            if (!password) {
-                showMessage('Inserisci la password', 'error');
-                return;
-            }
-            if (!title) {
-                showMessage('Inserisci il titolo del post', 'error');
-                return;
-            }
-            if (!date) {
-                showMessage('Seleziona la data di pubblicazione', 'error');
-                return;
-            }
-            if (!content) {
-                showMessage('Scrivi il contenuto del post', 'error');
-                return;
-            }
-            
-            // Disable button and show loading
-            const publishBtn = document.getElementById('publishBtn');
-            publishBtn.disabled = true;
-            document.getElementById('loading').classList.add('active');
-            document.getElementById('message').innerHTML = '';
-            
-            try {
-                let imageWebpName = null;
-                
-                // Step 1: Upload image if selected
-                if (selectedImageFile) {
-                    showMessage('Caricamento immagine...', 'info');
-                    
-                    const imageBase64 = await fileToBase64(selectedImageFile);
-                    const imageResponse = await fetch(CLOUDFLARE_WORKER_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            action: 'upload_image',
-                            password: password,
-                            filename: selectedImageFile.name,
-                            fileContent: imageBase64
-                        })
-                    });
-                    
-                    const imageData = await imageResponse.json();
-                    if (!imageResponse.ok || !imageData.success) {
-                        throw new Error(imageData.error || 'Errore nel caricamento dell\'immagine');
-                    }
-                    
-                    imageWebpName = imageData.webpName;
-                }
-                
-                // Step 2: Create post
-                showMessage('Creazione post...', 'info');
-                
-                const postFilename = `${date}-${slugify(title)}.md`;
-                
-                // Build front matter
-                let frontMatter = `---\nlayout: post\ntitle: "${title}"\ndate: ${date}\n`;
-                if (imageWebpName) {
-                    frontMatter += `image: /assets/images/posts/${imageWebpName}\n`;
-                }
-                frontMatter += `---\n\n`;
-                
-                const postContent = frontMatter + content;
-                
-                const postResponse = await fetch(CLOUDFLARE_WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        action: 'create_post',
-                        password: password,
-                        filename: postFilename,
-                        content: postContent
-                    })
-                });
-                
-                const postData = await postResponse.json();
-                if (!postResponse.ok || !postData.success) {
-                    throw new Error(postData.error || 'Errore nella creazione del post');
-                }
-                
-                // Success!
-                showMessage(
-                    `✅ <strong>Post pubblicato con successo!</strong><br><br>` +
-                    `📄 File: <code>${postFilename}</code><br>` +
-                    (imageWebpName ? `🖼️ Immagine: <code>${imageWebpName}</code><br>` : '') +
-                    `<br>⏳ Il post apparirà sul blog tra 1-2 minuti.<br>` +
-                    `🌍 Dopo altri 1-2 minuti sarà tradotto automaticamente in inglese.`,
-                    'success'
-                );
-                
-                // Reset form
-                document.getElementById('title').value = '';
-                document.getElementById('date').value = new Date().toISOString().split('T')[0];
-                document.getElementById('content').value = '';
-                document.getElementById('image').value = '';
-                document.getElementById('password').value = '';
-                document.getElementById('imagePreview').innerHTML = '<p style="color: #999;">Seleziona un\'immagine per vedere l\'anteprima</p>';
-                document.getElementById('imagePreview').classList.remove('has-image');
-                selectedImageFile = null;
-                selectedImageName = null;
-                updatePreview();
-                
-            } catch (error) {
-                console.error('Publish error:', error);
-                showMessage(`❌ <strong>Errore:</strong> ${error.message}`, 'error');
-            } finally {
-                publishBtn.disabled = false;
-                document.getElementById('loading').classList.remove('active');
-            }
-        }
-        
-        function showMessage(text, type) {
-            const messageDiv = document.getElementById('message');
-            messageDiv.innerHTML = `<div class="alert alert-${type}">${text}</div>`;
         }
         
         // Set default date to today
