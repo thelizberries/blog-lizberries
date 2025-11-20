@@ -76,6 +76,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add assets/images/posts/
           git diff --staged --quiet || git commit -m "Convert images to WebP format and remove originals [skip ci]"
+          git pull --rebase origin main || true
       
       - name: Commit and push to English blog
         run: |
