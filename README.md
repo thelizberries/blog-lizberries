@@ -17,6 +17,7 @@ Benvenuto nella guida per creare e pubblicare post sul blog dei Lizberries! Ques
 - [✏️ Formattazione Markdown](#️-formattazione-markdown)
 - [🔄 Workflow Completo](#-workflow-completo)
 - [❓ Domande Frequenti](#-domande-frequenti)
+- [🛡️ Backup e Ripristino](#️-backup-e-ripristino)
 - [🔧 Informazioni Tecniche](#-informazioni-tecniche-solo-per-amministratori)
 
 ---
@@ -484,6 +485,44 @@ Puoi usare un editor Markdown online come:
 ### Come ottengo la password per il form di upload delle immagini?
 
 La password per il form di upload è **riservata ai membri del team** che devono caricare immagini per i post. Contatta il team tecnico (Mattia) per ottenerla. La password è configurata in modo sicuro sul server e non è visibile pubblicamente.
+
+---
+
+## 🛡️ Backup e Ripristino
+
+### Sistema di Protezione Automatica
+
+Il blog è protetto da un sistema di backup automatico che:
+- ✅ Crea un backup completo ogni giorno alle 03:00 UTC
+- ✅ Mantiene gli ultimi 30 giorni di backup
+- ✅ Permette ripristino rapido in caso di problemi
+- ✅ Salva tutta la storia delle modifiche (Git History)
+
+### File Critici da NON Modificare
+
+**⚠️ ATTENZIONE**: Questi file sono essenziali per il funzionamento del blog. **Non modificarli** a meno che tu non sappia esattamente cosa stai facendo:
+
+- `_config.yml` - Configurazione principale
+- `.github/workflows/` - Automazioni (traduzione, ottimizzazione immagini, backup)
+- `.github/scripts/` - Script di traduzione
+- `wrangler.toml` e `workers/upload.js` - Sistema di upload immagini
+- `_layouts/` e `_includes/` - Template del sito
+- `CNAME` - Configurazione dominio
+
+**✅ File che PUOI modificare liberamente:**
+- `_posts/` - I tuoi post del blog
+- `assets/images/posts/` - Le immagini dei post
+- `README.md` - Questa documentazione (con cautela)
+
+### Come Ripristinare in Caso di Problemi
+
+Se qualcosa va storto, consulta la **[Guida Completa al Ripristino](RIPRISTINO.md)** che spiega:
+- Come ripristinare singoli file modificati per errore
+- Come usare i backup giornalieri automatici
+- Come verificare i permessi dei collaboratori
+- Comandi rapidi di emergenza
+
+**Link rapido**: [RIPRISTINO.md](RIPRISTINO.md)
 
 ---
 

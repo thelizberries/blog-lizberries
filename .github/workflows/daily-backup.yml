@@ -1,0 +1,109 @@
+name: Daily Backup
+
+on:
+  schedule:
+    # Esegui ogni giorno alle 03:00 UTC (04:00 CET / 05:00 CEST)
+    - cron: '0 3 * * *'
+  workflow_dispatch: # Permette esecuzione manuale
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Scarica tutta la storia Git
+      
+      - name: Create backup branch name
+        id: backup_info
+        run: |
+          BACKUP_DATE=$(date +'%Y-%m-%d')
+          BACKUP_BRANCH="backup/${BACKUP_DATE}"
+          echo "branch=${BACKUP_BRANCH}" >> $GITHUB_OUTPUT
+          echo "date=${BACKUP_DATE}" >> $GITHUB_OUTPUT
+      
+      - name: Create backup branch
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # Crea un nuovo branch per il backup
+          git checkout -b ${{ steps.backup_info.outputs.branch }}
+          
+          # Crea un file con informazioni sul backup
+          cat > .backup-info.txt << EOF
+          ========================================
+          BACKUP AUTOMATICO DEL BLOG LIZBERRIES
+          ========================================
+          
+          Data backup: ${{ steps.backup_info.outputs.date }}
+          Ora backup: $(date +'%H:%M:%S %Z')
+          Commit principale: $(git rev-parse main)
+          Branch principale: main
+          
+          Questo backup include:
+          - Tutti i post in _posts/
+          - Tutte le immagini in assets/
+          - Configurazioni Jekyll (_config.yml)
+          - Workflow GitHub Actions (.github/workflows/)
+          - Scripts di traduzione (.github/scripts/)
+          - Layout e include (_layouts/, _includes/)
+          - Fogli di stile (assets/css/)
+          - File di configurazione (wrangler.toml, etc.)
+          
+          Per ripristinare questo backup:
+          1. git checkout ${{ steps.backup_info.outputs.branch }}
+          2. git checkout -b restore-from-backup
+          3. Verifica che tutto sia corretto
+          4. git checkout main
+          5. git reset --hard restore-from-backup
+          6. git push --force origin main
+          
+          ATTENZIONE: Il ripristino con --force sovrascrive
+          completamente il branch main. Usa con cautela!
+          ========================================
+          EOF
+          
+          git add .backup-info.txt
+          git commit -m "Backup automatico del ${{ steps.backup_info.outputs.date }}"
+      
+      - name: Push backup branch
+        run: |
+          git push origin ${{ steps.backup_info.outputs.branch }} --force
+      
+      - name: Cleanup old backups (mantieni ultimi 30 giorni)
+        run: |
+          # Elenca tutti i branch di backup
+          git fetch --all
+          BACKUP_BRANCHES=$(git branch -r | grep 'origin/backup/' | sed 's|origin/||')
+          
+          # Calcola la data limite (30 giorni fa)
+          CUTOFF_DATE=$(date -d '30 days ago' +'%Y-%m-%d' 2>/dev/null || date -v-30d +'%Y-%m-%d')
+          
+          echo "Rimozione backup più vecchi di: $CUTOFF_DATE"
+          
+          for branch in $BACKUP_BRANCHES; do
+            # Estrai la data dal nome del branch (formato: backup/YYYY-MM-DD)
+            BRANCH_DATE=$(echo $branch | sed 's|backup/||')
+            
+            # Confronta le date (solo se il formato è corretto)
+            if [[ $BRANCH_DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+              if [[ "$BRANCH_DATE" < "$CUTOFF_DATE" ]]; then
+                echo "Eliminazione backup vecchio: $branch ($BRANCH_DATE)"
+                git push origin --delete $branch || echo "Impossibile eliminare $branch"
+              fi
+            fi
+          done
+      
+      - name: Create backup summary
+        run: |
+          echo "✅ Backup completato con successo!"
+          echo ""
+          echo "📦 Branch backup: ${{ steps.backup_info.outputs.branch }}"
+          echo "📅 Data: ${{ steps.backup_info.outputs.date }}"
+          echo "🕒 Ora: $(date +'%H:%M:%S %Z')"
+          echo ""
+          echo "🔍 Branch di backup disponibili:"
+          git branch -r | grep 'origin/backup/' | sed 's|origin/||' | sort -r | head -n 10
