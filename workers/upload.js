@@ -44,7 +44,7 @@ export default {
       // GitHub API setup
       const GITHUB_TOKEN = env.GITHUB_TOKEN;
       const GITHUB_OWNER = 'thelizberries';
-      const GITHUB_REPO = 'blog';
+      const GITHUB_REPO = 'blog-lizberries';
 
       // Route basato sull'action
       if (action === 'upload_image') {
