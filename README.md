@@ -244,7 +244,7 @@ Se non specifichi un'immagine, verrà usato automaticamente il logo dei Lizberri
 
 ### Metodo 2: Tramite GitHub Web Interface
 
-1. Vai su https://github.com/thelizberries/blog
+1. Vai su https://github.com/thelizberries/blog-lizberries
 2. Naviga nella cartella `_posts/`
 3. Clicca su "Add file" → "Upload files"
 4. Carica il file `.md` del post
@@ -525,7 +525,7 @@ Il sistema di upload è implementato con:
 - **Frontend**: Form HTML accessibile su https://blog.lizberries.thelizards.it/upload.html
 - **Backend**: Cloudflare Worker serverless (https://lizberries-blog-upload.lizberries.workers.dev)
 - **Autenticazione**: Password protetta tramite variabile d'ambiente `UPLOAD_PASSWORD`
-- **Storage**: GitHub API - carica direttamente nel repository `thelizberries/blog`
+- **Storage**: GitHub API - carica direttamente nel repository `thelizberries/blog-lizberries`
 - **Ottimizzazione immagini**:
   - Ridimensionamento automatico a max 900x600px (mantenendo proporzioni)
   - Conversione in formato WebP

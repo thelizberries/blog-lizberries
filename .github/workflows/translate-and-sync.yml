@@ -29,7 +29,7 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
         run: |
-          git clone https://x-access-token:${PAT}@github.com/thelizberries/blog-en.git
+          git clone https://x-access-token:${PAT}@github.com/thelizberries/blog-lizberries-en.git blog-en
 
       - name: Translate posts to English and copy
         run: |
@@ -46,7 +46,7 @@ jobs:
             echo "No image deletions in Italian blog"
           else
             git commit -m "Auto-delete unused images"
-            git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog.git
+            git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog-lizberries.git
             git push origin HEAD:main
           fi
 
@@ -67,6 +67,6 @@ jobs:
           else
             git commit -m "Auto-translated new posts and sync images"
             git pull --rebase origin main
-            git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog-en.git
+            git remote set-url origin https://x-access-token:${PAT}@github.com/thelizberries/blog-lizberries-en.git
             git push origin HEAD:main
           fi
