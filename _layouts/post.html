@@ -12,6 +12,42 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title }}",
+    "image": "{{ page.image | default: '/assets/images/The-Lizberries-Logo_small.png' | absolute_url }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "MusicGroup",
+      "name": "The Lizberries",
+      "url": "https://www.thelizards.it/lizberries",
+      "sameAs": [
+        "https://www.facebook.com/TheLizberries",
+        "https://www.youtube.com/TheLizberries",
+        "https://instagram.com/thelizberries"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Lizberries",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/The-Lizberries-Logo_small.png' | absolute_url }}"
+      }
+    },
+    "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    }
+  }
+  </script>
+  
   <!-- Link di ritorno -->
   <div class="back-link text-center" style="margin-top: 2rem;">
   <a href="#" class="text-red text-uppercase" id="backLink">
