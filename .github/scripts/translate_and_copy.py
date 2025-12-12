@@ -9,6 +9,35 @@ src_dir = Path("_posts")
 dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
 
+def protect_html_tags(text):
+    """Sostituisce temporaneamente i tag HTML con placeholder per proteggerli dalla traduzione"""
+    import re
+    html_pattern = r'<a[^>]*>.*?</a>'
+    placeholders = {}
+    
+    def replace_with_placeholder(match):
+        placeholder = f"___HTML_TAG_{len(placeholders)}___"
+        placeholders[placeholder] = match.group(0)
+        return placeholder
+    
+    protected_text = re.sub(html_pattern, replace_with_placeholder, text, flags=re.DOTALL)
+    return protected_text, placeholders
+
+def restore_html_tags(text, placeholders):
+    """Ripristina i tag HTML originali dai placeholder"""
+    for placeholder, original in placeholders.items():
+        text = text.replace(placeholder, original)
+    return text
+
+def fix_spacing(text):
+    """Sistema gli spazi dopo la punteggiatura"""
+    import re
+    # Aggiunge spazio dopo . ! ? se seguito da lettera maiuscola
+    text = re.sub(r'([.!?])([A-Z])', r'\1 \2', text)
+    # Sistema spazi multipli
+    text = re.sub(r' +', ' ', text)
+    return text
+
 # Directory per le immagini
 src_images_dir = Path("assets/images/posts")
 dest_images_dir = Path("blog-en/assets/images/posts")
@@ -178,18 +207,29 @@ for post in src_dir.glob("*.md"):
         translated_title = translator.translate(original_title, src="it", dest="en").text
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_title}\3', fm)
-        # Traduci la descrizione nel front matter
-    description_match = re.search(r'description:\s*["\']?([^"\']\n]+)["\']?', fm)
+    
+    # Traduci la descrizione nel front matter (REGEX CORRETTA)
+    description_match = re.search(r'description:\s*["\']?([^"\'\n]+)["\']?', fm)
     if description_match:
         original_description = description_match.group(1).strip()
         translated_description = translator.translate(original_description, src="it", dest="en").text
-        fm = re.sub(r'(description:\s*["\']?)([^"\']\n]+)(["\']?)', 
+        fm = re.sub(r'(description:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_description}\3', fm)
-        # Aggiungi original_file al front matter
+    
+    # Aggiungi original_file al front matter
     fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\n'
     
+    # Proteggi i tag HTML prima della traduzione
+    protected_content, html_placeholders = protect_html_tags(content)
+    
     # Traduci il contenuto
-    translated_content = translator.translate(content, src="it", dest="en").text
+    translated_content = translator.translate(protected_content, src="it", dest="en").text
+    
+    # Ripristina i tag HTML
+    translated_content = restore_html_tags(translated_content, html_placeholders)
+    
+    # Sistema gli spazi dopo la punteggiatura
+    translated_content = fix_spacing(translated_content)
     
     # Copia le immagini referenziate nel post
     copy_images_from_post(content, fm)
