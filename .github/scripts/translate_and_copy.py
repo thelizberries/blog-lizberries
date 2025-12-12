@@ -178,8 +178,14 @@ for post in src_dir.glob("*.md"):
         translated_title = translator.translate(original_title, src="it", dest="en").text
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_title}\3', fm)
-    
-    # Aggiungi original_file al front matter
+        # Traduci la descrizione nel front matter
+    description_match = re.search(r'description:\s*["\']?([^"\']\n]+)["\']?', fm)
+    if description_match:
+        original_description = description_match.group(1).strip()
+        translated_description = translator.translate(original_description, src="it", dest="en").text
+        fm = re.sub(r'(description:\s*["\']?)([^"\']\n]+)(["\']?)', 
+                    rf'\1{translated_description}\3', fm)
+        # Aggiungi original_file al front matter
     fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\n'
     
     # Traduci il contenuto
