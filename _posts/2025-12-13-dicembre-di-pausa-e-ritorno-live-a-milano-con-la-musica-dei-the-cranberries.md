@@ -6,7 +6,12 @@ description: " I Lizberries si prendono una pausa a dicembre, ma tornano il 17 g
 ---
 
 ##  Una pausa di dicembre per ricaricare le energie
-A dicembre ci siamo presi un periodo di pausa per recuperare le energie. Questo mese, spesso carico di impegni personali, è il momento ideale per dedicare tempo alle famiglie e ricaricare le batterie. La musica dei The Cranberries tornerà però molto presto con nuove emozioni e nuovi appuntamenti live.
+A dicembre ci siamo presi un periodo di pausa per recuperare le energie. 
+
+
+<!--more-->
+
+Questo mese, spesso carico di impegni personali, è il momento ideale per dedicare tempo alle famiglie e ricaricare le batterie. La musica dei The Cranberries tornerà però molto presto con nuove emozioni e nuovi appuntamenti live.
 
 ## Ritorno sul palco: il 17 gennaio al Teatro Guanella di Milano
 Il primo grande evento del 2026 sarà il live del 17 gennaio, alle ore 21, al Teatro Guanella di Milano. Sarà uno spettacolo dedicato alla nostra tournée estiva in Irlanda, con un racconto musicale che ripercorre luoghi, incontri ed episodi legati ai The Cranberries.
@@ -45,4 +50,3 @@ Possibili tappe 2026
 - Svizzera
   
 Il nuovo anno si apre con entusiasmo e con molte occasioni per vivere da vicino la musica dei The Cranberries e continuare a celebrare l’eredità artistica della band.
-## 
