@@ -23,8 +23,7 @@ Cosa racconteremo durante lo spettacolo
 
 Lo show sarà un viaggio emozionante, aperto a chi ama il rock irlandese e ai fan del tributo  The Cranberries.
 
-👉 Acquista i biglietti qui:
- https://www.vivaticket.com/it/ticket/the-lizberries-sulle-tracce-dei-cranberries/279229
+👉 Acquista i biglietti [qui](https://www.vivaticket.com/it/ticket/the-lizberries-sulle-tracce-dei-cranberries/279229)!
 
 ## Le date acustiche di gennaio
 Prima del live teatrale tornano anche i concerti acustici:
@@ -44,5 +43,6 @@ Possibili tappe 2026
 - Slovenia
 - Olanda
 - Svizzera
+  
 Il nuovo anno si apre con entusiasmo e con molte occasioni per vivere da vicino la musica dei The Cranberries e continuare a celebrare l’eredità artistica della band.
 ## 
