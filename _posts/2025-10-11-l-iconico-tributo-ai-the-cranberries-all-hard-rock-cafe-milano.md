@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "L’iconico tributo ai The Cranberries all'Hard Rock cafè Milano."
+title: "L'iconico tributo ai The Cranberries all'Hard Rock cafè Milano"
 date: 2025-10-11
 description: "Rivivi il nostro fantastico concerto tributo ai The Cranberries all'Hard Rock cafè Milano e se te lo sei perso scopri la prossima data."
 image: /assets/images/posts/Hard rock cafè.webp
 ---
 
-<!--more-->
 ## Un venerdì da ricordare all'Hard Rock Cafè
 
 Che serata incredibile abbiamo vissuto venerdì scorso all’Hard Rock Café!
+
+
+<!--more-->
 
 Nonostante qualche piccola sfortuna tecnologica (tra cui il povero cellulare di Kry, che ha deciso di abbandonarci proprio sul più bello), il concerto è stato un vero successo.
 
@@ -31,5 +33,5 @@ Torneremo proprio il 17 marzo per celebrare insieme San Patrizio, con una line-u
 
 Segnate la data sul calendario — sarà un’altra notte da vivere e ricordare insieme grazie alla musica dei The Cranberries!
 
-🎙 Guarda il video
+**<a href="https://youtu.be/Hk_jSxsmyXo?si=A601NMrZqFbgDA0J" target="_blank" rel="noopener" style="text-decoration: underline;">Guarda il video riassunto della serata</a>**
 
