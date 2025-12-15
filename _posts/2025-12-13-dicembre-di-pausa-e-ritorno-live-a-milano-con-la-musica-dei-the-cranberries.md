@@ -2,21 +2,19 @@
 layout: post
 title: "Dicembre di pausa e ritorno live a Milano con la musica dei The Cranberries"
 date: 2025-12-13
-description: " I Lizberries si prendono una pausa a dicembre, ma tornano il 17 gennaio al Teatro Guanella con uno spettacolo dedicato alla loro tournée in Irlanda."
+description: "I Lizberries si prendono una pausa a dicembre, ma tornano il 17 gennaio al Teatro Guanella con uno spettacolo dedicato alla loro tournée in Irlanda."
 ---
 
-##  Una pausa di dicembre per ricaricare le energie
-A dicembre ci siamo presi un periodo di pausa per recuperare le energie. 
-
+##  Una pausa a dicembre per ricaricare le energie
 
 <!--more-->
 
+
+A dicembre ci siamo presi un periodo di pausa per recuperare le energie. 
 Questo mese, spesso carico di impegni personali, è il momento ideale per dedicare tempo alle famiglie e ricaricare le batterie. La musica dei The Cranberries tornerà però molto presto con nuove emozioni e nuovi appuntamenti live.
 
 ## Ritorno sul palco: il 17 gennaio al Teatro Guanella di Milano
 Il primo grande evento del 2026 sarà il live del 17 gennaio, alle ore 21, al Teatro Guanella di Milano. Sarà uno spettacolo dedicato alla nostra tournée estiva in Irlanda, con un racconto musicale che ripercorre luoghi, incontri ed episodi legati ai The Cranberries.
-
-
 
 Cosa racconteremo durante lo spettacolo
 
@@ -44,9 +42,9 @@ Entrambe le date saranno dedicate al ricordo di Dolores O’Riordan, nel settimo
 Il 2026 sarà un anno importante per il progetto Lizberries. Oltre al ritorno in Irlanda e in UK, porteremo la musica della band anche in altre nuove città europee:
 
 Possibili tappe 2026
-- Spagna
-- Slovenia
+- Spagna (data già confermata!)
+- Slovenia (data già confermata!)
 - Olanda
-- Svizzera
+- Svizzera (data già confermata!)
   
-Il nuovo anno si apre con entusiasmo e con molte occasioni per vivere da vicino la musica dei The Cranberries e continuare a celebrare l’eredità artistica della band.
+Il nuovo anno si apre con entusiasmo e con molte occasioni per voi per vivere da vicino la musica dei The Cranberries e continuare a celebrare l'eredità artistica della band di Limerick!
