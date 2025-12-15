@@ -6,11 +6,15 @@ description: "Scopri quali canzoni dei The Cranberries dell'album No Need to Arg
 image: /assets/images/posts/spiaggia.webp
 ---
 
-## Cristina: No Need to Argue, un album pieno di perle preziose
-
-A costo di sembrare scontata, la mia canzone preferita dei The Cranberries è “Zombie”. 
+Cristina, Stefano e Mattia condividono le loro canzoni preferite dall'album "No Need to Argue" dei The Cranberries.
 
 <!--more-->
+
+---
+
+## 🎤 Cristina: No Need to Argue, un album pieno di perle preziose
+
+A costo di sembrare scontata, la mia canzone preferita dei The Cranberries è "Zombie".
 
 
 ### Perchè “Zombie”?
@@ -27,8 +31,9 @@ La musica segue il flusso delle emozioni, cresce, si apre, ti accompagna in un p
 ### “Ode to My Family”, il bisogno di essere compresi 
 E poi ci sono quei pezzi che ho imparato ad amare lentamente, quasi senza accorgermene, come “Ode to My Family”. Forse perché parla di radici, di identità, di quel bisogno di essere compresi. Ogni volta che la risento, mi riporta a momenti precisi, a ricordi profondi che si intrecciano alla sua melodia malinconica.  
 
+---
 
-## Stefano: i ricordi legati a No Need to Argue
+## 🎸 Stefano: i ricordi legati a No Need to Argue
 
 L' Album “No Need To Argue” mi lega ai bellissimi ricordi di una vacanza. Durante l'inverno dopo il boom di “Zombie”, avevo noleggiato il cd e me l'ero portato in montagna con i miei e alcuni amici di famiglia.
 
@@ -38,8 +43,9 @@ Sono stati giorni veramente belli, in cui, oltre ad essere in un bel posto, le a
 Tutta la raccolta mi ricorda quel periodo, ma se brani come Daffodil Lament mi portavano in territori un po' più malinconici, “Ode to My Family” mi faceva semplicemente stare bene.
 Il brano parla di famiglia quindi era pure azzeccato.  
 
+---
 
-## Mattia: Il mio viaggio alla scoperta dei The Cranberries
+## 🎸 Mattia: Il mio primo viaggio alla scoperta dei The Cranberries
 Non mi vergogno ad ammettere che il mio primo incontro con il brano più iconico dei The Cranberries è avvenuto attraverso un remix. 
 Mi sono avvicinato per la prima volta alla band grazie a un mio amico d’infanzia. Nell’estate del 1995 mi passò la musicassetta di “No Need to Argue”.
 
