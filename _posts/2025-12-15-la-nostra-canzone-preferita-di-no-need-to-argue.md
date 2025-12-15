@@ -55,4 +55,4 @@ Nei primi mesi di quell’anno ero stato letteralmente bombardato dalla versione
 ### “Ridiculous Thoughts” e la voce di Dolores 
 Tolta la hit planetaria, credo che questo brano racchiuda al meglio le sonorità più belle di quell’album e metta in risalto la straordinaria particolarità della voce di Dolores: dalla dolcezza del suo vocalizzo iniziale a un crescendo che esplode nell’impeto del ritornello e nella potente chiusura finale
 
-🎶[Guarda il video in cui abbiamo suonato Zombie al Dolan's di Limerick](https://youtu.be/FbkWGjNMT3s?si=B8RNswkOu-yPikUS)
+🎶 **<a href="https://youtu.be/FbkWGjNMT3s?si=B8RNswkOu-yPikUS" target="_blank" rel="noopener" style="text-decoration: underline;">Guarda il video in cui abbiamo suonato Zombie al Dolan's di Limerick</a>**
