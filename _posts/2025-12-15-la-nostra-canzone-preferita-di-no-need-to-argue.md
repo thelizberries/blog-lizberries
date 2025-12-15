@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "La nostra canzone preferita di "No Need to Argue""
+title: "La nostra canzone preferita di 'No Need to Argue'"
 date: 2025-12-15
-description: " Scopri quali canzoni dei The Cranberries dell'album No Need to Argue sono le preferite di Cristina, Stefano e Mattia dei The Lizberries."
+description: "Scopri quali canzoni dei The Cranberries dell'album No Need to Argue sono le preferite di Cristina, Stefano e Mattia dei The Lizberries."
 image: /assets/images/posts/spiaggia.webp
 ---
 
-<!--more-->
 ## Cristina: No Need to Argue, un album pieno di perle preziose
 
 A costo di sembrare scontata, la mia canzone preferita dei The Cranberries è “Zombie”. 
+
+<!--more-->
+
 
 ## Perchè “Zombie”?
 Non solo per la sua fama, ma per il significato denso che porta con sé. Ogni volta che la suono o la riascolto, sento quella potenza ruvida e viscerale, come un grido collettivo contro la violenza e l’ingiustizia. 
