@@ -140,6 +140,18 @@ header.blog-header nav a.lang-link.active {
   margin-bottom: 1.5rem;
 }
 
+/* Post content list styles */
+.post ul,
+.post ol {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.post li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
 /* Buttons */
 .btn {
   background: var(--btn-gradient);
