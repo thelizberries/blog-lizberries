@@ -10,23 +10,35 @@ dest_dir = Path("blog-en/_posts")
 dest_dir.mkdir(parents=True, exist_ok=True)
 
 def protect_html_tags(text):
-    """Sostituisce temporaneamente i tag HTML con placeholder per proteggerli dalla traduzione"""
+    """Estrae i tag HTML, traduce il contenuto, e li ricostruisce"""
     import re
-    html_pattern = r'<a[^>]*>.*?</a>'
-    placeholders = {}
+    html_pattern = r'<a([^>]*)>(.*?)</a>'
     
-    def replace_with_placeholder(match):
-        placeholder = f"___HTML_TAG_{len(placeholders)}___"
-        placeholders[placeholder] = match.group(0)
-        return placeholder
+    def translate_link_content(match):
+        attributes = match.group(1)  # Gli attributi del tag (href, target, ecc.)
+        link_text = match.group(2)   # Il testo dentro il tag
+        
+        # Traduce solo il testo, non gli attributi
+        try:
+            translated_text = translator.translate(link_text, src="it", dest="en").text
+        except:
+            translated_text = link_text  # Fallback se la traduzione fallisce
+        
+        # Aggiorna il locale nel link se presente
+        if 'locale=it_IT' in attributes:
+            attributes = attributes.replace('locale=it_IT', 'locale=en_US')
+        
+        # Ricostruisce il tag con il testo tradotto
+        return f'<a{attributes}>{translated_text}</a>'
     
-    protected_text = re.sub(html_pattern, replace_with_placeholder, text, flags=re.DOTALL)
-    return protected_text, placeholders
+    # Applica la traduzione a tutti i tag <a>
+    translated_text = re.sub(html_pattern, translate_link_content, text, flags=re.DOTALL)
+    
+    # Ritorna il testo tradotto e un dizionario vuoto (per compatibilità con il codice esistente)
+    return translated_text, {}
 
 def restore_html_tags(text, placeholders):
-    """Ripristina i tag HTML originali dai placeholder"""
-    for placeholder, original in placeholders.items():
-        text = text.replace(placeholder, original)
+    """Non più necessario - la traduzione avviene direttamente in protect_html_tags"""
     return text
 
 def fix_spacing(text):
