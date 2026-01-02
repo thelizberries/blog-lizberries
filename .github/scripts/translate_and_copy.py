@@ -216,7 +216,10 @@ for post in src_dir.glob("*.md"):
     translated_title = ""
     if title_match:
         original_title = title_match.group(1).strip()
-        translated_title = translator.translate(original_title, src="it", dest="en").text
+        # Sostituisci apostrofi problematici con spazi prima della traduzione
+        clean_title = original_title.replace("'", "' ").replace("'", "' ")
+        clean_title = re.sub(r'\s+', ' ', clean_title)  # Rimuovi spazi multipli
+        translated_title = translator.translate(clean_title, src="it", dest="en").text
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_title}\3', fm)
     

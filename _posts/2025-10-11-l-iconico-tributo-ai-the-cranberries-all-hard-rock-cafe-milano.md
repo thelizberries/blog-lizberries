@@ -8,7 +8,7 @@ image: /assets/images/posts/Hard rock cafè.webp
 
 ## Un venerdì da ricordare all'Hard Rock Cafè
 
-Che serata incredibile abbiamo vissuto venerdì scorso all’Hard Rock Café!
+Che serata incredibile abbiamo vissuto venerdì scorso all'Hard Rock Café!
 
 
 <!--more-->
