@@ -220,6 +220,8 @@ for post in src_dir.glob("*.md"):
         clean_title = original_title.replace("'", "' ").replace("'", "' ")
         clean_title = re.sub(r'\s+', ' ', clean_title)  # Rimuovi spazi multipli
         translated_title = translator.translate(clean_title, src="it", dest="en").text
+        # Sostituisci apici singoli con carattere tipografico per evitare problemi YAML
+        translated_title = translated_title.replace("'", "'")
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_title}\3', fm)
     
@@ -228,6 +230,8 @@ for post in src_dir.glob("*.md"):
     if description_match:
         original_description = description_match.group(1).strip()
         translated_description = translator.translate(original_description, src="it", dest="en").text
+        # Sostituisci apici singoli con carattere tipografico per evitare problemi YAML
+        translated_description = translated_description.replace("'", "'")
         fm = re.sub(r'(description:\s*["\']?)([^"\'\n]+)(["\']?)', 
                     rf'\1{translated_description}\3', fm)
     
