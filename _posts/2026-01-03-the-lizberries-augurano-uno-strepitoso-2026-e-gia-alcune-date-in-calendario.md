@@ -63,4 +63,4 @@ Un caloroso augurio da parte di tutti noi dei Lizberries: che il 2026 sia straor
 
 **<a href="https://www.instagram.com/thelizberries/" target="_blank" rel="noopener" style="text-decoration: underline;">Instagram🎙</a>**
 
-**<a href="https://www.thelizards.it/lizberries/" target="_blank" rel="noopener" style="text-decoration: underline;">Acquista i biglietti👇</a>**
+**<a href="https://www.thelizards.it/lizberries/#showcase-background-live-lizberries" target="_blank" rel="noopener" style="text-decoration: underline;">Acquista i biglietti👇</a>**
