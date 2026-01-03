@@ -2,6 +2,7 @@ from googletrans import Translator
 from pathlib import Path
 import re
 import shutil
+import hashlib
 
 translator = Translator()
 
@@ -198,13 +199,15 @@ for post in src_dir.glob("*.md"):
 
     # Se esiste già, controlla se è stato modificato
     if existing_en_post:
-        # Leggi il contenuto del post italiano dal post inglese esistente
-        en_text = existing_en_post.read_text(encoding="utf-8")
+        # Calcola l'hash del contenuto italiano corrente
+        current_hash = hashlib.md5(text.encode('utf-8')).hexdigest()
         
-        # Verifica se il contenuto è cambiato (confronto semplice sulla lunghezza)
-        # Un metodo più accurato sarebbe salvare un hash, ma questo è sufficiente
-        if len(text) == len(en_text):
-            # Probabilmente non è cambiato, salta
+        # Leggi l'hash salvato nel post inglese
+        en_text = existing_en_post.read_text(encoding="utf-8")
+        saved_hash_match = re.search(r'source_hash:\s*["\']?([^"\'\n]+)["\']?', en_text)
+        
+        if saved_hash_match and saved_hash_match.group(1).strip() == current_hash:
+            # Il contenuto non è cambiato, salta la traduzione
             continue
         else:
             print(f"🔄 Updating: {post.name}")
@@ -220,25 +223,27 @@ for post in src_dir.glob("*.md"):
     if title_match:
         original_title = title_match.group(1).strip()
         translated_title = translator.translate(original_title, src="it", dest="en").text
-        # Sostituisci doppi apici interni con virgolette tipografiche per YAML
-        translated_title = translated_title.replace('"', '"').replace('"', '"')
+        # Sostituisci eventuali doppi apici dritti interni con virgolette tipografiche per YAML
+        translated_title = translated_title.replace('"', '"')
         # Sostituisci il titolo assicurandoti che sia wrappato con doppi apici
         fm = re.sub(r'title:\s*["\']?[^"\'\n]+["\']?', 
                     f'title: "{translated_title}"', fm)
     
     # Traduci la descrizione nel front matter (REGEX CORRETTA)
-    description_match = re.search(r'description:\s*["\']?([^"\'\n]+)["\']?', fm)
+    # Usa una regex che cattura tutto tra i delimitatori, anche con virgolette tipografiche interne
+    description_match = re.search(r'description:\s*["\'](.+?)["\']', fm, re.DOTALL)
     if description_match:
         original_description = description_match.group(1).strip()
         translated_description = translator.translate(original_description, src="it", dest="en").text
-        # Sostituisci doppi apici interni con virgolette tipografiche per YAML
-        translated_description = translated_description.replace('"', '"').replace('"', '"')
+        # Sostituisci eventuali doppi apici dritti interni con virgolette tipografiche per YAML
+        translated_description = translated_description.replace('"', '"')
         # Sostituisci la description assicurandoti che sia wrappata con doppi apici
-        fm = re.sub(r'description:\s*["\']?[^"\'\n]+["\']?', 
-                    f'description: "{translated_description}"', fm)
+        fm = re.sub(r'description:\s*["\'].+?["\']', 
+                    f'description: "{translated_description}"', fm, flags=re.DOTALL)
     
-    # Aggiungi original_file al front matter
-    fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\n'
+    # Aggiungi original_file e hash del sorgente al front matter
+    current_hash = hashlib.md5(text.encode('utf-8')).hexdigest()
+    fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\nsource_hash: "{current_hash}"\n'
     
     # Proteggi i tag HTML prima della traduzione
     protected_content, html_placeholders = protect_html_tags(content)
