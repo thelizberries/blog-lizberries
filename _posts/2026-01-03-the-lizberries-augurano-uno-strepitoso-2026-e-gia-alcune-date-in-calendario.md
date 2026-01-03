@@ -52,6 +52,8 @@ E ancora:
 
 - 14 novembre – Orto Bar, Lubiana, SLO
 
+- 27 novembre - Mc Arthur's Pub, Thun, CH
+
 ## Segui il tour 2026:  non perdere  gli appuntamenti dei prossimi concerti in onore dei The Cranberries
 Il 2026 sarà un anno ricco di tributi, docu-concerti, serate acustiche e momenti celebrativi dedicati alla musica dei The Cranberries, al loro lascito e alla nostra passione per portare questa energia sul palco.
 ## 🎶 Non perdete l’occasione di vivere queste emozioni con noi! 
