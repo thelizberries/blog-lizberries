@@ -37,7 +37,7 @@ Ecco altri momenti imperdibili della prima parte dell’anno:
 
 - 17 marzo – Hard Rock Cafè, Milano, IT (gratuito) – San Patrizio
 
-## The Lizberries: Tour in  Irlanda per il compleanno di Dolores O’Riordan e poi Spagna e Slovenia
+## The Lizberries: Tour in  Irlanda per il compleanno di Dolores O’Riordan e poi Spagna, Slovenia e Svizzera
 Non vediamo l’ora di tornare anche in Irlanda per festeggiare il compleanno di Dolores, con concerti speciali:
 - 3 settembre – Monroe's, Galway, IE
 
