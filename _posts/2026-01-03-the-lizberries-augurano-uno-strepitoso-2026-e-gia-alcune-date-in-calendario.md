@@ -19,9 +19,9 @@ Vogliamo augurarvi un anno pieno di musica, emozioni e momenti indimenticabili, 
 Tra i primi appuntamenti dell’anno, non potevano mancare i tributi a **Dolores O’Riordan**:
 - **15 gennaio** – **Shamrock Pub, Lecco, IT** (acoustic gig, gratuito) – commemorazione anniversario morte Dolores
 
-- **16 gennaio – Pogue Mahone’s, Milano, IT **(acoustic gig, gratuito) – commemorazione anniversario morte Dolores
+- **16 gennaio – Pogue Mahone’s, Milano, IT** (acoustic gig, gratuito) – commemorazione anniversario morte Dolores
 
-- **17 gennaio – Teatro Guanella, Milano, IT** – Sulle orme dei The Cranberries: docu-concerto tratto dal nostro ultimo tour estivo in Irlanda
+- **17 gennaio – Teatro Guanella, Milano, IT** – Sulle orme dei The Cranberries: docu-concerto tratto dal nostro ultimo tour estivo in Irlanda - Aquista i biglietti **<a href="https://www.vivaticket.com/it/ticket/the-lizberries-sulle-tracce-dei-cranberries/279229" target="_blank" rel="noopener" style="text-decoration: underline;">>QUI</a>**
 
 ## Concerti  da non perdere sulle note dei The Cranberries: San Patrizio in Italia e Uk
 Ecco altri momenti imperdibili della prima parte dell’anno:
@@ -59,8 +59,8 @@ Il 2026 sarà un anno ricco di tributi, docu-concerti, serate acustiche e moment
 - Social: Segui il backstage e gli aggiornamenti in tempo reale
 Un caloroso augurio da parte di tutti noi dei Lizberries: che il 2026 sia straordinario, musicale e indimenticabile! 💚
 
-**<a href="url"https://www.facebook.com/TheLizberries/?locale=it_IT target="_blank" rel="noopener" style="text-decoration: underline;">Facebook🎼</a>**
+**<a href="https://www.facebook.com/TheLizberries/?locale=it_IT" target="_blank" rel="noopener" style="text-decoration: underline;">Facebook🎼</a>**
 
-**<a href="url"https://www.instagram.com/thelizberries/ target="_blank" rel="noopener" style="text-decoration: underline;">Instagram🎙</a>**
+**<a href="https://www.instagram.com/thelizberries/" target="_blank" rel="noopener" style="text-decoration: underline;">Instagram🎙</a>**
 
-**<a href="url"https://www.thelizards.it/lizberries/ target="_blank" rel="noopener" style="text-decoration: underline;">Acquista i biglietti👇</a>**
+**<a href="https://www.thelizards.it/lizberries/" target="_blank" rel="noopener" style="text-decoration: underline;">Acquista i biglietti👇</a>**
