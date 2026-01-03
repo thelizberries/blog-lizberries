@@ -216,10 +216,7 @@ for post in src_dir.glob("*.md"):
     translated_title = ""
     if title_match:
         original_title = title_match.group(1).strip()
-        # Sostituisci apostrofi problematici con spazi prima della traduzione
-        clean_title = original_title.replace("'", "' ").replace("'", "' ")
-        clean_title = re.sub(r'\s+', ' ', clean_title)  # Rimuovi spazi multipli
-        translated_title = translator.translate(clean_title, src="it", dest="en").text
+        translated_title = translator.translate(original_title, src="it", dest="en").text
         # Sostituisci apici singoli con carattere tipografico per evitare problemi YAML
         translated_title = translated_title.replace("'", "'")
         fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
@@ -258,7 +255,9 @@ for post in src_dir.glob("*.md"):
     date_match = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)\.md', post.name)
     if date_match and translated_title:
         date_prefix = date_match.group(1)
-        english_slug = slugify_english(translated_title)
+        # Rimuovi tutti i tipi di apostrofi prima di creare lo slug
+        title_for_slug = translated_title.replace("'", "").replace("'", "").replace("'", "")
+        english_slug = slugify_english(title_for_slug)
         new_filename = f"{date_prefix}-{english_slug}.md"
     else:
         new_filename = post.name  # Fallback al nome originale
