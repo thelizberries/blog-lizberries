@@ -21,7 +21,7 @@ Tra i primi appuntamenti dell’anno, non potevano mancare i tributi a **Dolores
 
 - **16 gennaio – Pogue Mahone’s, Milano, IT** (acoustic gig, gratuito) – commemorazione anniversario morte Dolores
 
-- **17 gennaio – Teatro Guanella, Milano, IT** – Sulle orme dei The Cranberries: docu-concerto tratto dal nostro ultimo tour estivo in Irlanda - Aquista i biglietti **<a href="https://www.vivaticket.com/it/ticket/the-lizberries-sulle-tracce-dei-cranberries/279229" target="_blank" rel="noopener" style="text-decoration: underline;">>QUI</a>**
+- **17 gennaio – Teatro Guanella, Milano, IT** – Sulle orme dei The Cranberries: docu-concerto tratto dal nostro ultimo tour estivo in Irlanda - Aquista i biglietti **<a href="https://www.vivaticket.com/it/ticket/the-lizberries-sulle-tracce-dei-cranberries/279229" target="_blank" rel="noopener" style="text-decoration: underline;">QUI</a>**
 
 ## Concerti  da non perdere sulle note dei The Cranberries: San Patrizio in Italia e Uk
 Ecco altri momenti imperdibili della prima parte dell’anno:
