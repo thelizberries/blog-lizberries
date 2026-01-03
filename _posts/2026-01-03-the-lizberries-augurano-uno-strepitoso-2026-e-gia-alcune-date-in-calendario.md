@@ -2,19 +2,17 @@
 layout: post
 title: 'The Lizberries augurano uno strepitoso 2026... e già alcune date in calendario! 🎶💚'
 date: 2026-01-03
-description: ' The Lizberries augurano un anno pieno di musica ai  fans e condividono le date del tour 2026 in ricordo di Dolores O’Riordan e la sua band, The Cranberries.'
+description: 'The Lizberries augurano un anno pieno di musica ai  fans e condividono le date del tour 2026 in ricordo di Dolores O’Riordan e la sua band, The Cranberries.'
 image: /assets/images/posts/Cork Cyprus Avenue 2.webp
 ---
 
-## Tour 2026: un anno pieno di musica ed emozioni 
+## Tour 2026: un anno pieno di musica ed emozioni sulle note dei The Cranberries
 
 <!--more-->
 
 
-sulle note dei The Cranberries
-
 Cari amici,
-Il 2026 è finalmente arrivato e noi dei Lizberries non potremmo essere più emozionati! 🎉
+il 2026 è finalmente arrivato e noi dei Lizberries non potremmo essere più emozionati! 🎉
 
 Vogliamo augurarvi un anno pieno di musica, emozioni e momenti indimenticabili, e siamo felici di condividere con voi alcune date già programmate per i nostri concerti in Italia, Regno Unito, Irlanda, Spagna e Slovenia.
 ## Gennaio in ricordo di Dolores O'Riordan
