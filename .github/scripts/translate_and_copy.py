@@ -217,8 +217,8 @@ for post in src_dir.glob("*.md"):
     if title_match:
         original_title = title_match.group(1).strip()
         translated_title = translator.translate(original_title, src="it", dest="en").text
-        # Escape dei doppi apici interni per YAML
-        translated_title = translated_title.replace('"', '\\"')
+        # Sostituisci doppi apici interni con virgolette tipografiche per YAML
+        translated_title = translated_title.replace('"', '"').replace('"', '"')
         # Sostituisci il titolo assicurandoti che sia wrappato con doppi apici
         fm = re.sub(r'title:\s*["\']?[^"\'\n]+["\']?', 
                     f'title: "{translated_title}"', fm)
@@ -228,8 +228,8 @@ for post in src_dir.glob("*.md"):
     if description_match:
         original_description = description_match.group(1).strip()
         translated_description = translator.translate(original_description, src="it", dest="en").text
-        # Escape dei doppi apici interni per YAML
-        translated_description = translated_description.replace('"', '\\"')
+        # Sostituisci doppi apici interni con virgolette tipografiche per YAML
+        translated_description = translated_description.replace('"', '"').replace('"', '"')
         # Sostituisci la description assicurandoti che sia wrappata con doppi apici
         fm = re.sub(r'description:\s*["\']?[^"\'\n]+["\']?', 
                     f'description: "{translated_description}"', fm)
