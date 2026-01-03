@@ -14,7 +14,7 @@ image: /assets/images/posts/Cork Cyprus Avenue 2.webp
 Cari amici,
 il 2026 è finalmente arrivato e noi dei Lizberries non potremmo essere più emozionati! 🎉
 
-Vogliamo augurarvi un anno pieno di musica, emozioni e momenti indimenticabili, e siamo felici di condividere con voi alcune date già programmate per i nostri concerti in Italia, Regno Unito, Irlanda, Spagna e Slovenia.
+Vogliamo augurarvi un anno pieno di musica, emozioni e momenti indimenticabili, e siamo felici di condividere con voi alcune date già programmate per i nostri concerti in Italia, Regno Unito, Irlanda, Spagna, Slovenia e Svizzera.
 ## Gennaio in ricordo di Dolores O'Riordan
 Tra i primi appuntamenti dell’anno, non potevano mancare i tributi a **Dolores O’Riordan**:
 - **15 gennaio** – **Shamrock Pub, Lecco, IT** (acoustic gig, gratuito) – commemorazione anniversario morte Dolores
