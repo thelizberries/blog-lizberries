@@ -216,25 +216,23 @@ for post in src_dir.glob("*.md"):
     translated_title = ""
     if title_match:
         original_title = title_match.group(1).strip()
-        # Sostituisci apostrofi nell'originale prima della traduzione
-        clean_title = original_title.replace("'", "'").replace("'", "'").replace("`", "'")
-        translated_title = translator.translate(clean_title, src="it", dest="en").text
-        # Sostituisci TUTTI i tipi di apostrofi nel risultato tradotto
-        translated_title = translated_title.replace("'", "'").replace("'", "'").replace("`", "'")
-        fm = re.sub(r'(title:\s*["\']?)([^"\'\n]+)(["\']?)', 
-                    rf'\1{translated_title}\3', fm)
+        translated_title = translator.translate(original_title, src="it", dest="en").text
+        # Escape dei doppi apici interni per YAML
+        translated_title = translated_title.replace('"', '\\"')
+        # Sostituisci il titolo assicurandoti che sia wrappato con doppi apici
+        fm = re.sub(r'title:\s*["\']?[^"\'\n]+["\']?', 
+                    f'title: "{translated_title}"', fm)
     
     # Traduci la descrizione nel front matter (REGEX CORRETTA)
     description_match = re.search(r'description:\s*["\']?([^"\'\n]+)["\']?', fm)
     if description_match:
         original_description = description_match.group(1).strip()
-        # Sostituisci apostrofi nell'originale prima della traduzione
-        clean_description = original_description.replace("'", "'").replace("'", "'").replace("`", "'")
-        translated_description = translator.translate(clean_description, src="it", dest="en").text
-        # Sostituisci TUTTI i tipi di apostrofi nel risultato tradotto
-        translated_description = translated_description.replace("'", "'").replace("'", "'").replace("`", "'")
-        fm = re.sub(r'(description:\s*["\']?)([^"\'\n]+)(["\']?)', 
-                    rf'\1{translated_description}\3', fm)
+        translated_description = translator.translate(original_description, src="it", dest="en").text
+        # Escape dei doppi apici interni per YAML
+        translated_description = translated_description.replace('"', '\\"')
+        # Sostituisci la description assicurandoti che sia wrappata con doppi apici
+        fm = re.sub(r'description:\s*["\']?[^"\'\n]+["\']?', 
+                    f'description: "{translated_description}"', fm)
     
     # Aggiungi original_file al front matter
     fm = fm.rstrip() + f'\noriginal_file: "{post.name}"\n'
