@@ -28,6 +28,9 @@ def protect_html_tags(text):
         if 'locale=it_IT' in attributes:
             attributes = attributes.replace('locale=it_IT', 'locale=en_US')
         
+        # Normalizza gli spazi tra gli attributi (assicura uno spazio prima di ogni attributo)
+        attributes = re.sub(r'(\S)(href|target|rel|style|class|id)=', r'\1 \2=', attributes)
+        
         # Ricostruisce il tag con il testo tradotto
         return f'<a{attributes}>{translated_text}</a>'
     
