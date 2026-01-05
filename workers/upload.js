@@ -178,6 +178,25 @@ async function handlePostCreation(data, GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO,
     );
   }
 
+  // Validazione titolo: estrai dal front matter e verifica lunghezza
+  const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
+  if (titleMatch) {
+    const title = titleMatch[1];
+    if (title.length > 51) {
+      return new Response(
+        JSON.stringify({ 
+          error: `Titolo troppo lungo: ${title.length} caratteri. Massimo 51 caratteri per SEO (titolo completo: "Titolo - Lizberries Blog")`,
+          titleLength: title.length,
+          maxLength: 51
+        }),
+        { 
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    }
+  }
+
   // Verifica e correggi il marcatore <!--more-->
   let processedContent = ensureMoreMarker(content);
 
