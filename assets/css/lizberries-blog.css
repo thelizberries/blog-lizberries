@@ -219,7 +219,7 @@ header.blog-header nav a.lang-link.active {
 
 .read-more {
   text-align: right;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 0;
   font-size: 0.85rem;
   transition: color 0.3s ease;
 }
