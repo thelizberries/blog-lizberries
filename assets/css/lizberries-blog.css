@@ -83,6 +83,13 @@ header.blog-header nav a.lang-link.active {
   height: 446.67px; /* altezza fissa */
   justify-content: space-between; /* mantiene proporzioni tra contenuto e margini */
 }
+
+.post-preview a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .post-preview:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
@@ -110,6 +117,11 @@ header.blog-header nav a.lang-link.active {
 .post-preview .excerpt {
   padding: 0 1rem 1rem;
   color: var(--muted);
+}
+
+.post-preview .read-more {
+  margin-top: auto;
+  text-align: right;
 }
 
 .post-preview img {
