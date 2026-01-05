@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "L’iconico tributo ai The Cranberries all’Hard Rock cafè Milano"
+title: "Tributo ai The Cranberries all'Hard Rock Milano"
 date: 2025-10-11
 description: "Rivivi il nostro fantastico concerto tributo ai The Cranberries all’Hard Rock cafè Milano e se te lo sei perso scopri la prossima data."
 image: /assets/images/posts/Hard rock cafè.webp

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dicembre di pausa e ritorno live a Milano con la musica dei The Cranberries"
+title: "Pausa dicembre e ritorno live a Milano"
 date: 2025-12-13
 description: "I Lizberries si prendono una pausa a dicembre, ma tornano il 17 gennaio al Teatro Guanella con uno spettacolo dedicato alla loro tournée in Irlanda."
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'La magia del Natale: un canto che tocca l’anima'
+title: "La magia del Natale: un canto emozionante"
 date: 2025-12-20
-description: 'Ascolta “Ave Maria” cantata da Dolores O’Riordan, l’iconica voce dei The Cranberries e Luciano Pavarotti: Un brano straordinario che unisce la voce rock di Dolores ORiordan'
+description: "Ascolta “Ave Maria” cantata da Dolores O’Riordan, l’iconica voce dei The Cranberries e Luciano Pavarotti: Un brano straordinario che unisce la voce rock di Dolores O’Riordan"
 image: /assets/images/posts/pavarotti.webp
 ---
 

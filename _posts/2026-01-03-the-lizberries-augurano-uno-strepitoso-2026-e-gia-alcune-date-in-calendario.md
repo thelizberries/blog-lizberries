@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'The Lizberries augurano uno strepitoso 2026... e già alcune date in calendario! 🎶💚'
+title: "The Lizberries: strepitoso 2026 in arrivo! 🎶💚"
 date: 2026-01-03
-description: 'The Lizberries augurano un anno pieno di musica ai  fans e condividono le date del tour 2026 in ricordo di Dolores O’Riordan e la sua band, The Cranberries.'
+description: "he Lizberries augurano un anno pieno di musica ai  fans e condividono le date del tour 2026 in ricordo di Dolores O’Riordan e la sua band, The Cranberries."
 image: /assets/images/posts/Cork Cyprus Avenue 2.webp
 ---
 
