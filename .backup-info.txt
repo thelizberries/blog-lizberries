@@ -1,0 +1,30 @@
+========================================
+BACKUP AUTOMATICO DEL BLOG LIZBERRIES
+========================================
+
+Data backup: 2026-01-09
+Ora backup: 04:00:32 UTC
+Commit principale: 9a1bc92570b87099e038a6960171bd0b61f75b2a
+Branch principale: main
+
+Questo backup include:
+- Tutti i post in _posts/
+- Tutte le immagini in assets/
+- Configurazioni Jekyll (_config.yml)
+- Workflow GitHub Actions (.github/workflows/)
+- Scripts di traduzione (.github/scripts/)
+- Layout e include (_layouts/, _includes/)
+- Fogli di stile (assets/css/)
+- File di configurazione (wrangler.toml, etc.)
+
+Per ripristinare questo backup:
+1. git checkout backup/2026-01-09
+2. git checkout -b restore-from-backup
+3. Verifica che tutto sia corretto
+4. git checkout main
+5. git reset --hard restore-from-backup
+6. git push --force origin main
+
+ATTENZIONE: Il ripristino con --force sovrascrive
+completamente il branch main. Usa con cautela!
+========================================
