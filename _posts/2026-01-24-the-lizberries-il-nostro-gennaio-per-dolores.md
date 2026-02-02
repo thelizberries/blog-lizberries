@@ -7,10 +7,15 @@ image: /assets/images/posts/The lizberries omaggio a Dolores.webp
 ---
 
 ## I  concerti di gennaio: il nostro viaggio nei sentimenti sulle note dei The Cranberries
-Ci sono serate che restano impresse non solo per la musica, ma per l’energia che nasce spontanea tra palco e pubblico.
+Ci sono serate che restano impresse non solo per la musica, 
+
+
+<!--more-->
+
+ma per l’energia che nasce spontanea tra palco e pubblico.
 
 Così è stato per il nostro mini-tour di gennaio, in cui tre concerti si sono trasformati in un vero e proprio viaggio emotivo.
-<!--more-->
+
 ## Lo Shamrock Pub di Lecco: il nostro locale del cuore dove ricordare Dolores O’Riordan
 
 La prima tappa è stata al **The Shamrock Pub di Lecco**, un locale intimo, dal sapore autenticamente irlandese. 
