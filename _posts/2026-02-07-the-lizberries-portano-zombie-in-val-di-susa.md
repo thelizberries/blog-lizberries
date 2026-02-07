@@ -8,6 +8,8 @@ image: /assets/images/posts/The Lizberries al Maravallino.webp
 
 ## Un ingaggio piacevole e inaspettato: le più belle canzoni dei The Cranberries a Sauze d’Oulx
 Questa volta è successo tutto molto in fretta, quasi per caso
+
+
 <!--more-->
 
 «Siete liberi venerdì per un concerto al Miravallino di Sauze d'Oulx?»
