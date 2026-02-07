@@ -34,7 +34,7 @@ E invece eravamo lì, a divertirci con il pubblico e nel pubblico. Il palco, pic
 Ringraziamo di cuore per questa bellissima esperienza, conclusa poi con una notte in un appartamento altrettanto speciale: Casa - elé a Exilles, che ci ha accolti con calore e intimità, quasi fosse una casetta delle favole. Cosa si può volere di più?
 ## Non perdetevi la nostra acoustic session al Pogue Mahone’s
 Ma non smettiamo di riscaldare queste notti fredde.
-Vi aspettiamo lunedì 9 febbraio per una **intimate acoustic session** al** Pogue Mahone’s** di Milano: niente elettricità, niente costruzioni artificiali. 
+Vi aspettiamo lunedì 9 febbraio per una **intimate acoustic session** al **Pogue Mahone’s** di Milano: niente elettricità, niente costruzioni artificiali. 
 
 La chitarra di Mattia, la voce di Cristina e la voce del pubblico intorno a un tavolo, come nei veri pub irlandesi. 
 
