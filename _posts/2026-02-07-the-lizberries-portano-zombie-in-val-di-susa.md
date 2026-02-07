@@ -42,7 +42,7 @@ Per scaldare corde vocali e cuori, mentre fuori sferza il freddo e la pioggia ba
 
 Volete vivere dal vivo l’energia dei The Cranberries?
 
-Consultate il **<a href="https://www.thelizards.it/lizberries/#showcase-background-live-lizberriesno" target="_blank" rel="noopener" style="text-decoration: underline;">calendario</a>** live nel nostro sito ufficiale
+Consultate il **<a href="https://www.thelizards.it/lizberries/#showcase-background-live-lizberries" target="_blank" rel="noopener" style="text-decoration: underline;">calendario</a>** live nel nostro sito ufficiale
 
 Vi aspettiamo sotto il palco🎤
 
