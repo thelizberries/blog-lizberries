@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Lizberries & The Cranberries:Omaggio al Tortuga"
+title: "The Lizberries & The Cranberries: Omaggio al Tortuga Pub"
 date: 2026-02-27
 description: "Non potete mancare: The Lizberries si esibiscono in uno dei loro locali preferiti. Cantate con noi The Cranberries stasera 28/02 al Tortuga Pub"
 image: /assets/images/posts/The Lizberries@Tortuga Pub.webp
@@ -8,7 +8,10 @@ image: /assets/images/posts/The Lizberries@Tortuga Pub.webp
 
 ## Torniamo a casa: The Lizberries con The Cranberries al Tortuga Pub
 Stasera torniamo a suonare in uno dei nostri locali storici. 
-<!--more-->
+
+<!-- more -->
+
+
 **Uno dei primi che ha creduto in noi** quando abbiamo iniziato a esibirci come Lizberries. 
 
 E ogni volta che rimettiamo piede lì dentro è un po’ come tornare a casa. Non vediamo l’ora!
