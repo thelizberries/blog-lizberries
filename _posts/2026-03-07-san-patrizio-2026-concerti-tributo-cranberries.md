@@ -5,13 +5,11 @@ date: 2026-03-07
 description: "Scopri tutti i nostri concerti per San Patrizio 2026 dedicati ai Cranberries: date a Busto Arsizio, Liverpool, Manchester, Chester e Milano all’Hard Rock Cafe"
 image: /assets/images/posts/St.Patrick's 2026.webp
 ---
-San Patrizio 2026: concerti tributo ai Cranberries tra Italia e Regno Unito ☘️
+## San Patrizio 2026: concerti tributo ai Cranberries tra Italia e Regno Unito ☘️
 
 <!--more-->
 
-<!-- more -->
-
-Il San Patrizio 2026 (St. Patrick’s Day) si avvicina e con lui torna una delle feste più amate dedicate alla cultura irlandese. Tra trifogli, Guinness e musica dal vivo, il modo migliore per celebrare l’Irlanda è cantare i grandi successi dei Cranberries, una delle band più iconiche della scena rock irlandese.
+San Patrizio 2026 (St. Patrick’s Day) si avvicina e con lui torna una delle feste più amate dedicate alla cultura irlandese. Tra trifogli, Guinness e musica dal vivo, il modo migliore per celebrare l’Irlanda è cantare i grandi successi dei Cranberries, una delle band più iconiche della scena rock irlandese.
 
 Per l’occasione prenderà il via un mini tour speciale per San Patrizio 2026, con concerti tra Italia e Regno Unito, dedicati alla musica dei Cranberries e alla straordinaria voce di Dolores O’Riordan.
 
@@ -21,8 +19,9 @@ Ecco tutte le date dove potrete vivere l’atmosfera di St. Patrick’s Day con 
 
 Il tour di San Patrizio 2026 inizierà con una serata acustica speciale in Lombardia, perfetta per scaldare l’atmosfera prima delle celebrazioni ufficiali.
 
-📍 The Millennium Irish Pub – Busto Arsizio (VA)</br>
-🕘 Ore 20:30</br>
+📍 The Millennium Irish Pub – Busto Arsizio (VA)
+📅 Martedì 10 marzo
+🕘 Ore 20:30
 🎸 Un viaggio acustico tra le melodie più amate di Dolores.
 
 Durante il concerto verranno proposte versioni acustiche dei brani più amati dei Cranberries, in un viaggio musicale che attraversa le canzoni simbolo della band irlandese.</br>
@@ -34,22 +33,25 @@ Dopo la data italiana, il tour si sposterà nel Regno Unito, con tre concerti de
 
 ## Concerto a Liverpool – Invisible Wind Factory
 
-📍 Liverpool</br>
-🕘 Sabato ore 21:00
+📍 Liverpool
+📅 Domenica 15 marzo
+🕘 Ore 21:00
 
 Liverpool è una città simbolo della musica internazionale. In questa location unica porteremo sul palco un tributo ai Cranberries nel cuore della scena musicale britannica.
 
 ## Concerto a Manchester – Freight Island
 
-📍 Manchester</br>
-🕑 Domenica ore 14:00
+📍 Manchester
+📅 Domenica 15 marzo
+🕑 Ore 14:00
 
 Manchester ospiterà un live pomeridiano dedicato ai grandi classici dei Cranberries, in uno degli spazi più dinamici dedicati alla musica e agli eventi dal vivo.
 
 ## Concerto a Chester – Alexander’s Live
 
-📍 Chester</br>
-🕘 Domenica ore 21:00
+📍 Chester
+📅 Domenica 15 marzo
+🕘 Ore 21:00
 
 Il weekend britannico si concluderà con un concerto serale in uno dei club storici della musica live inglese.
 
@@ -57,8 +59,8 @@ Il weekend britannico si concluderà con un concerto serale in uno dei club stor
 
 Il gran finale di San Patrizio 2026 si terrà proprio il 17 marzo, giorno ufficiale della festa irlandese.
 
-📍 Hard Rock Cafe – Milano (Via Dante)</br>
-📅 17 marzo 2026</br>
+📍 Hard Rock Cafe – Milano (Via Dante)
+📅 Martedì 17 marzo
 🕘 Ore 21:00
 
 Una serata speciale per festeggiare St. Patrick’s Day a Milano, con musica dal vivo, atmosfera irlandese e i grandi successi dei Cranberries da cantare insieme.
@@ -73,4 +75,4 @@ Se ami i Cranberries, la musica live e l’atmosfera dei pub irlandesi, preparat
 
 Indossa qualcosa di verde, ordina una Guinness e unisciti al coro sotto il palco.
 
-Sláinte! 🍻
+## Sláinte! 🍻
