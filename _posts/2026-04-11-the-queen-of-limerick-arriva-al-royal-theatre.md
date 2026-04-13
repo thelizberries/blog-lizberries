@@ -2,7 +2,7 @@
 layout: post
 title: "The Queen of Limerick arriva al Royal Theatre"
 date: 2026-04-11
-description: "The Queen of Limerick arriva al Royal Theatre di Castlebar il 31 maggio 2026: un Irish rock recital dedicato a Dolores O’Riordan dei The Cranberries"
+description: "The Queen of Limerick arriva al Royal Theatre di Castlebar il 31 maggio 2026: un Irish rock recital dedicato a Dolores O'Riordan dei The Cranberries"
 image: /assets/images/posts/tfroyal_Queen_Of_Limerick.webp
 ---
 The Queen of Limerick arriva finalmente in Irlanda per una serata che si preannuncia indimenticabile.
