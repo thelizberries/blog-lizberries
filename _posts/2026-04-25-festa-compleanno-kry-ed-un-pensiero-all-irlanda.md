@@ -3,6 +3,7 @@ layout: post
 title: "Festa compleanno Kry ed un pensiero all'Irlanda"
 date: 2026-04-25
 description: "The Lizberries live 2026: compleanno di Liz Kry e concerto a Castlebar con The Queen of Limerick, tributo a Dolores O’Riordan."
+image: /assets/images/posts/compleanno_kry_2026_con_Lizberries.webp
 ---
 ## Il compleanno di Liz Kry nella Giornata della Voce
 Per Liz Kry, il 16 aprile non è una data come le altre.
@@ -25,11 +26,10 @@ Si tratta di un recital dedicato a Dolores O’Riordan, che unisce musica, racco
 Portarlo proprio in Irlanda ha un valore simbolico forte. Significa riportare questa musica nel luogo in cui è nata.
 
 ### Dettagli del concerto a Castlebar
-Quando: 31 maggio 2026
-
-Dove: Royal Theatre Castlebar</br>
-Spettacolo: The Queen of Limerick</br>
-Con: The Lizberries, Gens d’Ys, Andrea Rock</br>
+Quando: 31 maggio 2026<br>
+Dove: Royal Theatre Castlebar<br>
+Spettacolo: The Queen of Limerick<br>
+Con: The Lizberries, Gens d’Ys, Andrea Rock<br>
 👉 Acquista i biglietti: <a href="https://tfroyal.ticketsolve.com/ticketbooth/shows/1173674482" target="_blank" rel="noopener">qui</a>!
 
 ## Un percorso tra musica e identità
