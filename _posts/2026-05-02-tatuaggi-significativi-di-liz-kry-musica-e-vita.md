@@ -8,7 +8,6 @@ image: /assets/images/posts/Liz Kry con tatuaggio su avambraccio con frase di Do
 C'è chi scrive diari, chi scatta fotografie.
 Io ho scelto di imprimere i momenti
 
-
 <!--more-->
 
 più importanti della mia vita direttamente sulla pelle.<br>
