@@ -3,10 +3,11 @@ layout: post
 title: "Tatuaggi significativi di Liz Kry: musica e vita"
 date: 2026-05-02
 description: "I tatuaggi significativi di Liz Kry raccontano musica, famiglia e sogni: dal diploma LLCM a Dolores O’Riordan e ai The Lizards."
-image: /assets/images/posts/WhatsApp Image 2026-04-28 at 09.13.35.webp
+image: /assets/images/posts/Liz Kry con tatuaggio su avambraccio con frase di Dolores ORiordan.webp
 ---
-C'è chi scrive diari, chi scatta fotografie.<br>
+C'è chi scrive diari, chi scatta fotografie.
 Io ho scelto di imprimere i momenti
+
 
 <!--more-->
 
