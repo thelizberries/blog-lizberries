@@ -44,4 +44,4 @@ Portare il nostro tributo in Irlanda non è una tappa di una tournée: è un cer
 
 Torneremo a Radio Deejay Fox con le scarpe ancora bagnate e le orecchie piene di vento. Un abbraccio enorme a tutto lo staff — è una delle webradio più amate d'Italia, e si vede, si sente, ogni volta che saliamo in quella stanza.
 
-👉 **<a href="https://blog.lizberries.thelizards.it/2026/04/11/the-queen-of-limerick-arriva-al-royal-theatre.html" target="_blank" rel="noopener" style="text-decoration: underline;">Scopri The Queen of Limerick al TF Royal Theatre →</a>**
+<!-- 👉 **<a href="https://blog.lizberries.thelizards.it/2026/04/11/the-queen-of-limerick-arriva-al-royal-theatre.html" target="_blank" rel="noopener" style="text-decoration: underline;">Scopri The Queen of Limerick al TF Royal Theatre →</a>** -->

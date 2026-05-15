@@ -21,16 +21,16 @@ Subito dopo è arrivata una dedica a se stessa. Un gesto semplice, ma significat
 
 ## The Queen of Limerick a Castlebar
 Dopo il compleanno, l’attenzione si sposta sul prossimo appuntamento.
-A fine maggio, esattamente il 31, la band sarà in Irlanda con il recital The Queen of Limerick. Lo spettacolo andrà in scena al Royal Theatre Castlebar.
+In futuro la band sarà in Irlanda con il recital The Queen of Limerick. Lo spettacolo andrà in scena al Royal Theatre Castlebar.
 Si tratta di un recital dedicato a Dolores O’Riordan, che unisce musica, racconto e danza.
 Portarlo proprio in Irlanda ha un valore simbolico forte. Significa riportare questa musica nel luogo in cui è nata.
 
 ### Dettagli del concerto a Castlebar
-Quando: 31 maggio 2026<br>
+Quando: TBD<br>
 Dove: Royal Theatre Castlebar<br>
 Spettacolo: The Queen of Limerick<br>
 Con: The Lizberries, Gens d’Ys, Andrea Rock<br>
-👉 Acquista i biglietti: <a href="https://tfroyal.ticketsolve.com/ticketbooth/shows/1173674482" target="_blank" rel="noopener">qui</a>!
+<!-- 👉 Acquista i biglietti: <a href="https://tfroyal.ticketsolve.com/ticketbooth/shows/1173674482" target="_blank" rel="noopener">qui</a>! -->
 
 ## Un percorso tra musica e identità
 Questo progetto rappresenta un passaggio importante.

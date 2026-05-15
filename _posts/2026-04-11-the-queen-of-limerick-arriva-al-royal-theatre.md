@@ -9,7 +9,7 @@ The Queen of Limerick arriva finalmente in Irlanda per una serata che si preannu
 
 <!--more-->
 
-Il 31 maggio 2026 alle ore 20:00, lo spettacolo andrà in scena al Royal Theatre di Castlebar, uno dei teatri più importanti del paese.
+Prossimamente, lo spettacolo andrà in scena al Royal Theatre di Castlebar, uno dei teatri più importanti del paese.
 Un evento speciale che porterà sul palco musica, danza ed emozione in un racconto intenso dedicato a Dolores O’Riordan, voce simbolo dei Cranberries.
 ## Un Irish rock recital tra musica e danza
 The Queen of Limerick è molto più di un semplice tributo. È un Irish rock recital capace di unire concerto, racconto e coreografie in uno spettacolo coinvolgente e originale.
@@ -32,4 +32,4 @@ Non vediamo l’ora di condividere con voi questa avventura.
 
 **Ci vediamo a Castlebar.** 💚
 
-Acquista i biglietti **<a href="https://tfroyal.ticketsolve.com/ticketbooth/shows/1173674482?_gl=1*1wdpov6*_ga*ODkyMzEwMTc1LjE3NjgwNjgwNTg.*_ga_DN1ZMCKZPC*czE3NzU4MDU3NzckbzMkZzAkdDE3NzU4MDU3NzckajYwJGwwJGgw" target="_blank" rel="noopener">qui</a>**!
+<!-- Acquista i biglietti **<a href="https://tfroyal.ticketsolve.com/ticketbooth/shows/1173674482?_gl=1*1wdpov6*_ga*ODkyMzEwMTc1LjE3NjgwNjgwNTg.*_ga_DN1ZMCKZPC*czE3NzU4MDU3NzckbzMkZzAkdDE3NzU4MDU3NzckajYwJGwwJGgw" target="_blank" rel="noopener">qui</a>**! -->
