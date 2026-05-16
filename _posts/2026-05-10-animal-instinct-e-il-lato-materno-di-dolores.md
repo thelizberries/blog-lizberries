@@ -1,34 +1,54 @@
 ---
 layout: post
-title: "Animal Instinct e il lato materno di Dolores"
+title: "Animal Instinct e il lato materno di Dolores O'Riordan"
 date: 2026-05-10
 description: "Animal Instinct racconta il lato materno di Dolores O’Riodan tra amore, difficoltà emotive e protezione verso i figli"
 image: /assets/images/posts/IMG_1935.webp
 ---
-IL SIGNIFICATO DI “ANIMAL INSTINCT”
-La canzone “Animal Instinct” descrive l’istinto materno come appunto un istinto animale.
+Tra le canzoni più intime dei <span>The Cranberries</span>, Animal Instinct occupa un posto speciale.
 
-<!--more-->
+Pubblicato nel 1999 all'interno dell'album Bury the Hatchet, il brano mostra un lato molto personale di <span>Dolores O'Riordan</span>: quello della maternità, della fragilità e del cambiamento interiore.
 
-Parla di una madre che lotta per proteggere i propri figli 
-“So take my hands and come with me/we will change reality/so take my hands and we will pray/they won’t to take you away”
-(Quindi prendi le mie mani e vieni con me/cambieremo la realtà/quindi prendi le mie mani e preghiamo/non ti porteranno via)
-Ma “Animal Instinct” parla anche delle difficoltà sopratutto emotive che la maternità comporta 
-“Suddenly I was feeling depressed/I was utterly and totally stressed/Do you know you make me cry/Do you know you make me die”
-(All’improvviso mi sono sentita depressa/ero completamente e totalmente stressata/tu sai che mi hai fatto piangere/tu sai che mi hai fatto morire)
+Lontana dalle atmosfere più rabbiose di Zombie o dall'energia di altri grandi successi dei Cranberries, Animal Instinct racconta qualcosa di più delicato e profondo.
 
-COME NASCE ANIMAL INSTINCT
-“Animal Instinct” ha origine da un momento ben preciso: Dolores si trovava al supermercato con il figlio che faceva i capricci e una donna le suggerì di schiaffeggiarlo.
-Lei tornò a casa sconvolta e scrisse il ritornello “Animal instinct, animal instinct to me”: l’istinto materno che si ribella per proteggere il proprio piccolo contro il mondo.
+## Una canzone diversa nel repertorio dei Cranberries
 
-IL VIDEO DI “ANIMAL INSTINCT”
-Quello di “Animal Instinct” è un video molto intenso e toccante: è la storia di una madre che riesce a scappare insieme ai figli dal centro dei servizi sociali che, si evince, glie li aveva sottratti.
-I tre sono in condizione di totale indigenza, arrivando anche a dormire in macchina, a mangiare in un fast food per poi andare via senza pagare e a fermarsi a fare l’autostop quando la macchina va in panne.
-Tuttavia la gioia dello stare insieme e del loro legame ritrovato riesce a far trovare loro la felicità nelle piccole cose come vagare senza meta o giocare con le bolle di sapone in mezzo ad un prato.
+Con Animal Instinct, Dolores O’Riordan sembra mettere da parte il personaggio pubblico per raccontare semplicemente sé stessa.
 
-DOLORES O’ RIODAN E LA MATERNITÀ
-Dolores aveva tre figli, Taylor, Molly e Dakota.
-Per lei la maternità era un dono e la considerava il centro della sua vita.
-Pur continuando a lavorare, anche durante una gravidanza, ha sempre messo la famiglia al primo posto. Essere madre, diceva, è più appagante perfino della carriera.
-Avendo sofferto di disturbi emotivi si possono immaginare le difficoltà a cui ha dovuto far fronte ma che non l’hanno mai fermata davvero.
-Dopotutto essere madre è anche questo: un amore forte e capace di andare oltre le problematiche!
+La maternità vissuta in quel periodo influenzò profondamente la scrittura del brano, trasformandolo in una riflessione molto sincera sul legame emotivo tra madre e figlio.
+
+Anche musicalmente, la canzone mantiene toni morbidi e malinconici, lasciando spazio soprattutto all’emozione della voce di Dolores.
+
+## Il significato di Animal Instinct
+
+Il titolo del brano richiama qualcosa di naturale, primordiale e profondamente umano.
+
+Nel testo, Dolores descrive quella trasformazione emotiva che nasce quando la vita cambia improvvisamente prospettiva.
+
+Non si tratta solo di maternità.
+Animal Instinct parla anche di vulnerabilità, protezione e bisogno di riscoprire ciò che conta davvero.
+
+Ed è probabilmente proprio questa sincerità a rendere il brano ancora oggi così vicino a molti fan dei Cranberries.
+
+## Il lato più umano di Dolores O'Riordan
+
+Nel corso della sua carriera, <span>Dolores O'Riordan</span> ha spesso alternato forza e fragilità nelle sue interpretazioni.
+
+Ma in Animal Instinct emerge soprattutto il suo lato più umano.
+
+La voce conserva tutta l’intensità emotiva che ha reso unica la musica dei Cranberries, ma qui viene utilizzata con una delicatezza rara.
+
+Non ci sono grandi esplosioni musicali o arrangiamenti aggressivi.
+La canzone punta tutto sull’atmosfera e sull’emozione.
+
+## Una delle canzoni più intime dei Cranberries
+
+Forse Animal Instinct non è il primo brano che viene in mente pensando ai grandi successi dei <span>The Cranberries</span>, ma resta una delle canzoni più personali mai scritte da Dolores O’Riordan.
+
+È un brano che racconta un momento preciso della sua vita, trasformandolo però in qualcosa di universale.
+
+Ed è proprio questa autenticità a renderlo ancora oggi così speciale per molti ascoltatori.
+
+---
+
+> *Frame tratto dal videoclip ufficiale di "Animal Instinct" — The Cranberries (1999). © Universal Music Group / tutti i diritti riservati. Immagine utilizzata a scopo illustrativo e di discussione artistica ai sensi dell'art. 70 L. 633/1941.*
