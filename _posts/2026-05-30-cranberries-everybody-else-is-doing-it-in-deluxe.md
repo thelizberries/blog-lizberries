@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Cranberries: Everybody Else Is Doing It in deluxe"
+title: "Everybody Else Is Doing It: il sogno dei Cranberries ritorna"
 date: 2026-05-30
-description: "Everybody Else Is Doing It dei Cranberries è uscito in edizione deluxe remastered. Cristina dei Lizberries racconta perché è il disco più amato di Dolores O'Rio"
-image: /assets/images/posts/konstantinos-hasandras-u633cpBSjro-unsplash.webp
+description: "Everybody Else Is Doing It dei Cranberries torna in edizione deluxe remastered, riportando alla luce la magia di Dolores O'Riordan"
+image: /assets/images/posts/Cranberries Everybody Else Is Doing It Vinyl.webp
 ---
 ## Il ritorno di un disco straordinario
 
@@ -14,10 +14,6 @@ image: /assets/images/posts/konstantinos-hasandras-u633cpBSjro-unsplash.webp
 We?* dei Cranberries è appena tornato in una nuova edizione deluxe remastered. Con lui è tornata la voce di Dolores O'Riordan, la luce degli anni Novanta, il senso di qualcosa di fragile e prezioso insieme. Un debut album che, a distanza di trent'anni, non ha perso nulla della sua forza.
 
 Nella serata del 21 maggio, Andrea Rock ha dedicato uno speciale su Virgin Radio proprio a questo disco. Non un semplice programma radiofonico — una vera immersione emotiva che ci ha riportate dentro quell'universo.
-
-
-
-★
 
 ## Il disco di Dolores che abbiamo amato di più
 
@@ -35,8 +31,6 @@ Tra tutti, un brano merita una menzione speciale: *Them*. Raramente citato, rara
 
 L'album si chiude con *How* — quasi una risoluzione emotiva. Come se Dolores, dopo tutte le ferite e i dubbi, fosse finalmente pronta a lasciarsi alle spalle quella storia e a lanciarsi verso i propri sogni. La puntata si è poi chiusa con un'ulteriore chicca: *Liar*.
 
-★
-
 ## Lo speciale su Virgin Radio: quando e dove
 
 Lo speciale è andato in onda il **21 maggio 2026** su **Virgin Radio**, condotto da **Andrea Rock**.
@@ -44,8 +38,6 @@ Lo speciale è andato in onda il **21 maggio 2026** su **Virgin Radio**, condott
 Il pretesto è stata l'uscita della nuova edizione deluxe remastered dell'album — ma il risultato è stato qualcosa di più: un viaggio emotivo dentro il disco che ha segnato l'inizio di una carriera straordinaria.
 
 Se vuoi approfondire il legame tra Dolores O'Riordan e la sua musica più intima, leggi anche il nostro articolo su **<a href="https://blog.lizberries.thelizards.it/2026/05/10/animal-instinct-e-il-lato-materno-di-dolores.html" target="_blank" rel="noopener" style="text-decoration: underline;">Animal Instinct e il lato materno di Dolores O'Riordan</a>**.
-
-★
 
 ## Continua a seguire i Lizberries
 
