@@ -54,6 +54,33 @@ def fix_spacing(text):
     text = re.sub(r' +', ' ', text)
     return text
 
+APOSTROPHE_VARIANTS = "’‘‛`´ʻʼʹʽʾʿˈˊˋʺ＇"
+
+def normalize_single_quotes(text):
+    """Normalizza tutti i tipi di apostrofo nel carattere ASCII singolo (')."""
+    if not text:
+        return text
+    translation_table = str.maketrans({ch: "'" for ch in APOSTROPHE_VARIANTS})
+    normalized = text.translate(translation_table)
+    # Evita sequenze come '' che possono creare problemi di parsing YAML
+    normalized = re.sub(r"'{2,}", "'", normalized)
+    return normalized
+
+def read_front_matter_value(fm, key):
+    """Legge un valore one-line dal front matter YAML per la chiave richiesta."""
+    match = re.search(rf'^{key}:\s*(.*)$', fm, re.MULTILINE)
+    if not match:
+        return None
+    raw_value = match.group(1).strip()
+    if len(raw_value) >= 2 and ((raw_value[0] == '"' and raw_value[-1] == '"') or (raw_value[0] == "'" and raw_value[-1] == "'")):
+        raw_value = raw_value[1:-1]
+    return raw_value.strip()
+
+def write_front_matter_value(fm, key, value):
+    """Scrive un valore one-line nel front matter YAML con escaping sicuro."""
+    safe_value = value.replace('\\', '\\\\').replace('"', '\\"')
+    return re.sub(rf'^{key}:\s*.*$', f'{key}: "{safe_value}"', fm, count=1, flags=re.MULTILINE)
+
 # Directory per le immagini
 src_images_dir = Path("assets/images/posts")
 dest_images_dir = Path("blog-en/assets/images/posts")
@@ -218,28 +245,20 @@ for post in src_dir.glob("*.md"):
         print(f"📝 Translating: {post.name}")
     
     # Traduci il titolo nel front matter
-    title_match = re.search(r'title:\s*["\']?([^"\'\n]+)["\']?', fm)
     translated_title = ""
-    if title_match:
-        original_title = title_match.group(1).strip()
+    original_title = read_front_matter_value(fm, "title")
+    if original_title:
         translated_title = translator.translate(original_title, src="it", dest="en").text
-        # Sostituisci eventuali doppi apici dritti interni con virgolette tipografiche per YAML
-        translated_title = translated_title.replace('"', '"')
-        # Sostituisci il titolo assicurandoti che sia wrappato con doppi apici
-        fm = re.sub(r'title:\s*["\']?[^"\'\n]+["\']?', 
-                    f'title: "{translated_title}"', fm)
+        translated_title = normalize_single_quotes(translated_title)
+        fm = write_front_matter_value(fm, "title", translated_title)
     
     # Traduci la descrizione nel front matter (REGEX CORRETTA)
     # Usa una regex che cattura tutto tra i delimitatori, anche con virgolette tipografiche interne
-    description_match = re.search(r'description:\s*["\'](.+?)["\']', fm, re.DOTALL)
-    if description_match:
-        original_description = description_match.group(1).strip()
+    original_description = read_front_matter_value(fm, "description")
+    if original_description:
         translated_description = translator.translate(original_description, src="it", dest="en").text
-        # Sostituisci eventuali doppi apici dritti interni con virgolette tipografiche per YAML
-        translated_description = translated_description.replace('"', '"')
-        # Sostituisci la description assicurandoti che sia wrappata con doppi apici
-        fm = re.sub(r'description:\s*["\'].+?["\']', 
-                    f'description: "{translated_description}"', fm, flags=re.DOTALL)
+        translated_description = normalize_single_quotes(translated_description)
+        fm = write_front_matter_value(fm, "description", translated_description)
     
     # Aggiungi original_file e hash del sorgente al front matter
     current_hash = hashlib.md5(text.encode('utf-8')).hexdigest()
@@ -265,8 +284,8 @@ for post in src_dir.glob("*.md"):
     date_match = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)\.md', post.name)
     if date_match and translated_title:
         date_prefix = date_match.group(1)
-        # Rimuovi tutti i tipi di apostrofi prima di creare lo slug
-        title_for_slug = translated_title.replace("'", "").replace("'", "").replace("'", "")
+        # Rimuovi gli apostrofi normalizzati prima di creare lo slug
+        title_for_slug = normalize_single_quotes(translated_title).replace("'", "")
         english_slug = slugify_english(title_for_slug)
         new_filename = f"{date_prefix}-{english_slug}.md"
     else:
