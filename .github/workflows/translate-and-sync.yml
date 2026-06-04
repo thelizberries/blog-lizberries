@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '_posts/**.md'
+      - '.github/scripts/translate_and_copy.py'
+      - 'tests/test_translate_apostrophes.py'
 
 jobs:
   translate:
@@ -24,6 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install googletrans==4.0.0-rc1
+
+      - name: Run apostrophe normalization tests
+        run: python3 tests/test_translate_apostrophes.py -v
 
       - name: Clone English repo
         env:

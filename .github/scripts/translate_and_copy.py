@@ -62,8 +62,11 @@ def normalize_single_quotes(text):
         return text
     translation_table = str.maketrans({ch: "'" for ch in APOSTROPHE_VARIANTS})
     normalized = text.translate(translation_table)
-    # Evita sequenze come '' che possono creare problemi di parsing YAML
+    # Evita sequenze come '' o anche '   ' che possono creare problemi di parsing YAML
+    normalized = re.sub(r"'(\s*)'", "'", normalized)
     normalized = re.sub(r"'{2,}", "'", normalized)
+    # Rimuove apostrofi orfani usati come quote isolate prima di una parola
+    normalized = re.sub(r"(^|\s)'\s+(?=\w)", r"\1", normalized)
     return normalized
 
 def read_front_matter_value(fm, key):
