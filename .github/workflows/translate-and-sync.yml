@@ -1,6 +1,7 @@
 name: Translate and sync to English blog
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
