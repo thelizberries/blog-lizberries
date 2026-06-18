@@ -1,10 +1,182 @@
-from googletrans import Translator
+try:
+    import argostranslate.package
+    import argostranslate.translate
+except ImportError as exc:
+    raise SystemExit(
+        "Missing dependency 'argostranslate'. Install it with: pip install argostranslate"
+    ) from exc
 from pathlib import Path
 import re
 import shutil
 import hashlib
+import json
+import os
+from urllib import error as urllib_error
+from urllib import parse as urllib_parse
+from urllib import request as urllib_request
 
-translator = Translator()
+class TranslationResult:
+    def __init__(self, text):
+        self.text = text
+
+
+class DeepLApiTranslator:
+    """Traduttore DeepL API opzionale con fallback su backend locale."""
+
+    def __init__(self, api_key, timeout_seconds=20):
+        self.api_key = api_key.strip()
+        self.timeout_seconds = timeout_seconds
+        # Le API key Free tipicamente terminano con ':fx'
+        if self.api_key.endswith(":fx"):
+            self.endpoint = "https://api-free.deepl.com/v2/translate"
+        else:
+            self.endpoint = "https://api.deepl.com/v2/translate"
+
+    def translate(self, text, src="it", dest="en"):
+        if text is None or text == "":
+            return TranslationResult(text)
+
+        payload = urllib_parse.urlencode(
+            {
+                "text": text,
+                "source_lang": src.upper(),
+                "target_lang": dest.upper(),
+            }
+        ).encode("utf-8")
+
+        req = urllib_request.Request(
+            self.endpoint,
+            data=payload,
+            headers={"Authorization": f"DeepL-Auth-Key {self.api_key}"},
+            method="POST",
+        )
+
+        with urllib_request.urlopen(req, timeout=self.timeout_seconds) as response:
+            data = json.loads(response.read().decode("utf-8"))
+
+        translated = data["translations"][0]["text"]
+        return TranslationResult(translated)
+
+
+class FreeOfflineTranslator:
+    """Traduttore offline gratuito basato su Argos Translate."""
+
+    def __init__(self):
+        self._translation_cache = {}
+
+    def _ensure_model_installed(self, src, dest):
+        installed_languages = argostranslate.translate.get_installed_languages()
+        from_lang = next((lang for lang in installed_languages if lang.code == src), None)
+        to_lang = next((lang for lang in installed_languages if lang.code == dest), None)
+
+        if from_lang and to_lang:
+            try:
+                from_lang.get_translation(to_lang)
+                return
+            except Exception:
+                pass
+
+        print(f"⬇️ Installing Argos model {src}->{dest} (first run only)...")
+        argostranslate.package.update_package_index()
+        available_packages = argostranslate.package.get_available_packages()
+        package_to_install = next(
+            (
+                pkg
+                for pkg in available_packages
+                if pkg.from_code == src and pkg.to_code == dest
+            ),
+            None,
+        )
+
+        if package_to_install is None:
+            raise RuntimeError(f"No Argos model available for {src}->{dest}")
+
+        downloaded_path = package_to_install.download()
+        argostranslate.package.install_from_path(downloaded_path)
+
+    def _get_translation(self, src, dest):
+        cache_key = (src, dest)
+        if cache_key in self._translation_cache:
+            return self._translation_cache[cache_key]
+
+        self._ensure_model_installed(src, dest)
+        installed_languages = argostranslate.translate.get_installed_languages()
+        from_lang = next((lang for lang in installed_languages if lang.code == src), None)
+        to_lang = next((lang for lang in installed_languages if lang.code == dest), None)
+
+        if not from_lang or not to_lang:
+            raise RuntimeError(f"Argos languages not installed for {src}->{dest}")
+
+        translation = from_lang.get_translation(to_lang)
+        self._translation_cache[cache_key] = translation
+        return translation
+
+    def _split_text(self, text, max_chars=1800):
+        if len(text) <= max_chars:
+            return [text]
+
+        parts = re.split(r"(\n{2,})", text)
+        chunks = []
+        current = ""
+
+        for part in parts:
+            if len(current) + len(part) <= max_chars:
+                current += part
+                continue
+
+            if current:
+                chunks.append(current)
+
+            if len(part) <= max_chars:
+                current = part
+            else:
+                for i in range(0, len(part), max_chars):
+                    chunks.append(part[i : i + max_chars])
+                current = ""
+
+        if current:
+            chunks.append(current)
+
+        return chunks
+
+    def translate(self, text, src="it", dest="en"):
+        if text is None or text == "":
+            return TranslationResult(text)
+
+        translation = self._get_translation(src, dest)
+        chunks = self._split_text(text)
+        translated_text = "".join(translation.translate(chunk) for chunk in chunks)
+        return TranslationResult(translated_text)
+
+
+class HybridTranslator:
+    """Usa DeepL se configurato; in caso di errore ripiega su Argos offline."""
+
+    def __init__(self, primary_translator, fallback_translator):
+        self.primary_translator = primary_translator
+        self.fallback_translator = fallback_translator
+
+    def translate(self, text, src="it", dest="en"):
+        try:
+            return self.primary_translator.translate(text, src=src, dest=dest)
+        except (urllib_error.URLError, urllib_error.HTTPError, TimeoutError, KeyError, ValueError):
+            return self.fallback_translator.translate(text, src=src, dest=dest)
+        except Exception:
+            return self.fallback_translator.translate(text, src=src, dest=dest)
+
+
+argos_translator = FreeOfflineTranslator()
+deepl_api_key = os.getenv("DEEPL_API_KEY", "").strip()
+
+if deepl_api_key:
+    print("🌐 DeepL API key found: hybrid mode enabled (DeepL -> Argos fallback)")
+    translator = HybridTranslator(
+        primary_translator=DeepLApiTranslator(deepl_api_key),
+        fallback_translator=argos_translator,
+    )
+else:
+    print("🧠 No DEEPL_API_KEY set: using Argos offline mode")
+    translator = argos_translator
 
 src_dir = Path("_posts")
 dest_dir = Path("blog-en/_posts")

@@ -25,7 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install googletrans==4.0.0-rc1
+        run: pip install argostranslate
 
       - name: Run apostrophe normalization tests
         run: python3 tests/test_translate_apostrophes.py -v
@@ -37,6 +37,8 @@ jobs:
           git clone https://x-access-token:${PAT}@github.com/thelizberries/blog-lizberries-en.git blog-en
 
       - name: Translate posts to English and copy
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           python3 .github/scripts/translate_and_copy.py
 
