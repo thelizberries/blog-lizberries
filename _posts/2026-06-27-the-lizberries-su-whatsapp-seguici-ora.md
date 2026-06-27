@@ -3,6 +3,7 @@ layout: post
 title: "The Lizberries su WhatsApp: seguici ora"
 date: 2026-06-27
 description: "Il canale WhatsApp ufficiale dei Lizberries è online. Date, anteprime e retroscena del tributo internazionale ai The Cranberries, direttamente sul tuo telefono."
+image: /assets/images/posts/The Lizberries su WhatsApp – canale ufficiale del tributo ai Cranberries.webp
 ---
 
 C'è un modo più diretto per restare in contatto. Lo abbiamo aperto noi.
