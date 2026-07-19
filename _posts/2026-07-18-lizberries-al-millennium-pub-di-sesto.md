@@ -49,7 +49,7 @@ Un'idea originale che ci ha fatto sorridere e che dimostra quanta cura sia stata
 
 Per un attimo ci è sembrato davvero di essere tornati in Irlanda.
 
-Del resto manca ormai pochissimo al nostro prossimo <a href="https://www.thelizards.it/lizberries/#showcase-background-live-lizberries" target="_blank" rel="noopener" style="text-decoration: underline;">tour in Irlanda del 3, 4, 5 e 6 settembre 2026</a>, un appuntamento a cui teniamo particolarmente e del quale vi segnaliamo la nostra Brochure con delle idee di viaggio per quei giorni.
+Del resto manca ormai pochissimo al nostro prossimo <a href="https://www.thelizards.it/lizberries/lizberriesPhotos/brochureIrlanda2026.webp" target="_blank" rel="noopener" style="text-decoration: underline;">tour in Irlanda del 3, 4, 5 e 6 settembre 2026</a>, un appuntamento a cui teniamo particolarmente e del quale vi segnaliamo la nostra Brochure con delle idee di viaggio per quei giorni.
 
 <h2>Un concerto sold out dedicato ai Cranberries</h2>
 
