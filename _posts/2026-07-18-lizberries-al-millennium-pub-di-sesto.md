@@ -5,7 +5,7 @@ date: 2026-07-18
 description: "I Lizberries portano il loro tributo ai Cranberries al Millennium Pub di Sesto San Giovanni tra sold out, musica irlandese e grandi emozioni."
 image: /assets/images/posts/Palco del Millennium Pub allestito per il concerto dei Lizberries.webp
 ---
-I Lizberries al Millennium Pub di Sesto San Giovanni: una serata speciale
+<h1>I Lizberries al Millennium Pub di Sesto San Giovanni: una serata speciale</h1>
 
 <!--more-->
 
@@ -17,7 +17,7 @@ Quasi non ci sembrava vero.
 
 Dopo anni passati a caricare strumenti e percorrere centinaia di chilometri per portare la musica dei Cranberries in giro per l'Italia e all'estero, arrivare a un concerto in così poco tempo è stato qualcosa di davvero speciale.
 
-Suonare vicino a casa ha un valore speciale
+<h2>Suonare vicino a casa ha un valore speciale</h2>
 
 Ogni tanto qualcuno ci ha detto che suonare lontano dalla propria zona sia soltanto "uno sfizio".
 
@@ -29,7 +29,7 @@ Crediamo che una band debba viaggiare, conoscere luoghi nuovi e incontrare perso
 
 Per questo motivo poter finalmente condividere tutto questo così vicino a casa ci ha emozionato ancora di più.
 
-Il Millennium Pub: un angolo d'Irlanda a Sesto San Giovanni
+<h2>Il Millennium Pub: un angolo d'Irlanda a Sesto San Giovanni</h2>
 
 Entrare nel nuovo Millennium Pub è stata una sorpresa.
 
@@ -51,7 +51,7 @@ Per un attimo ci è sembrato davvero di essere tornati in Irlanda.
 
 Del resto manca ormai pochissimo al nostro prossimo <a href="https://www.thelizards.it/lizberries/#showcase-background-live-lizberries" target="_blank" rel="noopener" style="text-decoration: underline;">tour in Irlanda del 3, 4, 5 e 6 settembre 2026</a>, un appuntamento a cui teniamo particolarmente e del quale vi segnaliamo la nostra Brochure con delle idee di viaggio per quei giorni.
 
-Un concerto sold out dedicato ai Cranberries
+<h2>Un concerto sold out dedicato ai Cranberries</h2>
 
 La soddisfazione più grande è arrivata quando abbiamo visto il locale completamente pieno.
 
@@ -67,7 +67,7 @@ Il pubblico ci ha accolto con entusiasmo, partecipazione e tanto affetto.
 
 Ed è proprio questo che rende ogni concerto diverso dall'altro.
 
-Le parole che ci hanno emozionato di più
+<h2>Le parole che ci hanno emozionato di più</h2>
 
 Tra tutti gli incontri della serata, alcune parole ci sono rimaste nel cuore.
 
@@ -89,7 +89,7 @@ In un periodo non semplice dal punto di vista musicale, quelle parole ci hanno c
 
 A volte basta davvero poco per ritrovare nuove energie.
 
-Portare la musica dei Cranberries con il cuore
+<h2>Portare la musica dei Cranberries con il cuore</h2>
 
 Ci fa sempre piacere quando qualcuno ci dice che siamo bravi o che il nostro tributo è fedele all'originale.
 
@@ -99,7 +99,7 @@ Quando ci dicono che si percepisce l'armonia tra noi, che ogni canzone viene suo
 
 È questo il motivo per cui continuiamo a salire sul palco.
 
-Musica irlandese, danza e un pizzico di follia
+<h2>Musica irlandese, danza e un pizzico di follia</h2>
 
 Come spesso accade durante i nostri concerti, non sono mancati i momenti più divertenti.
 
@@ -113,7 +113,7 @@ Ci siamo divertiti tantissimo.
 
 Un ringraziamento speciale va anche a tutti i corsisti dell'Accademia Gens d'Ys di Monza, che hanno scelto di festeggiare insieme a noi il loro ultimo incontro prima della pausa estiva proprio al Millennium Pub.
 
-Grazie per questa splendida serata
+<h2>Grazie per questa splendida serata</h2>
 
 Quindici minuti di macchina.
 
