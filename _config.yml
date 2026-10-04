@@ -7,6 +7,8 @@ author:
 theme: minima
 show_excerpts: true
 lang: it_IT
+timezone: Europe/Rome
+future: false
 
 # Impostazioni di paginazione
 paginate: 5

@@ -70,7 +70,7 @@ Usa questo metodo solo se devi **modificare un post già pubblicato**:
 **⏱️ Tempi di pubblicazione:**
 - Il post appare sul blog italiano in 1-2 minuti (se la data è oggi o passata)
 - Dopo altri 1-2 minuti appare tradotto automaticamente sul blog inglese
-- **Post programmati**: I post con data futura verranno pubblicati automaticamente il giorno indicato
+- **Post programmati**: Dal giorno indicato (fuso `Europe/Rome`), i post vengono pubblicati alla successiva ricostruzione oraria di ciascun blog. GitHub Actions può introdurre ritardi: la pubblicazione non è garantita a mezzanotte.
 
 ---
 
@@ -465,7 +465,9 @@ Sì! Markdown supporta anche HTML, quindi puoi usare tag HTML quando necessario.
 
 ### Posso programmare post per il futuro?
 
-Sì! Puoi impostare una data futura nel front matter del post (es: `date: 2025-12-25`). Il post verrà pubblicato automaticamente il giorno indicato. Fino a quella data, il post non sarà visibile sul blog, ma sarà già presente nel repository GitHub.
+Sì! Puoi impostare una data futura nel front matter del post (es: `date: 2026-12-25`). Fino a quella data, il post non sarà visibile sul blog, ma sarà già presente nel repository GitHub. Dal giorno indicato, nel fuso `Europe/Rome`, i workflow **Publish scheduled posts** ricostruiscono ogni ora i blog italiano e inglese, separatamente, richiedendo una nuova build di GitHub Pages.
+
+I workflow devono essere presenti sul ramo principale e attivi; GitHub Pages deve pubblicare dal ramo `main`. GitHub Actions può ritardare le esecuzioni e, nei repository pubblici, disabilitare le pianificazioni dopo 60 giorni senza attività. Se un post non compare, controlla **Actions**, riattiva il workflow se necessario e avvia **Publish scheduled posts** con **Run workflow** nel repository interessato.
 
 ### Come vedo l'anteprima prima di pubblicare?
 
