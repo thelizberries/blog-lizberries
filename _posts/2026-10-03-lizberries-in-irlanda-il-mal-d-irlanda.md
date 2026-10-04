@@ -35,7 +35,7 @@ Abbiamo trovato qualcosa di ancora più prezioso: il **Limerick Post**, il giorn
 
 **Grazie Erik! ❤️**
 
-## Colazione al Green Yard
+## Colazione al Green Yard 
 
 A quel punto ci fermiamo al **Green Yard**, una specie di bar dove è possibile fare una sorta di colazione-pranzo ibrida.
 
